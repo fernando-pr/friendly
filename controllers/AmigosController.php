@@ -8,18 +8,33 @@ use app\models\AmigoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
- * AmigosController implements the CRUD actions for Amigo model.
- */
+* AmigosController implements the CRUD actions for Amigo model.
+*/
 class AmigosController extends Controller
 {
     /**
-     * @inheritdoc
-     */
+    * @inheritdoc
+    */
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['create', 'update', 'view', 'delete', 'index'],
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'actions' => ['create', 'update', 'view', 'delete', 'index'],
+                        'roles' => ['@'],
+                        'matchCallback' => function ($rule, $action) {
+                            return !Yii::$app->user->isGuest;
+                        }
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -30,9 +45,9 @@ class AmigosController extends Controller
     }
 
     /**
-     * Lists all Amigo models.
-     * @return mixed
-     */
+    * Lists all Amigo models.
+    * @return mixed
+    */
     public function actionIndex()
     {
         $searchModel = new AmigoSearch();
@@ -45,10 +60,10 @@ class AmigosController extends Controller
     }
 
     /**
-     * Displays a single Amigo model.
-     * @param integer $id
-     * @return mixed
-     */
+    * Displays a single Amigo model.
+    * @param integer $id
+    * @return mixed
+    */
     public function actionView($id)
     {
         return $this->render('view', [
@@ -57,10 +72,10 @@ class AmigosController extends Controller
     }
 
     /**
-     * Creates a new Amigo model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
+    * Creates a new Amigo model.
+    * If creation is successful, the browser will be redirected to the 'view' page.
+    * @return mixed
+    */
     public function actionCreate()
     {
         $model = new Amigo();
@@ -75,11 +90,11 @@ class AmigosController extends Controller
     }
 
     /**
-     * Updates an existing Amigo model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     */
+    * Updates an existing Amigo model.
+    * If update is successful, the browser will be redirected to the 'view' page.
+    * @param integer $id
+    * @return mixed
+    */
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
@@ -94,11 +109,11 @@ class AmigosController extends Controller
     }
 
     /**
-     * Deletes an existing Amigo model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     */
+    * Deletes an existing Amigo model.
+    * If deletion is successful, the browser will be redirected to the 'index' page.
+    * @param integer $id
+    * @return mixed
+    */
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
@@ -107,12 +122,12 @@ class AmigosController extends Controller
     }
 
     /**
-     * Finds the Amigo model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return Amigo the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
+    * Finds the Amigo model based on its primary key value.
+    * If the model is not found, a 404 HTTP exception will be thrown.
+    * @param integer $id
+    * @return Amigo the loaded model
+    * @throws NotFoundHttpException if the model cannot be found
+    */
     protected function findModel($id)
     {
         if (($model = Amigo::findOne($id)) !== null) {

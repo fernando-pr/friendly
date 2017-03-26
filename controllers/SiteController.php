@@ -12,19 +12,27 @@ use app\models\ContactForm;
 class SiteController extends Controller
 {
     /**
-     * @inheritdoc
-     */
+    * @inheritdoc
+    */
     public function behaviors()
     {
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout'],
+                'only' => ['logout', 'index'],
                 'rules' => [
                     [
                         'actions' => ['logout'],
                         'allow' => true,
                         'roles' => ['@'],
+                    ],
+                    [
+                        'allow' => true,
+                        'actions' => ['index'],
+                        'roles' => ['@'],
+                        'matchCallback' => function ($rule, $action) {
+                            return !Yii::$app->user->isGuest;
+                        }
                     ],
                 ],
             ],
@@ -38,8 +46,8 @@ class SiteController extends Controller
     }
 
     /**
-     * @inheritdoc
-     */
+    * @inheritdoc
+    */
     public function actions()
     {
         return [
@@ -54,20 +62,20 @@ class SiteController extends Controller
     }
 
     /**
-     * Displays homepage.
-     *
-     * @return string
-     */
+    * Displays homepage.
+    *
+    * @return string
+    */
     public function actionIndex()
     {
         return $this->render('index');
     }
 
     /**
-     * Login action.
-     *
-     * @return string
-     */
+    * Login action.
+    *
+    * @return string
+    */
     public function actionLogin()
     {
         if (!Yii::$app->user->isGuest) {
@@ -84,10 +92,10 @@ class SiteController extends Controller
     }
 
     /**
-     * Logout action.
-     *
-     * @return string
-     */
+    * Logout action.
+    *
+    * @return string
+    */
     public function actionLogout()
     {
         Yii::$app->user->logout();
@@ -96,10 +104,10 @@ class SiteController extends Controller
     }
 
     /**
-     * Displays contact page.
-     *
-     * @return string
-     */
+    * Displays contact page.
+    *
+    * @return string
+    */
     public function actionContact()
     {
         $model = new ContactForm();
@@ -114,10 +122,10 @@ class SiteController extends Controller
     }
 
     /**
-     * Displays about page.
-     *
-     * @return string
-     */
+    * Displays about page.
+    *
+    * @return string
+    */
     public function actionAbout()
     {
         return $this->render('about');
