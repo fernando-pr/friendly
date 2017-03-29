@@ -3,11 +3,15 @@
 namespace app\controllers;
 
 use Yii;
+use app\helpers\Mensaje;
+use app\models\Usuario;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use yii\helpers\Url;
+use kartik\widgets\AlertBlock;
 
 class SiteController extends Controller
 {
@@ -81,11 +85,15 @@ class SiteController extends Controller
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
-
+        //  Yii::$app
+        // var_dump(Yii::$app->session->getFlash('error'));die();
+        echo Yii::$app->session->getFlash('error', 'kdsfdkdnfkfdngvd');
+        Mensaje::exito('"guay"');
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         }
+
         return $this->render('login', [
             'model' => $model,
         ]);
@@ -129,5 +137,18 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+
+    public function actionCorreo()
+    {
+        $model = Usuario::findOne(1);
+        Yii::$app->mailer->compose('usuarios/view', ['model' => $model])
+        ->setFrom(Yii::$app->params['smtpUsername'])
+        ->setTo('ricardo@iesdonana.org')
+        ->setSubject('Prueba')
+        //            ->setTextBody('Prueba')
+        //            ->setHtmlBody('<b>Prueba</b>')
+        ->send();
     }
 }

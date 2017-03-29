@@ -22,70 +22,75 @@ AppAsset::register($this);
     <?php $this->head() ?>
 </head>
 <body>
-<?php $this->beginBody() ?>
+    <?php $this->beginBody() ?>
 
-<div class="wrap">
-    <?php
-    NavBar::begin([
-        'brandLabel' => 'My Company',
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
-    ]);
+    <div class="wrap">
+        <?php
+        NavBar::begin([
+            'brandLabel' => 'My Company',
+            'brandUrl' => Yii::$app->homeUrl,
+            'options' => [
+                'class' => 'navbar-inverse navbar-fixed-top',
+            ],
+        ]);
 
-    $items = [
-        //['label' => 'Socios', 'url' => ['socios/index']],
-        //['label' => 'Películas', 'url' => ['peliculas/index']],
-        //['label' => 'Alquileres', 'url' => ['alquileres/gestionar']],
-        Yii::$app->user->isGuest ? (
-            ['label' => 'Login', 'url' => ['/site/login']]
-        ) : (
-            '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->nombre . ')',
-                ['class' => 'btn btn-link logout']
-            )
-            . Html::endForm()
-            . '</li>'
-        )
-    ];
+        $items = [
+            //['label' => 'Socios', 'url' => ['socios/index']],
+            //['label' => 'Películas', 'url' => ['peliculas/index']],
+            //['label' => 'Alquileres', 'url' => ['alquileres/gestionar']],
+            Yii::$app->user->isGuest ? (
+                    ['label' => 'Login', 'url' => ['/site/login']]
+                ) : (
+                    '<li>'
+                    . Html::beginForm(['/site/logout'], 'post')
+                    . Html::submitButton(
+                        'Logout (' . Yii::$app->user->identity->nombre . ')',
+                        ['class' => 'btn btn-link logout']
+                        )
+                        . Html::endForm()
+                        . '</li>'
+                        )
+                    ];
+                    if (Yii::$app->user->isGuest) {
+                        //Añadir aqui apartados de usuarios invitados
+                        array_unshift($items,  ['label' => 'Registrarse', 'url' => ['usuarios/create']]);
+                    }
 
-    if (!Yii::$app->user->isGuest) {
-        //Añadir aqui apartados de usuarios registrados
-        array_unshift($items, ['label' => 'gestion', 'url' => ['usuarios/index']]);
-     }
 
-    if (Yii::$app->user->esAdmin) {
-            //Añadir aqui apartados de usuarios administrador
-        array_unshift($items, ['label' => 'Usuarios', 'url' => ['usuarios/index']]);
-     }
+                    if (!Yii::$app->user->isGuest) {
+                        //Añadir aqui apartados de usuarios registrados
+                        array_unshift($items, ['label' => 'gestion', 'url' => ['usuarios/index']]);
+                    }
 
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => $items,
-    ]);
-    NavBar::end();
-    ?>
+                    if (Yii::$app->user->esAdmin) {
+                        //Añadir aqui apartados de usuarios administrador
+                        array_unshift($items, ['label' => 'Usuarios', 'url' => ['usuarios/index']]);
+                    }
 
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= $content ?>
-    </div>
-</div>
+                    echo Nav::widget([
+                        'options' => ['class' => 'navbar-nav navbar-right'],
+                        'items' => $items,
+                    ]);
+                    NavBar::end();
+                    ?>
 
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+                    <div class="container">
+                        <?= Breadcrumbs::widget([
+                            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                            ]) ?>
+                            <?= $content ?>
+                        </div>
+                    </div>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
-    </div>
-</footer>
+                    <footer class="footer">
+                        <div class="container">
+                            <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
 
-<?php $this->endBody() ?>
-</body>
-</html>
-<?php $this->endPage() ?>
+                            <p class="pull-right"><?= Yii::powered() ?></p>
+                        </div>
+                    </footer>
+
+                    <?php $this->endBody() ?>
+                </body>
+                </html>
+                <?php $this->endPage() ?>

@@ -25,7 +25,24 @@ use Yii;
 class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
 {
 
-    public $passwordConfirm;
+    /**
+    * Escenario para cuando se crea un usuario
+    * @var string
+    */
+    const ESCENARIO_CREATE = 'create';
+
+    /**
+    * Campo de contraseña en el formulario de alta y modificación de usuarios
+    * @var string
+    */
+    public $pass;
+    /**
+    * Campo de confirmación de contraseña en el formulario de alta y
+    * modificación de usuarios
+    * @var string
+    */
+    public $passConfirm;
+
 
     /**
     * @inheritdoc
@@ -41,15 +58,17 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public function rules()
     {
         return [
-            [['nombre', 'password', 'passwordConfirm'], 'required'],
+            [['nombre', 'email'], 'required'],
+            [['pass', 'passConfirm'], 'required', 'on' => self::ESCENARIO_CREATE],
+            [['pass'], 'safe'],
             [['email'], 'required'],
             [['created_at'], 'safe'],
             [['nombre'], 'string', 'max' => 15],
-            [['password'], 'string', 'max' => 60],
             [['email'], 'string', 'max' => 255],
             [['token', 'activacion'], 'string', 'max' => 32],
             [['nombre'], 'unique'],
-            [['passwordConfirm'], 'confirmarPassword'],
+            [['passConfirm'], 'confirmarPassword'],
+            [['email'], 'email'],
         ];
     }
 
@@ -61,7 +80,8 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         return [
             'id' => 'ID',
             'nombre' => 'Nombre',
-            'password' => 'Password',
+            'pass' => 'Contraseña',
+            'passConfirm' => 'Confirmar contraseña',
             'email' => 'Email',
             'token' => 'Token',
             'activacion' => 'Activacion',
@@ -112,6 +132,11 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         return $this->token;
     }
 
+    public function regenerarToken()
+    {
+        $this->token = Yii::$app->security->generateRandomString();
+    }
+
     /**
     * [validateAuthKey description]
     * @param  [type]  $authKey [description]
@@ -133,14 +158,14 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     }
 
     /**
-     * [confirmarPassword description]
-     * @param  [type]  $attribute [description]
-     * @param  [type]  $params    [description]
-     * @return {[type]            [description]
-     */
+    * [confirmarPassword description]
+    * @param  [type]  $attribute [description]
+    * @param  [type]  $params    [description]
+    * @return {[type]            [description]
+    */
     public function confirmarPassword($attribute, $params)
     {
-        if ($this->password !== $this->passwordConfirm) {
+        if ($this->pass !== $this->passConfirm) {
             $this->addError($attribute, 'Las contraseñas no coinciden');
         }
     }
@@ -155,11 +180,21 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         return $this->nombre === 'admin';
     }
 
+
+    public function getActivado()
+    {
+        return $this->activacion === null;
+    }
+
     public function beforeSave($insert)
     {
         if (parent::beforeSave($insert)) {
-            $this->password = Yii::$app->security->generatePasswordHash($this->password);
-            $this->token = Yii::$app->security->generateRandomString();
+            if ($this->pass != '' || $insert) {
+                $this->password = Yii::$app->security->generatePasswordHash($this->pass);
+            }
+            if ($insert) {
+                  $this->regenerarToken();
+            }
             return true;
         } else {
             return false;
