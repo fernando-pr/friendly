@@ -32,7 +32,7 @@ $config = [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'smtp.gmail.com',
                 'username' => $params['smtpUsername'],
-                'password' => 'passsoporte',//getenv('SMTP_PASS'),
+                'password' => getenv('SMTP_PASS'),
                 'port' => '587',
                 'encryption' => 'tls',
             ],

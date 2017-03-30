@@ -23,11 +23,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'email') ?>
 
+    <?= $form->field($model, 'poblacion') ?>
+
+    <?= $form->field($model, 'provincia') ?>
+
     <?= $form->field($model, 'token') ?>
 
-    <?php // echo $form->field($model, 'activacion') ?>
 
-    <?php // echo $form->field($model, 'created_at') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

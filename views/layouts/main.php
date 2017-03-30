@@ -27,7 +27,7 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
         NavBar::begin([
-            'brandLabel' => 'My Company',
+            'brandLabel' => 'Friendly',
             'brandUrl' => Yii::$app->homeUrl,
             'options' => [
                 'class' => 'navbar-inverse navbar-fixed-top',
@@ -35,9 +35,7 @@ AppAsset::register($this);
         ]);
 
         $items = [
-            //['label' => 'Socios', 'url' => ['socios/index']],
-            //['label' => 'Películas', 'url' => ['peliculas/index']],
-            //['label' => 'Alquileres', 'url' => ['alquileres/gestionar']],
+            
             Yii::$app->user->isGuest ? (
                     ['label' => 'Login', 'url' => ['/site/login']]
                 ) : (
@@ -57,14 +55,23 @@ AppAsset::register($this);
                     }
 
 
-                    if (!Yii::$app->user->isGuest) {
+                    if (!Yii::$app->user->isGuest && !Yii::$app->user->esAdmin) {
                         //Añadir aqui apartados de usuarios registrados
-                        array_unshift($items, ['label' => 'gestion', 'url' => ['usuarios/index']]);
+                        array_unshift($items, ['label' => 'Mi perfil', 'url' => ['usuarios/index']]);
+                        array_unshift($items, ['label' => 'Amigos', 'url' => ['usuarios/index']]);
+                        array_unshift($items, ['label' => 'Chat', 'url' => ['usuarios/index']]);
+                        array_unshift($items, ['label' => 'Foro', 'url' => ['usuarios/index']]);
+                        array_unshift($items, ['label' => 'Chat', 'url' => ['usuarios/index']]);
                     }
 
                     if (Yii::$app->user->esAdmin) {
                         //Añadir aqui apartados de usuarios administrador
+                        array_unshift($items, ['label' => 'Mensajes foro', 'url' => ['publicos/index']]);
+                        array_unshift($items, ['label' => 'Mensajes Chat', 'url' => ['privados/index']]);
+                        array_unshift($items, ['label' => 'Amistad', 'url' => ['amigos/index']]);
+                        array_unshift($items, ['label' => 'Conectados', 'url' => ['conectados/index']]);
                         array_unshift($items, ['label' => 'Usuarios', 'url' => ['usuarios/index']]);
+
                     }
 
                     echo Nav::widget([
@@ -84,9 +91,9 @@ AppAsset::register($this);
 
                     <footer class="footer">
                         <div class="container">
-                            <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+                            <p class="pull-left">&copy; Friendly <?= date('Y') ?></p>
 
-                            <p class="pull-right"><?= Yii::powered() ?></p>
+
                         </div>
                     </footer>
 

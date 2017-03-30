@@ -8,24 +8,24 @@ use yii\data\ActiveDataProvider;
 use app\models\Usuario;
 
 /**
- * UsuarioSearch represents the model behind the search form about `app\models\Usuario`.
- */
+* UsuarioSearch represents the model behind the search form about `app\models\Usuario`.
+*/
 class UsuarioSearch extends Usuario
 {
     /**
-     * @inheritdoc
-     */
+    * @inheritdoc
+    */
     public function rules()
     {
         return [
             [['id'], 'integer'],
-            [['nombre', 'password', 'token'], 'safe'],
+            [['nombre', 'password', 'email', 'poblacion', 'provincia', 'token', 'activacion', 'created_at'], 'safe'],
         ];
     }
 
     /**
-     * @inheritdoc
-     */
+    * @inheritdoc
+    */
     public function scenarios()
     {
         // bypass scenarios() implementation in the parent class
@@ -33,12 +33,12 @@ class UsuarioSearch extends Usuario
     }
 
     /**
-     * Creates data provider instance with search query applied
-     *
-     * @param array $params
-     *
-     * @return ActiveDataProvider
-     */
+    * Creates data provider instance with search query applied
+    *
+    * @param array $params
+    *
+    * @return ActiveDataProvider
+    */
     public function search($params)
     {
         $query = Usuario::find();
@@ -57,8 +57,13 @@ class UsuarioSearch extends Usuario
             'id' => $this->id,
         ]);
         $query->andFilterWhere(['like', 'nombre', $this->nombre])
-            ->andFilterWhere(['like', 'password', $this->password])
-            ->andFilterWhere(['like', 'token', $this->token]);
+        ->andFilterWhere(['like', 'password', $this->password])
+        ->andFilterWhere(['like', 'email', $this->email])
+        ->andFilterWhere(['like', 'poblacion', $this->poblacion])
+        ->andFilterWhere(['like', 'provincia', $this->provincia])
+        ->andFilterWhere(['like', 'token', $this->token])
+        ->andFilterWhere(['like', 'activacion', $this->activacion]);
+
         return $dataProvider;
     }
 }

@@ -5,6 +5,8 @@ create table usuarios (
     nombre     varchar(15)  not null constraint uq_usuarios_nombre unique,
     password   varchar(60)  not null,
     email      varchar(255) not null,
+    poblacion  varchar(255) not null,
+    provincia  varchar(255) not null,
     token      varchar(32),
     activacion varchar(32),
     created_at timestamptz  default current_timestamp
@@ -16,11 +18,11 @@ create index idx_usuarios_created_at on usuarios (created_at);
 
 --usuarios de prueba
 
-insert into usuarios(nombre, password, email)
-values ('admin', crypt('admin', gen_salt('bf', 13)), 'admin@admin.com');
+insert into usuarios(nombre, password, email, poblacion, provincia)
+values ('admin', crypt('admin', gen_salt('bf', 13)), 'admin@admin.com', 'Sanlúcar de Barrameda', 'Cádiz');
 
-insert into usuarios(nombre, password, email)
-values ('demo', crypt('demo', gen_salt('bf', 13)), 'demo@demo.com');
+insert into usuarios(nombre, password, email, poblacion, provincia)
+values ('demo', crypt('demo', gen_salt('bf', 13)), 'demo@demo.com', 'Sanlúcar de Barrameda', 'Cádiz');
 
 
 drop table if exists amigos cascade;

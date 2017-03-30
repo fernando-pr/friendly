@@ -32,6 +32,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'nombre',
             //'password',
             'email:email',
+            'poblacion',
+            'provincia',
             //'token',
             //'activacion',
             //'created_at',
