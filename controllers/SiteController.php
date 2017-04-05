@@ -5,8 +5,10 @@ namespace app\controllers;
 use Yii;
 use app\helpers\Mensaje;
 use app\models\Usuario;
+use app\models\UploadForm;
 use yii\filters\AccessControl;
 use yii\web\Controller;
+use yii\web\UploadedFile;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
@@ -137,18 +139,5 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
-    }
-
-
-    public function actionCorreo()
-    {
-        $model = Usuario::findOne(1);
-        Yii::$app->mailer->compose('usuarios/view', ['model' => $model])
-        ->setFrom(Yii::$app->params['smtpUsername'])
-        ->setTo('ricardo@iesdonana.org')
-        ->setSubject('Prueba')
-        //            ->setTextBody('Prueba')
-        //            ->setHtmlBody('<b>Prueba</b>')
-        ->send();
     }
 }

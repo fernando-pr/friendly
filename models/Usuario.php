@@ -3,6 +3,8 @@
 namespace app\models;
 
 use Yii;
+use yii\web\UploadedFile;
+use yii\imagine\Image;
 
 /**
 * This is the model class for table "usuarios".
@@ -43,7 +45,11 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     */
     public $passConfirm;
 
-
+    /**
+    * [tableName description]
+    * @return {[type] [description]
+    */
+    public $imageFile;
     /**
     * @inheritdoc
     */
@@ -69,6 +75,7 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             [['nombre'], 'unique'],
             [['passConfirm'], 'confirmarPassword'],
             [['email'], 'email'],
+            [['imageFile'], 'file', 'extensions' => 'png'],
         ];
     }
 
@@ -88,6 +95,7 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             'token' => 'Token',
             'activacion' => 'Activacion',
             'created_at' => 'Created At',
+            'imageFile' => 'Imagen',
         ];
     }
 
@@ -182,6 +190,13 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         return $this->nombre === 'admin';
     }
 
+    public function getImageUrl()
+    {
+        $uploads = Yii::getAlias('@uploads');
+        $ruta = "$uploads/{$this->id}.png";
+        return file_exists($ruta) ? "/$ruta" : "/$uploads/default.png";
+    }
+
 
     public function getActivado()
     {
@@ -195,10 +210,28 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
                 $this->password = Yii::$app->security->generatePasswordHash($this->pass);
             }
             if ($insert) {
-                  $this->regenerarToken();
+                $this->regenerarToken();
+            }
+            $this->imageFile = UploadedFile::getInstance($this, 'imageFile');
+            if ($this->imageFile !== null && $this->validate()) {
+                $nombre = Yii::getAlias('@uploads/')
+                . $this->id . '.' . $this->imageFile->extension;
+
+                $this->imageFile->saveAs($nombre);
+                Image::thumbnail($nombre, 120, null)
+                ->save($nombre, ['quality' => 50]);
             }
             return true;
         } else {
+            $this->imageFile = UploadedFile::getInstance($this, 'imageFile');
+            if ($this->imageFile !== null && $this->validate()) {
+                $nombre = Yii::getAlias('@uploads/')
+                . $this->id . '.' . $this->imageFile->extension;
+
+                $this->imageFile->saveAs($nombre);
+                Image::thumbnail($nombre, 120, null)
+                ->save($nombre, ['quality' => 50]);
+            }
             return false;
         }
     }

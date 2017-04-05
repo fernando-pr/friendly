@@ -35,7 +35,7 @@ AppAsset::register($this);
         ]);
 
         $items = [
-            
+
             Yii::$app->user->isGuest ? (
                     ['label' => 'Login', 'url' => ['/site/login']]
                 ) : (
@@ -56,8 +56,9 @@ AppAsset::register($this);
 
 
                     if (!Yii::$app->user->isGuest && !Yii::$app->user->esAdmin) {
+
                         //Añadir aqui apartados de usuarios registrados
-                        array_unshift($items, ['label' => 'Mi perfil', 'url' => ['usuarios/index']]);
+                        array_unshift($items, ['label' => 'Mi perfil', 'url' => ['usuarios/view/' . Yii::$app->user->id]]);
                         array_unshift($items, ['label' => 'Amigos', 'url' => ['usuarios/index']]);
                         array_unshift($items, ['label' => 'Chat', 'url' => ['usuarios/index']]);
                         array_unshift($items, ['label' => 'Foro', 'url' => ['usuarios/index']]);

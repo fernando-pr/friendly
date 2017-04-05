@@ -18,7 +18,7 @@ $(document).on('ready', function () {
     function provincias(r){
 
         for (i in r){
-            $("#usuario-provincia").append("<option value="+ i +">"+r[i]+"</option>")
+            $("#usuario-provincia").append("<option name="+ i +" value="+r[i]+">"+r[i]+"</option>")
         }
         ordenar();
     }
@@ -63,8 +63,8 @@ $(document).on('ready', function () {
 
     function peticionCiudades(){
 
-        var dato = $("#usuario-provincia option:selected").val();
-
+        var dato = $("#usuario-provincia option:selected").attr('name');//val();
+        alert(dato);
         $.ajax({
             data: 'provincia=' + dato,
             type: "POST",
@@ -93,11 +93,11 @@ $this->registerJs($js);
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
-    <!-- <?= $form->field($model, 'provincia')->textInput(['maxlength' => true]) ?> -->
+    <?= $form->field($model, 'provincia')->dropDownList(['' => 'Provincias...']);?>
 
-    <?= $form->field($model, 'provincia')->dropDownList(['00' => 'Provincias...']);?>
-    <?= $form->field($model, 'poblacion')->dropDownList(['00' => 'Poblaciones...']);?>
+    <?= $form->field($model, 'poblacion')->dropDownList(['' => 'Poblaciones...']);?>
 
+    <?= $form->field($model, 'imageFile')->fileInput(['maxlength' => true]) ?>
     <br><br>
 
     <div class="form-group">

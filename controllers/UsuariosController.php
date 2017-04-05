@@ -38,6 +38,7 @@ class UsuariosController extends Controller
                         'matchCallback' => function ($rule, $action) {
                             $id = Yii::$app->request->get('id');
 
+                            // Comprobar que es el id del usuario o que es amigo.
                             return $id === null || $id == Yii::$app->user->id;
                         },
                     ],
@@ -152,7 +153,7 @@ class UsuariosController extends Controller
     public function actionUpdate($id = null)
     {
         $model = $this->findModel($id);
-
+        //var_dump($model);die();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
