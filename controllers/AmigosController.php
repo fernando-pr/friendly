@@ -60,6 +60,21 @@ class AmigosController extends Controller
     }
 
     /**
+    * muestra los amigos del usuario logueado
+    * @return mixed
+    */
+    public function actionAmigos()
+    {
+        $searchModel = new AmigoSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        
+        return $this->render('amigos', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    /**
     * Displays a single Amigo model.
     * @param integer $id
     * @return mixed
