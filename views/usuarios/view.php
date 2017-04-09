@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
    <img src="<?= $model->imageUrl ?>" />
 
-  <?php var_dump($model); ?>
+
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'email:email',
             'poblacion',
             'provincia',
-            'imageFile',
+            
             //'token',
             //'activacion',
             //'created_at',

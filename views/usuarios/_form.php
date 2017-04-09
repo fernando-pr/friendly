@@ -11,6 +11,8 @@ use yii\widgets\ActiveForm;
 <?php
 $url = Url::to(['provincias/provincias']);
 $url2 = Url::to(['poblacion/poblacion']);
+$provincia = $model->provincia;
+$poblacion = $model->poblacion;
 $js = <<<EOT
 
 $(document).on('ready', function () {
@@ -21,7 +23,26 @@ $(document).on('ready', function () {
             $("#usuario-provincia").append("<option name="+ i +" value="+r[i]+">"+r[i]+"</option>")
         }
         ordenar();
+
+        if('$provincia' != null){
+            marcarProvincia();
+        }
+        if('$poblacion' != null){
+            peticionCiudades();
+        }
+
     }
+
+    function marcarProvincia(){
+
+        $("option[value="+'$provincia'+"]").attr("selected",true)
+    }
+
+    function marcarPoblacion(){
+
+        $("option[value="+'$poblacion'+"]").attr("selected",true)
+    }
+
 
 
     (function(){
@@ -56,15 +77,20 @@ $(document).on('ready', function () {
 
     function poblacion(r){
         for (i in r){
-            $("#usuario-poblacion").append("<option>"+r[i]+"</option>")
+            $("#usuario-poblacion").append("<option value ="+r[i]+">"+r[i]+"</option>")
         }
         ordenar();
+
+        if('$poblacion' != null){
+            marcarPoblacion();
+        }
+
     }
 
     function peticionCiudades(){
 
         var dato = $("#usuario-provincia option:selected").attr('name');//val();
-        alert(dato);
+
         $.ajax({
             data: 'provincia=' + dato,
             type: "POST",
