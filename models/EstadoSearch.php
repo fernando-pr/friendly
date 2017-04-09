@@ -5,12 +5,12 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Amigo;
+use app\models\Estado;
 
 /**
- * AmigoSearch represents the model behind the search form about `app\models\Amigo`.
+ * EstadoSearch represents the model behind the search form about `app\models\Estado`.
  */
-class AmigoSearch extends Amigo
+class EstadoSearch extends Estado
 {
     /**
      * @inheritdoc
@@ -18,7 +18,7 @@ class AmigoSearch extends Amigo
     public function rules()
     {
         return [
-            [['id', 'id_usuario', 'id_amigo'], 'integer'],
+            [['id'], 'integer'],
             [['estado'], 'safe'],
         ];
     }
@@ -41,7 +41,7 @@ class AmigoSearch extends Amigo
      */
     public function search($params)
     {
-        $query = Amigo::find();
+        $query = Estado::find();
 
         // add conditions that should always apply here
 
@@ -60,10 +60,8 @@ class AmigoSearch extends Amigo
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'id_usuario' => $this->id_usuario,
-            'id_amigo' => $this->id_amigo,
         ]);
-        
+
         $query->andFilterWhere(['like', 'estado', $this->estado]);
 
         return $dataProvider;

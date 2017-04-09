@@ -24,6 +24,24 @@ values ('admin', crypt('admin', gen_salt('bf', 13)), 'admin@admin.com', 'Sanlúc
 insert into usuarios(nombre, password, email, poblacion, provincia)
 values ('demo', crypt('demo', gen_salt('bf', 13)), 'demo@demo.com', 'Sanlúcar de Barrameda', 'Cádiz');
 
+insert into usuarios(nombre, password, email, poblacion, provincia)
+values ('paco', crypt('paco', gen_salt('bf', 13)), 'demo@demo.com', 'Sanlúcar de Barrameda', 'Cádiz');
+
+insert into usuarios(nombre, password, email, poblacion, provincia)
+values ('pepe', crypt('pepe', gen_salt('bf', 13)), 'demo@demo.com', 'Sanlúcar de Barrameda', 'Cádiz');
+
+insert into usuarios(nombre, password, email, poblacion, provincia)
+values ('jose', crypt('jose', gen_salt('bf', 13)), 'demo@demo.com', 'Sanlúcar de Barrameda', 'Cádiz');
+
+
+drop table if exists estados cascade;
+create table estados (
+    id  bigserial   constraint pk_estados primary key,
+    estado          varchar(30) not null unique
+);
+
+insert into estados (estado) values ('Solicitado');
+insert into estados (estado) values ('Aceptado');
 
 drop table if exists amigos cascade;
 
@@ -37,6 +55,9 @@ drop table if exists amigos cascade;
 
         id_amigo        bigint      not null constraint fk_amigos_usuarios_rec
                                     references usuarios (id)
+                                    on delete no action on update cascade,
+        estado          varchar(30) not null constraint fk_amigos_estados
+                                    references estados(estado)
                                     on delete no action on update cascade
     );
 

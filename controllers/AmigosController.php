@@ -67,7 +67,7 @@ class AmigosController extends Controller
     {
         $searchModel = new AmigoSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        
+
         return $this->render('amigos', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -148,7 +148,7 @@ class AmigosController extends Controller
         if (($model = Amigo::findOne($id)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
+            throw new NotFoundHttpException('La página solicitada no existe');
         }
     }
 }
