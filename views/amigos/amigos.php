@@ -11,19 +11,34 @@ use yii\widgets\ListView;
 $this->title = 'Amigos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<?php //var_dump($model); ?>
 <div class="amigo-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    
+    <h1><?= Html::encode($this->title) . ' de ' . Yii::$app->user->identity->nombre?></h1>
 
-    <p>
-        <?= Html::a('Create Amigo', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-    <?= ListView::widget([
-        'dataProvider' => $dataProvider,
-        'itemOptions' => ['class' => 'item'],
-        'itemView' => function ($model, $key, $index, $widget) {
-            return Html::a(Html::encode($model->id), ['view', 'id' => $model->id]);
-        },
-        ]) ?>
-    </div>
+
+    <?php
+    if (empty($model)) {?>
+        <h1><?= 'No tienes amigos todavia' ?></h1>
+        <?php } else { ?>
+            <table>
+
+
+                <?php
+
+                foreach ($model as $amigo) { ?>
+                    <tr>
+                        <div class="">
+                            <td>
+                                <img src="<?= $amigo->imageUrl ?>" />
+                            </td>
+                            <td>
+                                <?= $amigo->nombre ?>
+                            </td>
+
+                        </div>
+                    </tr>
+                <?php  } ?>
+            </table>
+    <?php  } ?>
+</div>

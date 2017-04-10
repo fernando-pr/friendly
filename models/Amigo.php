@@ -52,6 +52,14 @@ class Amigo extends \yii\db\ActiveRecord
         ];
     }
 
+    public function esMiAmigo($id)
+    {
+        $usuario = Usuario::findOne(['id' => $id]);
+        $amigos = Usuario::getAmigosUsuario();
+
+        return in_array($usuario, $amigos);
+    }
+
     /**
     * @return \yii\db\ActiveQuery
     */

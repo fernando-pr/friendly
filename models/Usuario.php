@@ -236,6 +236,30 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         }
     }
 
+    public function esMiAmigo($id)
+    {
+        $usuario = Usuario::findOne(['id' => $id]);
+        $amigos = Usuario::getAmigosUsuario();
+
+        return in_array($usuario, $amigos);
+    }
+
+    public function getAmigosUsuario()
+    {
+        $id = Yii::$app->user->id;
+        $amigos = Amigo::findBySql('SELECT * FROM amigos where (id_usuario = ' . $id . 'or id_amigo = ' . $id . ') and estado =' . "'Aceptado'")->all();
+        $user_id = [];
+        foreach ($amigos as $amigo) {
+            if ($amigo->id_usuario == $id) {
+                $user_id[] = $amigo->id_amigo;
+            } else {
+                $user_id[] = $amigo->id_usuario;
+            }
+        }
+
+        return Usuario::findAll($user_id);
+    }
+
     /**
     * @return \yii\db\ActiveQuery
     */

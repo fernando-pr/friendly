@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Amigo;
+use app\models\Usuario;
 use app\models\AmigoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -65,12 +66,12 @@ class AmigosController extends Controller
     */
     public function actionAmigos()
     {
-        $searchModel = new AmigoSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        //var_dump(Amigo::esAmigo(1));die();
+
+        $model = Usuario::getAmigosUsuario();
 
         return $this->render('amigos', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'model' => $model,
         ]);
     }
 

@@ -37,9 +37,8 @@ class UsuariosController extends Controller
                         'roles' => ['@'],
                         'matchCallback' => function ($rule, $action) {
                             $id = Yii::$app->request->get('id');
-
-                            // Comprobar que es el id del usuario o que es amigo.
-                            return $id === null || $id == Yii::$app->user->id;
+                            $esAmigo = Usuario::esMiAmigo($id);
+                            return $id === null || $id == Yii::$app->user->id || $esAmigo;
                         },
                     ],
                     [
