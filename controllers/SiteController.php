@@ -87,10 +87,7 @@ class SiteController extends Controller
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
-        //  Yii::$app
-        // var_dump(Yii::$app->session->getFlash('error'));die();
-        echo Yii::$app->session->getFlash('error', 'kdsfdkdnfkfdngvd');
-        Mensaje::exito('"guay"');
+
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();

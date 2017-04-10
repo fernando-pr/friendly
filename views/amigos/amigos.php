@@ -21,24 +21,24 @@ $this->params['breadcrumbs'][] = $this->title;
     if (empty($model)) {?>
         <h1><?= 'No tienes amigos todavia' ?></h1>
         <?php } else { ?>
-            <table>
 
+            <?php
 
-                <?php
+            foreach ($model as $amigo) { ?>
+                <?php $ruta = '../usuarios/view/' . $amigo->id; ?>
+                <fieldset>
+                    <legend>
+                    <?= "<a href=" . $ruta . ">" .$amigo->nombre . "</a>" ?>
+                    </legend>
 
-                foreach ($model as $amigo) { ?>
-                    <tr>
-                        <div class="">
-                            <td>
-                                <img src="<?= $amigo->imageUrl ?>" />
-                            </td>
-                            <td>
-                                <?= $amigo->nombre ?>
-                            </td>
+                    <div class="">
+                        <img src="<?= $amigo->imageUrl ?>" />
+                        <?= $amigo->nombre ?>
+                    </div>
+                </fieldset>
+                <br>
 
-                        </div>
-                    </tr>
                 <?php  } ?>
-            </table>
-    <?php  } ?>
-</div>
+
+                <?php  } ?>
+            </div>

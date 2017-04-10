@@ -152,7 +152,7 @@ class UsuariosController extends Controller
     public function actionUpdate($id = null)
     {
         $model = $this->findModel($id);
-        //var_dump($model);die();
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
