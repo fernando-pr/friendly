@@ -12,4 +12,9 @@ class User extends \yii\web\User
     {
         return ($this->identity) ? $this->identity->esAdmin() : false;
     }
+
+    public function getEsMiAmigo($id)
+    {
+        return $this->identity->esMiAmigo($id);
+    }
 }

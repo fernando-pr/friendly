@@ -37,7 +37,8 @@ class UsuariosController extends Controller
                         'roles' => ['@'],
                         'matchCallback' => function ($rule, $action) {
                             $id = Yii::$app->request->get('id');
-                            $esAmigo = Usuario::esMiAmigo($id);
+                            $esAmigo = Yii::$app->user->getEsMiAmigo($id);
+
                             return $id === null || $id == Yii::$app->user->id || $esAmigo;
                         },
                     ],

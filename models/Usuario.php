@@ -238,8 +238,8 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
 
     public function esMiAmigo($id)
     {
-        $usuario = Usuario::findOne(['id' => $id]);
-        $amigos = Usuario::getAmigosUsuario();
+        $usuario = self::findOne(['id' => $id]);
+        $amigos = self::getAmigosUsuario();
 
         return in_array($usuario, $amigos);
     }
