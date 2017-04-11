@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?php $ruta = '../usuarios/view/' . $amigo->id; ?>
                 <fieldset>
                     <legend>
-                    <?= "<a href=" . $ruta . ">" .$amigo->nombre . "</a>" ?>
+                        <?= "<a href=" . $ruta . ">" .$amigo->nombre . "</a>" ?>
                     </legend>
 
                     <div class="">

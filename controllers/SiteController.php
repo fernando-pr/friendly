@@ -74,7 +74,14 @@ class SiteController extends Controller
     */
     public function actionIndex()
     {
-        return $this->render('index');
+        $provincia = Yii::$app->user->identity->provincia;
+        $poblacion = Yii::$app->user->identity->poblacion;
+
+        $model = Usuario::find()->where(['poblacion' => $poblacion])->orWhere(['provincia' => $provincia])->all();
+
+        return $this->render('index', [
+            'model' => $model,
+        ]);
     }
 
     /**

@@ -134,6 +134,14 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     {
         return $this->id;
     }
+
+    /**
+    * @inheritdoc
+    */
+    public function getPoblacion()
+    {
+        return $this->poblacion;
+    }
     /**
     * @inheritdoc
     */
