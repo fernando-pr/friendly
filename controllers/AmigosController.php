@@ -68,7 +68,9 @@ class AmigosController extends Controller
     {
         //var_dump(Amigo::esAmigo(1));die();
 
-        $model = Usuario::getAmigosUsuario();
+        $amigo = new Usuario;
+
+        $model = $amigo->getAmigosUsuario();
 
         return $this->render('amigos', [
             'model' => $model,
