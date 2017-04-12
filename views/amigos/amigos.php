@@ -10,17 +10,14 @@ use yii\helpers\Html;
 $this->title = 'Amigos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<?php //var_dump($model); ?>
 <div class="amigo-index">
-
-    <h1><?= Html::encode($this->title) . ' de ' . Yii::$app->user->identity->nombre?></h1>
-
 
     <?php
     if (empty($model)) {?>
         <h1><?= 'No tienes amigos todavia' ?></h1>
+        <h3><a href="../">pincha aquí para ver si tienes personas cerca</a></h3>
         <?php } else { ?>
-
+            <h1><?= Html::encode($this->title) . ' de ' . Yii::$app->user->identity->nombre?></h1>
             <?php
 
             foreach ($model as $amigo) { ?>
@@ -36,8 +33,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                 </fieldset>
                 <br>
-
-                <?php  } ?>
-
-                <?php  } ?>
-            </div>
+                <?php
+            }
+        }
+        ?>
+    </div>

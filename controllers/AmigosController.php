@@ -66,8 +66,6 @@ class AmigosController extends Controller
     */
     public function actionAmigos()
     {
-        //var_dump(Amigo::esAmigo(1));die();
-
         $amigo = new Usuario;
 
         $model = $amigo->getAmigosUsuario();

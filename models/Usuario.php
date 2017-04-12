@@ -265,7 +265,7 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             }
         }
 
-        return Usuario::findAll($user_id);
+        return self::findAll($user_id);
     }
 
     /**
