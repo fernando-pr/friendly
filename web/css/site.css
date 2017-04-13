@@ -113,3 +113,12 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+.barra_navegacion {
+    background-color: #9B59B6;
+}
+a.navbar-brand {
+    color: white !important;
+}
+.navbar-right {
+    
+}

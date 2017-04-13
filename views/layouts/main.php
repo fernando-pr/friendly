@@ -26,60 +26,63 @@ AppAsset::register($this);
 
     <div class="wrap">
         <?php
-        NavBar::begin([
-            'brandLabel' => 'Friendly',
-            'brandUrl' => Yii::$app->homeUrl,
-            'options' => [
-                'class' => 'navbar-inverse navbar-fixed-top',
-            ],
-        ]);
+        if (!Yii::$app->user->isGuest){
+            NavBar::begin([
+                'brandLabel' => 'Friendly',
+                'brandUrl' => Yii::$app->homeUrl,
+                'options' => [
+                    'class' => 'navbar-inverse navbar-fixed-top barra_navegacion',
+                ],
+            ]);
 
-        $items = [
 
-            Yii::$app->user->isGuest ? (
+            $items = [
+
+                Yii::$app->user->isGuest ? (
                     ['label' => 'Login', 'url' => ['/site/login']]
-                ) : (
-                    '<li>'
-                    . Html::beginForm(['/site/logout'], 'post')
-                    . Html::submitButton(
-                        'Logout (' . Yii::$app->user->identity->nombre . ')',
-                        ['class' => 'btn btn-link logout']
-                        )
-                        . Html::endForm()
-                        . '</li>'
-                        )
-                    ];
-                    if (Yii::$app->user->isGuest) {
-                        //Añadir aqui apartados de usuarios invitados
-                        array_unshift($items,  ['label' => 'Registrarse', 'url' => ['usuarios/create']]);
+                    ) : (
+                        '<li>'
+                        . Html::beginForm(['/site/logout'], 'post')
+                        . Html::submitButton(
+                            'Logout (' . Yii::$app->user->identity->nombre . ')',
+                            ['class' => 'btn btn-link logout']
+                            )
+                            . Html::endForm()
+                            . '</li>'
+                            )
+                        ];
+                        // if (Yii::$app->user->isGuest) {
+                        //     //Añadir aqui apartados de usuarios invitados
+                        //     array_unshift($items,  ['label' => 'Registrarse', 'url' => ['usuarios/create']]);
+                        // }
+
+
+                        if (!Yii::$app->user->isGuest && !Yii::$app->user->esAdmin) {
+
+                            //Añadir aqui apartados de usuarios registrados
+                            array_unshift($items, ['label' => 'Mi perfil', 'url' => ['usuarios/view/' . Yii::$app->user->id]]);
+                            array_unshift($items, ['label' => 'Amigos', 'url' => ['amigos/amigos']]);
+                            array_unshift($items, ['label' => 'Chat', 'url' => ['usuarios/index']]);
+                            array_unshift($items, ['label' => 'Foro', 'url' => ['usuarios/index']]);
+                            array_unshift($items, ['label' => 'Chat', 'url' => ['usuarios/index']]);
+                        }
+
+                        if (Yii::$app->user->esAdmin) {
+                            //Añadir aqui apartados de usuarios administrador
+                            array_unshift($items, ['label' => 'Mensajes foro', 'url' => ['publicos/index']]);
+                            array_unshift($items, ['label' => 'Mensajes Chat', 'url' => ['privados/index']]);
+                            array_unshift($items, ['label' => 'Amistad', 'url' => ['amigos/index']]);
+                            array_unshift($items, ['label' => 'Conectados', 'url' => ['conectados/index']]);
+                            array_unshift($items, ['label' => 'Usuarios', 'url' => ['usuarios/index']]);
+
+                        }
+
+                        echo Nav::widget([
+                            'options' => ['class' => 'navbar-nav navbar-right'],
+                            'items' => $items,
+                        ]);
+                        NavBar::end();
                     }
-
-
-                    if (!Yii::$app->user->isGuest && !Yii::$app->user->esAdmin) {
-
-                        //Añadir aqui apartados de usuarios registrados
-                        array_unshift($items, ['label' => 'Mi perfil', 'url' => ['usuarios/view/' . Yii::$app->user->id]]);
-                        array_unshift($items, ['label' => 'Amigos', 'url' => ['amigos/amigos']]);
-                        array_unshift($items, ['label' => 'Chat', 'url' => ['usuarios/index']]);
-                        array_unshift($items, ['label' => 'Foro', 'url' => ['usuarios/index']]);
-                        array_unshift($items, ['label' => 'Chat', 'url' => ['usuarios/index']]);
-                    }
-
-                    if (Yii::$app->user->esAdmin) {
-                        //Añadir aqui apartados de usuarios administrador
-                        array_unshift($items, ['label' => 'Mensajes foro', 'url' => ['publicos/index']]);
-                        array_unshift($items, ['label' => 'Mensajes Chat', 'url' => ['privados/index']]);
-                        array_unshift($items, ['label' => 'Amistad', 'url' => ['amigos/index']]);
-                        array_unshift($items, ['label' => 'Conectados', 'url' => ['conectados/index']]);
-                        array_unshift($items, ['label' => 'Usuarios', 'url' => ['usuarios/index']]);
-
-                    }
-
-                    echo Nav::widget([
-                        'options' => ['class' => 'navbar-nav navbar-right'],
-                        'items' => $items,
-                    ]);
-                    NavBar::end();
                     ?>
 
                     <div class="container">
