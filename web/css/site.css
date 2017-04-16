@@ -114,11 +114,5 @@ a.desc:after {
     outline: none;
 }
 .barra_navegacion {
-    background-color: #9B59B6;
-}
-a.navbar-brand {
-    color: white !important;
-}
-.navbar-right {
-    
+    background-color: #224b5f;
 }

@@ -28,7 +28,7 @@ AppAsset::register($this);
         <?php
         if (!Yii::$app->user->isGuest){
             NavBar::begin([
-                'brandLabel' => 'Friendly',
+                'brandLabel' => '<img src="/logo.png" alt="Logo" title="Logo" width="30">',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top barra_navegacion',

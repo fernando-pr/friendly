@@ -41,7 +41,7 @@ use yii\bootstrap\ActiveForm;
             </div>
             <br>
             <div>
-               <button type="button" name="button" class="btn btn-primary btn btn-block btn-info ripple-effect">Registrate</button>
+               <button type="button" name="button" class="btn btn-primary btn btn-block btn-info ripple-effect registrate">Registrate</button>
             </div>
 
          <?php ActiveForm::end(); ?>

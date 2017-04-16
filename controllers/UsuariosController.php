@@ -136,7 +136,8 @@ class UsuariosController extends Controller
                     'Usuario creado correctamente. Por favor,mire su correo.'
                 );
             }
-            return $this->redirect(['view', 'id' => $model->id]);
+            //return $this->redirect(['view', 'id' => $model->id]);
+            return $this->render('aceptar');
         } else {
             return $this->render('create', [
                 'model' => $model,
