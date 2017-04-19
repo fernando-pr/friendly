@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 
-$this->title = 'My Yii Application';
+$this->title = 'friendly';
 ?>
 
 <?php
