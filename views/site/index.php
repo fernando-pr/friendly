@@ -52,9 +52,6 @@ $this->registerJs($js);
                     </div>
                 </fieldset>
                 <br>
-
-
-
                 <?php
             }
         }
