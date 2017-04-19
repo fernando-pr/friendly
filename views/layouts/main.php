@@ -28,7 +28,7 @@ AppAsset::register($this);
         <?php
         if (!Yii::$app->user->isGuest){
             NavBar::begin([
-                'brandLabel' => '<img src="/logo.png" alt="Logo" title="Logo" width="30">',
+                'brandLabel' => '<img src="/logo.png" alt="Logo" title="Logo" width="30" class="logo">',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top barra_navegacion',
@@ -64,7 +64,6 @@ AppAsset::register($this);
                             array_unshift($items, ['label' => 'Amigos', 'url' => ['amigos/amigos']]);
                             array_unshift($items, ['label' => 'Chat', 'url' => ['usuarios/index']]);
                             array_unshift($items, ['label' => 'Foro', 'url' => ['usuarios/index']]);
-                            array_unshift($items, ['label' => 'Chat', 'url' => ['usuarios/index']]);
                         }
 
                         if (Yii::$app->user->esAdmin) {

@@ -123,7 +123,9 @@ $this->registerJs($js);
 
     <?= $form->field($model, 'poblacion')->dropDownList(['' => 'Poblaciones...']);?>
 
-    <?= $form->field($model, 'imageFile')->fileInput(['maxlength' => true]) ?>
+    <?php if(!$model->isNewRecord){ ?>
+        <?= $form->field($model, 'imageFile')->fileInput(['maxlength' => true]) ?>
+    <?php } ?>
     <br><br>
 
     <div class="form-group">

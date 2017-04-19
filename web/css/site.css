@@ -116,3 +116,31 @@ a.desc:after {
 .barra_navegacion {
     background-color: #224b5f;
 }
+
+.nav>li>a, .nav>li>form>button {
+    color: white !important;
+    border:1px solid #224b5f;
+}
+.nav>li>a:hover, .nav>li>form>button:hover {
+    color: black !important;
+    border-color: black;
+}
+
+
+.nav>li>a, .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: white;
+    background-color: #224b5f;
+}
+.logo{
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+}
+.logo:hover{
+    -webkit-transform: rotateY(360deg);
+    -moz-transform: rotateY(360deg);
+    -o-transform: rotateY(360deg);
+    -ms-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+}

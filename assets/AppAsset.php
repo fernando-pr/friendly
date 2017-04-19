@@ -23,6 +23,7 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
         'js/login.js',
+        'js/jquery.galeria.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

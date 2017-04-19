@@ -4,7 +4,28 @@ use yii\helpers\Html;
 
 $this->title = 'My Yii Application';
 ?>
+
+<?php
+$js = <<<EOT
+
+$(document).on('ready', function () {
+
+
+    $(".galeria").galeriaImg();
+
+});
+EOT;
+$this->registerJs($js);
+ ?>
+
+
 <div class="site-index">
+    <div class="galeria">
+        <div class="foto">
+
+        </div>
+    </div>
+
     <h1>Personas cerca</h1>
 
     <?php
@@ -25,7 +46,7 @@ $this->title = 'My Yii Application';
                         <?= "<a href=" . $ruta . ">" .$usuario->nombre . "</a>" ?>
                     </legend>
 
-                    <div class="">
+                    <div class="fotos">
                         <img src="<?= $usuario->imageUrl ?>" />
                         <?= $usuario->nombre ?>
                     </div>

@@ -75,7 +75,7 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             [['nombre'], 'unique'],
             [['passConfirm'], 'confirmarPassword'],
             [['email'], 'email'],
-            [['imageFile'], 'file', 'extensions' => 'png'],
+            [['imageFile'], 'file', 'extensions' =>  ['png', 'jpg']],
         ];
     }
 
@@ -226,7 +226,7 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
                 . $this->id . '.' . $this->imageFile->extension;
 
                 $this->imageFile->saveAs($nombre);
-                Image::thumbnail($nombre, 120, null)
+                Image::thumbnail($nombre, 90, null)
                 ->save($nombre, ['quality' => 50]);
             }
             return true;
@@ -237,7 +237,7 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
                 . $this->id . '.' . $this->imageFile->extension;
 
                 $this->imageFile->saveAs($nombre);
-                Image::thumbnail($nombre, 120, null)
+                Image::thumbnail($nombre, 90, null)
                 ->save($nombre, ['quality' => 50]);
             }
             return false;
