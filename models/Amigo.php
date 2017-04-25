@@ -60,6 +60,17 @@ class Amigo extends \yii\db\ActiveRecord
         return in_array($usuario, $amigos);
     }
 
+    public function estaPeticionEnviada($id)
+    {
+        $items = ['id_usuario' => Yii::$app->user->id, 'id_amigo' => $id, 'estado' => 'Solicitado'];
+        return self::findOne($items) != null;
+    }
+
+    public function estaPeticionRecibida($id)
+    {
+        $items = ['id_usuario' => $id, 'id_amigo' => Yii::$app->user->id, 'estado' => 'Solicitado'];
+        return self::findOne($items) != null;
+    }
     /**
     * @return \yii\db\ActiveQuery
     */

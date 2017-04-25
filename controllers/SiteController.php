@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\helpers\Mensaje;
+use app\models\Amigo;
 use app\models\Usuario;
 use app\models\UploadForm;
 use yii\filters\AccessControl;

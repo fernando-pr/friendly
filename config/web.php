@@ -62,6 +62,10 @@ $config = [
                 'usuario/<id:\d+>' => 'usuarios/view',
                 'usuarios/index/<sort>' => 'usuarios/index',
                 'usuarios/index/<page:\d+>/<per-page:\d+>' => 'usuarios/index',
+
+                'amigos/solicitud/<id:\d+>' => 'amigos/solicitud',
+                'amigos/cancelar/<id:\d+>' => 'amigos/cancelar',
+                'amigos/aceptar/<id:\d+>' => 'amigos/aceptar',
             ],
         ],
 

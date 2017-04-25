@@ -59,9 +59,15 @@ AppAsset::register($this);
 
 
                         if (!Yii::$app->user->isGuest && !Yii::$app->user->esAdmin) {
-
+                            $peticiones = Yii::$app->user->numPeticionesUsuario();
+                        
                             //Añadir aqui apartados de usuarios registrados
                             array_unshift($items, ['label' => 'Mi perfil', 'url' => ['usuarios/view/' . Yii::$app->user->id]]);
+                            if ($peticiones > 0){
+                                array_unshift($items, ['label' => 'peticiones (' . $peticiones . ')', 'url' => ['usuarios/peticiones']]);
+                            } else {
+                                array_unshift($items, ['label' => 'peticiones', 'url' => ['usuarios/peticiones']]);
+                            }
                             array_unshift($items, ['label' => 'Amigos', 'url' => ['amigos/amigos']]);
                             array_unshift($items, ['label' => 'Chat', 'url' => ['usuarios/index']]);
                             array_unshift($items, ['label' => 'Foro', 'url' => ['usuarios/index']]);

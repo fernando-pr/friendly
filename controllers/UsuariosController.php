@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Usuario;
+use app\models\Amigo;
 use app\models\UsuarioSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -87,6 +88,56 @@ class UsuariosController extends Controller
             'model' => $this->findModel($id),
         ]);
     }
+
+    public function actionPeticiones()
+    {
+
+        //$model = Usuario::getPeticiones();
+
+        $peticiones = Usuario::getPeticiones();
+
+        $model = [];
+        foreach ($peticiones as $peticion) {
+
+            $esAmigo = \Yii::$app->user->getEsMiAmigo($peticion->id);
+            $soyYo = \Yii::$app->user->id == $peticion->id;
+
+            if (!$esAmigo && !$soyYo && !$peticion->esAdmin()) {
+                $model[] = $peticion;
+            }
+        }
+        return $this->render('peticiones', [
+            'model' =>$model,
+        ]);
+    }
+
+    // public function actionSolicitud($id)
+    // {
+    //     $existePeticion = Amigo::estaPeticionEnviada($id);
+    //
+    //     if (!$existePeticion) {
+    //         $model = new Amigo();
+    //         $model->id_usuario = Yii::$app->user->id;
+    //         $model->id_amigo = $id;
+    //         $model->estado = 'Solicitado';
+    //         $model->save();
+    //     }
+    //
+    //     return $this->goBack();
+    // }
+    //
+    // public function actionCancelar($id)
+    // {
+    //     $existePeticion = Amigo::estaPeticionEnviada($id);
+    //
+    //     if ($existePeticion) {
+    //         $cond = ['id_usuario' => Yii::$app->user->id, 'id_amigo' => $id];
+    //         $model = Amigo::findOne($cond);
+    //         $model->delete();
+    //     }
+    //
+    //     return $this->goBack();
+    // }
 
 
     public function actionActivar($token)

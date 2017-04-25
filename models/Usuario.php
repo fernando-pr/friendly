@@ -244,12 +244,39 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         }
     }
 
+
+    public function getPeticiones()
+    {
+        $items = ['id_amigo' => Yii::$app->user->id, 'estado' => 'Solicitado'];
+
+        $ids = [];
+        $amigos = Amigo::find()->where($items)->all();
+        foreach ($amigos as $amigo) {
+            $ids[] = $amigo->id_usuario;
+        }
+        $model = self::findAll($ids);
+
+        return $model;
+    }
+
     public function esMiAmigo($id)
     {
         $usuario = self::findOne(['id' => $id]);
         $amigos = self::getAmigosUsuario();
 
         return in_array($usuario, $amigos);
+    }
+
+    public function meHaEnviadoAmistad($id)
+    {
+        $cond = ['id_usuario' => $id , 'id_amigo' => Yii::$app->user->id, 'estado' => 'Solicitado'];
+        return Amigo::findOne($cond) == null;
+    }
+
+    public function estaPeticionEnviada($id)
+    {
+        $items = ['id_usuario' => Yii::$app->user->id, 'id_amigo' => $id, 'estado' => 'Solicitado'];
+        return Amigo::findOne($items) != null;
     }
 
     public function getAmigosUsuario()

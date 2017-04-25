@@ -9,15 +9,11 @@ $this->title = 'friendly';
 $js = <<<EOT
 
 $(document).on('ready', function () {
-
-
     $(".galeria").galeriaImg();
-
 });
 EOT;
 $this->registerJs($js);
- ?>
-
+?>
 
 <div class="site-index">
     <div class="galeria">
@@ -37,24 +33,47 @@ $this->registerJs($js);
 
             $esAmigo = Yii::$app->user->getEsMiAmigo($usuario->id);
             $soyYo = Yii::$app->user->id == $usuario->id;
-
-            if (!$esAmigo && !$soyYo && !$usuario->esAdmin()){
+            $meHaEnviadoAmistad = Yii::$app->user->meHaEnviadoAmistad($usuario->id);
+            if (!$esAmigo && !$soyYo && !$usuario->esAdmin() && $meHaEnviadoAmistad){
 
                 $ruta = '../usuarios/view/' . $usuario->id; ?>
                 <fieldset>
-                    <legend>
-                        <?= "<a href=" . $ruta . ">" .$usuario->nombre . "</a>" ?>
-                    </legend>
-
-                    <div class="fotos">
-                        <img src="<?= $usuario->imageUrl ?>" />
-                        <?= $usuario->nombre ?>
-                    </div>
+                    <legend></legend>
                 </fieldset>
-                <br>
-                <?php
-            }
-        }
-    }
-    ?>
-</div>
+                <div id="foto">
+                    <fieldset>
+                        <legend><?= $usuario->nombre ?></legend>
+                        <img src="<?= $usuario->imageUrl ?>" />
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Datos</legend>
+                        <div class="datos">
+                            <?= "Nombre: " . $usuario->nombre ?><br>
+                            <?= "Población: " . $usuario->poblacion ?><br>
+                            <?= "Provincia: " . $usuario->provincia ?>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                            <legend>
+                                Opciones
+                            </legend>
+                            <div class="opciones">
+                                <?php if(!Yii::$app->user->estaPeticionEnviada($usuario->id)) { ?>
+                                    <?= Html::a('Solicitud Amistad', ['/amigos/solicitud', 'id' => $usuario->id], ['class' => 'btn btn-primary']) ?>
+                                    <?php } else { ?>
+                                    <?= Html::a('Cancelar Solicitud', ['/amigos/cancelar', 'id' => $usuario->id], ['class' => 'btn btn-danger']) ?>
+                                    <?php } ?>
+                                    </div>
+                                </fieldset>
+
+                                </div>
+
+                                <br>
+                                <?php
+                            }
+                        }
+                    }
+                    ?>
+                </div>

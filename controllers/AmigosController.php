@@ -152,4 +152,49 @@ class AmigosController extends Controller
             throw new NotFoundHttpException('La página solicitada no existe');
         }
     }
+
+
+    public function actionSolicitud($id)
+    {
+        $existePeticion = Amigo::estaPeticionEnviada($id);
+
+        if (!$existePeticion) {
+            $model = new Amigo();
+            $model->id_usuario = Yii::$app->user->id;
+            $model->id_amigo = $id;
+            $model->estado = 'Solicitado';
+            $model->save();
+        }
+
+        return $this->goBack();
+    }
+
+    public function actionCancelar($id)
+    {
+        $existePeticion = Amigo::estaPeticionEnviada($id);
+
+        if ($existePeticion) {
+            $cond = ['id_usuario' => Yii::$app->user->id, 'id_amigo' => $id];
+            $model = Amigo::findOne($cond);
+            $model->delete();
+        }
+
+        return $this->goBack();
+    }
+
+    public function actionAceptar($id)
+    {
+        $existePeticion = Amigo::estaPeticionRecibida($id);
+
+        if ($existePeticion) {
+            $cond = ['id_usuario' => $id, 'id_amigo' => Yii::$app->user->id];
+            $model = Amigo::findOne($cond);
+            $model->estado = 'Aceptado';
+            
+            $model->save();
+        }
+
+        return $this->goBack();
+    }
+
 }

@@ -58,7 +58,8 @@ drop table if exists amigos cascade;
                                     on delete no action on update cascade,
         estado          varchar(30) not null constraint fk_amigos_estados
                                     references estados(estado)
-                                    on delete no action on update cascade
+                                    on delete no action on update cascade,
+                                    constraint amigos_uq unique (id_usuario,id_amigo,estado)
     );
 
 
