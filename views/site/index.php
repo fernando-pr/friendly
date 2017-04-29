@@ -37,13 +37,16 @@ $this->registerJs($js);
             if (!$esAmigo && !$soyYo && !$usuario->esAdmin() && $meHaEnviadoAmistad){
 
                 $ruta = '../usuarios/view/' . $usuario->id; ?>
+
                 <fieldset>
                     <legend></legend>
                 </fieldset>
                 <div id="foto">
                     <fieldset>
                         <legend><?= $usuario->nombre ?></legend>
-                        <img src="<?= $usuario->imageUrl ?>" />
+                        <div class="fotos">
+                            <img src="<?= $usuario->imageUrl ?>" title="<?= $usuario->nombre ?>"/>
+                        </div>
                     </fieldset>
 
                     <fieldset>
@@ -56,24 +59,24 @@ $this->registerJs($js);
                     </fieldset>
 
                     <fieldset>
-                            <legend>
-                                Opciones
-                            </legend>
-                            <div class="opciones">
-                                <?php if(!Yii::$app->user->estaPeticionEnviada($usuario->id)) { ?>
-                                    <?= Html::a('Solicitud Amistad', ['/amigos/solicitud', 'id' => $usuario->id], ['class' => 'btn btn-primary']) ?>
-                                    <?php } else { ?>
+                        <legend>
+                            Opciones
+                        </legend>
+                        <div class="opciones">
+                            <?php if(!Yii::$app->user->estaPeticionEnviada($usuario->id)) { ?>
+                                <?= Html::a('Solicitud Amistad', ['/amigos/solicitud', 'id' => $usuario->id], ['class' => 'btn btn-primary']) ?>
+                                <?php } else { ?>
                                     <?= Html::a('Cancelar Solicitud', ['/amigos/cancelar', 'id' => $usuario->id], ['class' => 'btn btn-danger']) ?>
                                     <?php } ?>
-                                    </div>
-                                </fieldset>
-
                                 </div>
+                            </fieldset>
 
-                                <br>
-                                <?php
-                            }
-                        }
+                        </div>
+
+                        <br>
+                        <?php
                     }
-                    ?>
-                </div>
+                }
+            }
+            ?>
+        </div>
