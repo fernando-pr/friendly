@@ -97,6 +97,7 @@ class UsuariosController extends Controller
         $peticiones = Usuario::getPeticiones();
 
         $model = [];
+
         foreach ($peticiones as $peticion) {
 
             $esAmigo = \Yii::$app->user->getEsMiAmigo($peticion->id);

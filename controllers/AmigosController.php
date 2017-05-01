@@ -190,11 +190,35 @@ class AmigosController extends Controller
             $cond = ['id_usuario' => $id, 'id_amigo' => Yii::$app->user->id];
             $model = Amigo::findOne($cond);
             $model->estado = 'Aceptado';
-            
+
             $model->save();
         }
 
-        return $this->goBack();
+        return $this->redirect(['usuarios/peticiones']);
     }
 
+    public function actionRechazar($id)
+    {
+        $existePeticion = Amigo::estaPeticionRecibida($id);
+
+        if ($existePeticion) {
+            $cond = ['id_usuario' => $id, 'id_amigo' => Yii::$app->user->id];
+            $model = Amigo::findOne($cond);
+            $model->delete();
+        }
+
+        return $this->redirect(['usuarios/peticiones']);
+    }
+
+    public function actionBorrar($id)
+    {
+        $esAmigo = Amigo::esMiAmigo($id);
+
+        if ($esAmigo) {
+            $usuario = Usuario::findOne(Yii::$app->user->id);
+            $amigo = $usuario->getAmistad($id);
+            $amigo->delete();
+        }
+        return $this->redirect(['amigos/amigos']);
+    }
 }

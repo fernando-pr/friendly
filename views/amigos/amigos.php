@@ -20,21 +20,51 @@ $this->params['breadcrumbs'][] = $this->title;
             <h1><?= Html::encode($this->title) . ' de ' . Yii::$app->user->identity->nombre?></h1>
             <?php
 
-            foreach ($model as $amigo) { ?>
-                <?php $ruta = '../usuarios/view/' . $amigo->id; ?>
-                <fieldset>
-                    <legend>
-                        <?= "<a href=" . $ruta . ">" .$amigo->nombre . "</a>" ?>
-                    </legend>
+            foreach ($model as $usuario) { ?>
 
-                    <div class="">
-                        <img src="<?= $amigo->imageUrl ?>" />
-                        <?= $amigo->nombre ?>
-                    </div>
+                <?php $ruta = '../usuarios/view/' . $usuario->id; ?>
+                <fieldset>
+                    <legend></legend>
                 </fieldset>
+                <div id="foto">
+                    <fieldset>
+                        <legend><?= $usuario->nombre ?></legend>
+                        <img src="<?= $usuario->imageUrl ?>" />
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Datos</legend>
+                        <div class="datos">
+                            <?= "Nombre: " . $usuario->nombre ?><br>
+                            <?= "Población: " . $usuario->poblacion ?><br>
+                            <?= "Provincia: " . $usuario->provincia ?>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>
+                            Opciones
+                        </legend>
+                        <div class="opciones">
+                            <?= Html::a('Borrar Amigo', ['/amigos/borrar', 'id' => $usuario->id], [
+                                'class' => 'btn btn-danger',
+                                'data' => [
+                                    'confirm' => 'Seguro que desea dejar de ser amigo de ' . $usuario->nombre,
+                                    'method' => 'post',
+                                ],
+                                ]) ?>
+                        </div>
+                    </fieldset>
+
+                </div>
                 <br>
                 <?php
             }
         }
         ?>
+        <div class="botones_abajo">
+            <div class="botonvolver">
+                <?= Html::a('Volver', ['/site/volver'], ['class' => 'btn btn-warning btn-lg btn-block']) ?>
+            </div>
+        </div>
     </div>

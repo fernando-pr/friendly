@@ -144,3 +144,14 @@ a.desc:after {
     -ms-transform: rotateY(360deg);
     transform: rotateY(360deg);
 }
+
+.botonvolver {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+.botones_abajo{
+    display: flex;
+    justify-content: center;
+}

@@ -44,5 +44,9 @@ $this->params['breadcrumbs'][] = $model->nombre;
 
         ],
     ]) ?>
-
+    <div class="botones_abajo">
+        <div class="botonvolver">
+            <?= Html::a('Volver', ['/site/volver'], ['class' => 'btn btn-warning btn-lg btn-block']) ?>
+        </div>
+    </div>
 </div>

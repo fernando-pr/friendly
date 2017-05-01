@@ -40,6 +40,7 @@ use yii\helpers\Html;
                     </legend>
                     <div class="opciones">
                         <?= Html::a('Aceptar Amigo', ['/amigos/aceptar', 'id' => $usuario->id], ['class' => 'btn btn-primary']) ?>
+                        <?= Html::a('Rechazar', ['/amigos/rechazar', 'id' => $usuario->id], ['class' => 'btn btn-danger']) ?>
                     </div>
                 </fieldset>
 
@@ -50,6 +51,9 @@ use yii\helpers\Html;
         }
     }
     ?>
-
-
+    <div class="botones_abajo">
+        <div class="botonvolver">
+            <?= Html::a('Volver', ['/site/volver'], ['class' => 'btn btn-warning btn-lg btn-block']) ?>
+        </div>
+    </div>
 </div>
