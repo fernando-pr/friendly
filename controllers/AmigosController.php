@@ -66,7 +66,7 @@ class AmigosController extends Controller
     */
     public function actionAmigos()
     {
-        $amigo = new Usuario;
+        $amigo = new Usuario();
 
         $model = $amigo->getAmigosUsuario();
 
@@ -156,7 +156,8 @@ class AmigosController extends Controller
 
     public function actionSolicitud($id)
     {
-        $existePeticion = Amigo::estaPeticionEnviada($id);
+        $amigo = new Amigo();
+        $existePeticion =$amigo->estaPeticionEnviada($id);
 
         if (!$existePeticion) {
             $model = new Amigo();
@@ -171,7 +172,8 @@ class AmigosController extends Controller
 
     public function actionCancelar($id)
     {
-        $existePeticion = Amigo::estaPeticionEnviada($id);
+        $amigo = new Amigo();
+        $existePeticion = $amigo->estaPeticionEnviada($id);
 
         if ($existePeticion) {
             $cond = ['id_usuario' => Yii::$app->user->id, 'id_amigo' => $id];
@@ -184,7 +186,8 @@ class AmigosController extends Controller
 
     public function actionAceptar($id)
     {
-        $existePeticion = Amigo::estaPeticionRecibida($id);
+        $amigo = new Amigo();
+        $existePeticion = $amigo->estaPeticionRecibida($id);
 
         if ($existePeticion) {
             $cond = ['id_usuario' => $id, 'id_amigo' => Yii::$app->user->id];
@@ -199,7 +202,8 @@ class AmigosController extends Controller
 
     public function actionRechazar($id)
     {
-        $existePeticion = Amigo::estaPeticionRecibida($id);
+        $amigo = new Amigo();
+        $existePeticion = $amigo->estaPeticionRecibida($id);
 
         if ($existePeticion) {
             $cond = ['id_usuario' => $id, 'id_amigo' => Yii::$app->user->id];
@@ -212,7 +216,8 @@ class AmigosController extends Controller
 
     public function actionBorrar($id)
     {
-        $esAmigo = Amigo::esMiAmigo($id);
+        $amigo = new Amigo();
+        $esAmigo = $amigo->esMiAmigo($id);
 
         if ($esAmigo) {
             $usuario = Usuario::findOne(Yii::$app->user->id);

@@ -92,9 +92,9 @@ class UsuariosController extends Controller
     public function actionPeticiones()
     {
 
-        //$model = Usuario::getPeticiones();
+        $usuario = new Usuario();
 
-        $peticiones = Usuario::getPeticiones();
+        $peticiones = $usuario->getPeticiones();
 
         $model = [];
 
