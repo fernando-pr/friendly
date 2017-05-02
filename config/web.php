@@ -60,6 +60,8 @@ $config = [
                 'usuarios/update/<id:\d+>' => 'usuarios/update',
                 'usuarios/<id:\d+>' => 'usuarios/view',
                 'usuario/<id:\d+>' => 'usuarios/view',
+                'usuarios/delete/<id:\d+>' => 'usuarios/delete',
+                'usuario/delete/<id:\d+>' => 'usuarios/delete',
                 'usuarios/index/<sort>' => 'usuarios/index',
                 'usuarios/index/<page:\d+>/<per-page:\d+>' => 'usuarios/index',
 
