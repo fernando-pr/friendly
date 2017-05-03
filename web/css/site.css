@@ -114,22 +114,23 @@ a.desc:after {
     outline: none;
 }
 .barra_navegacion {
-    background-color: #224b5f;
+    /*background-color: #224b5f;*/
+    background-color: LightSeaGreen;
 }
 
 .nav>li>a, .nav>li>form>button {
     color: white !important;
-    border:1px solid #224b5f;
+    border:1px solid LightSeaGreen;
 }
 .nav>li>a:hover, .nav>li>form>button:hover {
     color: black !important;
-    border-color: black;
+    /*border-color: black;*/
 }
 
 
 .nav>li>a, .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
     color: white;
-    background-color: #224b5f;
+    background-color: LightSeaGreen;
 }
 .logo{
     -webkit-transition: 1s;
@@ -154,4 +155,9 @@ a.desc:after {
 .botones_abajo{
     display: flex;
     justify-content: center;
+}
+
+
+.galeria {
+    height: 120px;
 }

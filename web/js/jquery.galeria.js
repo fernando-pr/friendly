@@ -20,9 +20,8 @@
                     width:"100%",
                     height:"120px",
                     position:"relative",
-                    //display:"flex",
-                    left:"40%"
-
+                    display:"flex",
+                    justifyContent:'center'
                 });
 
                 $(this).children("div").css({
@@ -56,39 +55,27 @@
 
                     imagen.attr("src", rutas[index]);
                     imagen.attr("class", "img-circle img-responsive");
-                    elemento.animate({
-                        left:"+=20%",
-                        opacity:"0"
-                    }, 3000, function() {
-                        elemento.css({
-                            width:"100%",
-                            height:"120px",
-                            position:"relative",
-                            opacity:"1",
-                            left:"-=20%"
-                        });
-
-                    });
+                    elemento.fadeToggle(3000);
 
                     index++;
 
                     if(index == rutas.length){
-                        index = 0;
-                    }
+                    index = 0;
                 }
+            }
 
 
 
-                imagen.on("mouseenter", function(){
-                    clearInterval(interval);
-                });
+            imagen.on("mouseenter", function(){
+            clearInterval(interval);
+        });
 
-                imagen.on("mouseleave", function(){
-                    intervalo();
-                });
-            });
-            return this;
-        }
+        imagen.on("mouseleave", function(){
+        intervalo();
     });
+});
+return this;
+}
+});
 
 })(jQuery);

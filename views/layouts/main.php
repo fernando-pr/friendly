@@ -36,7 +36,11 @@ AppAsset::register($this);
                 ],
             ]);
 
+            $ruta = Yii::$app->request->baseUrl . 'uploads' . '/' . Yii::$app->user->identity->id . '.png';
 
+            if (!file_exists($ruta)){
+                $ruta = Yii::$app->request->baseUrl . 'uploads' . '/default.png';
+            }
             $items = [
 
                 Yii::$app->user->isGuest ? (
@@ -44,8 +48,14 @@ AppAsset::register($this);
                     ) : (
                         '<li>'
                         . Html::beginForm(['/site/logout'], 'post')
+                        //. Html::img($ruta, ['width'=>'30px','height'=>'30px', 'class'=>'img-circle'])
+                        . Html::a(
+                            '<img src="/' . $ruta . '" width="27" height="27", class="img-circle">',
+                            ['usuarios/view/' . Yii::$app->user->id],
+                            ['class' => 'img-circle', 'title'=>'Mi perfil']
+                            )
                         . Html::submitButton(
-                            'Logout (' . Yii::$app->user->identity->nombre . ')',
+                            '<img src="/encendido.png" width="27" height="27" title="Cerrar Sesión">',
                             ['class' => 'btn btn-link logout']
                             )
                             . Html::endForm()
@@ -60,9 +70,9 @@ AppAsset::register($this);
 
                         if (!Yii::$app->user->isGuest && !Yii::$app->user->esAdmin) {
                             $peticiones = Yii::$app->user->numPeticionesUsuario();
-                        
+
                             //Añadir aqui apartados de usuarios registrados
-                            array_unshift($items, ['label' => 'Mi perfil', 'url' => ['usuarios/view/' . Yii::$app->user->id]]);
+                        //    array_unshift($items, ['label' => 'Mi perfil', 'url' => ['usuarios/view/' . Yii::$app->user->id]]);
                             if ($peticiones > 0){
                                 array_unshift($items, ['label' => 'peticiones (' . $peticiones . ')', 'url' => ['usuarios/peticiones']]);
                             } else {

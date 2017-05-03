@@ -119,9 +119,9 @@ $this->registerJs($js);
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'provincia')->dropDownList(['' => 'Provincias...']);?>
+    <?= $form->field($model, 'provincia')->dropDownList([]);?>
 
-    <?= $form->field($model, 'poblacion')->dropDownList(['' => 'Poblaciones...']);?>
+    <?= $form->field($model, 'poblacion')->dropDownList([]);?>
 
     <?php if(!$model->isNewRecord){ ?>
         <?= $form->field($model, 'imageFile')->fileInput(['maxlength' => true]) ?>
