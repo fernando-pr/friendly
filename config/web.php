@@ -69,7 +69,10 @@ $config = [
                 'amigos/cancelar/<id:\d+>' => 'amigos/cancelar',
                 'amigos/aceptar/<id:\d+>' => 'amigos/aceptar',
                 'amigos/borrar/<id:\d+>' => 'amigos/borrar',
-                'amigo/borrar/<id:\d+>' => 'amigos/borrar',
+                'amigos/amigos/<sort>' => 'amigos/amigos',
+                'amigos/amigos/<page:\d+>/<per-page:\d+>' => 'amigos/amigos',
+
+
             ],
         ],
 

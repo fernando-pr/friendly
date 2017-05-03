@@ -220,8 +220,7 @@ class AmigosController extends Controller
         $esAmigo = $amigo->esMiAmigo($id);
 
         if ($esAmigo) {
-            $usuario = new Usuario();
-            $usuario = $usuario->findOne(Yii::$app->user->id);
+            $usuario = Usuario::findOne(Yii::$app->user->id);
             $amigo = $usuario->getAmistad($id);
             $amigo->delete();
         }
