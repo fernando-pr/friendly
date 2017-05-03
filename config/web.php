@@ -68,6 +68,8 @@ $config = [
                 'amigos/solicitud/<id:\d+>' => 'amigos/solicitud',
                 'amigos/cancelar/<id:\d+>' => 'amigos/cancelar',
                 'amigos/aceptar/<id:\d+>' => 'amigos/aceptar',
+                'amigos/borrar/<id:\d+>' => 'amigos/borrar',
+                'amigo/borrar/<id:\d+>' => 'amigos/borrar',
             ],
         ],
 
