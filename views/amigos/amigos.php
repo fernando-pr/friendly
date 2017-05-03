@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <div class="row">
 
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+                    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-1 col-lg-offset-1 toppad" >
 
                         <div class="panel panel-info">
                             <div class="panel-heading">
@@ -73,15 +73,15 @@ $this->params['breadcrumbs'][] = $this->title;
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <?php
+
+                    <?php
+                }
             }
-        }
-        ?>
-        <div class="botones_abajo">
-            <div class="botonvolver">
-                <?= Html::a('Volver', ['/site/volver'], ['class' => 'btn btn-warning btn-lg btn-block']) ?>
+            ?>
+            <div class="botones_abajo">
+                <div class="botonvolver">
+                    <?= Html::a('Volver', ['/site/volver'], ['class' => 'btn btn-warning btn-lg btn-block']) ?>
+                </div>
             </div>
         </div>
-    </div>

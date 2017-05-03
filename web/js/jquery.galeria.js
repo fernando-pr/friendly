@@ -12,18 +12,21 @@
 
             this.each(function(){
 
-                var fotos = $(".fotos>img");
+                var fotos = $(".imagen");
 
 
+                var elemento = $(this);
                 $(this).css({
                     width:"100%",
                     height:"120px",
-                    display:"flex",
-                    justifyContent:"center"
+                    position:"relative",
+                    //display:"flex",
+                    left:"40%"
+
                 });
 
                 $(this).children("div").css({
-                    width:"80",
+                    width:"80px",
                     height:"80px",
                 });
 
@@ -52,6 +55,20 @@
                 function changeImage() {
 
                     imagen.attr("src", rutas[index]);
+                    imagen.attr("class", "img-circle img-responsive");
+                    elemento.animate({
+                        left:"+=20%",
+                        opacity:"0"
+                    }, 3000, function() {
+                        elemento.css({
+                            width:"100%",
+                            height:"120px",
+                            position:"relative",
+                            opacity:"1",
+                            left:"-=20%"
+                        });
+
+                    });
 
                     index++;
 
@@ -59,6 +76,8 @@
                         index = 0;
                     }
                 }
+
+
 
                 imagen.on("mouseenter", function(){
                     clearInterval(interval);

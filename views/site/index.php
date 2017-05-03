@@ -21,9 +21,9 @@ $this->registerJs($js);
 
         </div>
     </div>
-
-    <h1>Personas cerca</h1>
-
+    <div class="text-center">
+        <h1>Personas cerca</h1>
+    </div>
     <?php
     if (!empty($model)) { ?>
 
@@ -34,49 +34,68 @@ $this->registerJs($js);
             $esAmigo = Yii::$app->user->getEsMiAmigo($usuario->id);
             $soyYo = Yii::$app->user->id == $usuario->id;
             $meHaEnviadoAmistad = Yii::$app->user->meHaEnviadoAmistad($usuario->id);
+
             if (!$esAmigo && !$soyYo && !$usuario->esAdmin() && $meHaEnviadoAmistad){
+                ?>
 
-                $ruta = '../usuarios/view/' . $usuario->id; ?>
+                <div class="row">
 
-                <fieldset>
-                    <legend></legend>
-                </fieldset>
-                <div id="foto">
-                    <fieldset>
-                        <legend><?= $usuario->nombre ?></legend>
-                        <div class="fotos">
-                            <img src="<?= $usuario->imageUrl ?>" title="<?= $usuario->nombre ?>"/>
-                        </div>
-                    </fieldset>
+                    <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-1 col-lg-offset-1 toppad" >
 
-                    <fieldset>
-                        <legend>Datos</legend>
-                        <div class="datos">
-                            <?= "Nombre: " . $usuario->nombre ?><br>
-                            <?= "Población: " . $usuario->poblacion ?><br>
-                            <?= "Provincia: " . $usuario->provincia ?>
-                        </div>
-                    </fieldset>
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
 
-                    <fieldset>
-                        <legend>
-                            Opciones
-                        </legend>
-                        <div class="opciones">
-                            <?php if(!Yii::$app->user->estaPeticionEnviada($usuario->id)) { ?>
-                                <?= Html::a('Solicitud Amistad', ['/amigos/solicitud', 'id' => $usuario->id], ['class' => 'btn btn-primary']) ?>
-                                <?php } else { ?>
-                                    <?= Html::a('Cancelar Solicitud', ['/amigos/cancelar', 'id' => $usuario->id], ['class' => 'btn btn-danger']) ?>
-                                    <?php } ?>
+                                <h1 class="panel-title"><?= $usuario->nombre?></h1>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-3 col-lg-3 " align="center"> <img alt="No imagen" src="<?= $usuario->imageUrl ?>" class="img-circle img-responsive imagen"> </div>
+
+                                    <div class=" col-md-9 col-lg-9 ">
+                                        <table class="table table-user-information">
+                                            <tbody>
+                                                <tr>
+                                                    <td>Nombre</td>
+                                                    <td><?= $usuario->nombre?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Email</td>
+                                                    <td><?= $usuario->email?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Población</td>
+                                                    <td><?= $usuario->poblacion?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Provincia</td>
+                                                    <td><?= $usuario->provincia?></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
                                 </div>
-                            </fieldset>
+                            </div>
+                            <div class="panel-footer">
+                                <?php if(!Yii::$app->user->estaPeticionEnviada($usuario->id)) { ?>
+                                    <?= Html::a('Solicitud Amistad', ['/amigos/solicitud', 'id' => $usuario->id], ['class' => 'btn btn-primary']) ?>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <?= Html::a('Cancelar Solicitud', ['/amigos/cancelar', 'id' => $usuario->id], ['class' => 'btn btn-danger']) ?>
+                                    <?php
+                                }
+                                ?>
+                            </div>
 
                         </div>
+                    </div>
+                </div>
 
-                        <br>
-                        <?php
-                    }
-                }
+
+                <?php
             }
-            ?>
-        </div>
+        }
+    }
+    ?>
+</div>
