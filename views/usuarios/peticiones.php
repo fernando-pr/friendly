@@ -7,7 +7,9 @@ use yii\helpers\Html;
 
 ?>
 <div class="usuarios-peticiones">
-    <h1>Peticiones de amistad</h1>
+    <div class="text-center">
+        <h1>Peticiones de amistad</h1>
+    </div>
     <?php
     foreach ($model as $usuario) {
 

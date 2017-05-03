@@ -11,7 +11,9 @@ $this->params['breadcrumbs'][] = (Yii::$app->user->esAdmin) ? ['label' => 'Usuar
 $this->params['breadcrumbs'][] = $model->nombre;
 ?>
 <div class="usuario-view">
-
+    <div class="text-center">
+        <h1>Mi Perfil</h1>
+    </div>
     <div class="row">
 
         <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-1 col-lg-offset-1 toppad" >

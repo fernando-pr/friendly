@@ -14,10 +14,14 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php
     if (empty($model)) {?>
-        <h1><?= 'No tienes amigos todavia' ?></h1>
-        <h3><a href="../">pincha aquí para ver si tienes personas cerca</a></h3>
+        <div class="text-center">
+            <h1><?= 'No tienes amigos todavia' ?></h1>
+            <h3><a href="../">pincha aquí para ver si tienes personas cerca</a></h3>
+        </div>
         <?php } else { ?>
-            <h1><?= Html::encode($this->title) . ' de ' . Yii::$app->user->identity->nombre?></h1>
+            <div class="text-center">
+                <h1><?= Html::encode($this->title) . ' de ' . Yii::$app->user->identity->nombre?></h1>
+            </div>
             <?php
 
             foreach ($model as $usuario) { ?>
