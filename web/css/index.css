@@ -2,3 +2,9 @@ div#foto {
     display: flex;
     justify-content: space-around;
 }
+
+.caja_perfil {
+    -webkit-box-shadow: 3px 3px 3px 0px rgba(72,72,72);
+    -moz-box-shadow: 3px 3px 3px 0px rgba(72,72,72);
+    box-shadow: 3px 3px 3px 0px rgba(72,72,72);
+}

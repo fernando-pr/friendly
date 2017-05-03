@@ -19,7 +19,6 @@
                 $(this).css({
                     width:"100%",
                     height:"120px",
-                    position:"relative",
                     display:"flex",
                     justifyContent:'center'
                 });

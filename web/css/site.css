@@ -115,12 +115,13 @@ a.desc:after {
 }
 .barra_navegacion {
     /*background-color: #224b5f;*/
-    background-color: LightSeaGreen;
+    /*background-color: LightSeaGreen;*/
+    background-color: #31b0d5;
 }
 
 .nav>li>a, .nav>li>form>button {
     color: white !important;
-    border:1px solid LightSeaGreen;
+    border:1px solid #31b0d5;
 }
 .nav>li>a:hover, .nav>li>form>button:hover {
     color: black !important;
@@ -130,7 +131,7 @@ a.desc:after {
 
 .nav>li>a, .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
     color: white;
-    background-color: LightSeaGreen;
+    background-color: #31b0d5;
 }
 .logo{
     -webkit-transition: 1s;

@@ -49,6 +49,7 @@ AppAsset::register($this);
                         '<li>'
                         . Html::beginForm(['/site/logout'], 'post')
                         //. Html::img($ruta, ['width'=>'30px','height'=>'30px', 'class'=>'img-circle'])
+                        . '<div class="fotos_login">'
                         . Html::a(
                             '<img src="/' . $ruta . '" width="27" height="27", class="img-circle">',
                             ['usuarios/view/' . Yii::$app->user->id],
@@ -58,6 +59,7 @@ AppAsset::register($this);
                             '<img src="/encendido.png" width="27" height="27" title="Cerrar Sesión">',
                             ['class' => 'btn btn-link logout']
                             )
+                            . '</div>'
                             . Html::endForm()
                             . '</li>'
                             )
