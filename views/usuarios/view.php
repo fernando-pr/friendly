@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $model->nombre;
 
         <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-1 col-lg-offset-1 toppad" >
 
-            <div class="panel panel-info">
+            <div class="panel panel-info caja_perfil">
                 <div class="panel-heading">
                     <h1 class="panel-title"><?= $model->nombre?></h1>
                 </div>

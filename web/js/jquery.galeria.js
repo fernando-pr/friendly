@@ -18,7 +18,7 @@
                 var elemento = $(this);
                 $(this).css({
                     width:"100%",
-                    height:"120px",
+                    height:"80px",
                     display:"flex",
                     justifyContent:'center'
                 });
