@@ -167,7 +167,7 @@ class AmigosController extends Controller
             $model->save();
         }
 
-        return $this->goBack();
+        //return $this->goBack();
     }
 
     public function actionCancelar($id)
@@ -181,7 +181,7 @@ class AmigosController extends Controller
             $model->delete();
         }
 
-        return $this->goBack();
+        //return $this->goBack();
     }
 
     public function actionAceptar($id)

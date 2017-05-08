@@ -19,31 +19,14 @@ $(document).on('ready', function () {
 
     function provincias(r){
 
+
         for (i in r){
             $("#usuario-provincia").append("<option name="+ i +" value="+r[i]+">"+r[i]+"</option>")
         }
         ordenar();
-
-        if('$provincia' != null){
-            marcarProvincia();
-        }
-        if('$poblacion' != null){
-            peticionCiudades();
-        }
-
     }
 
-    function marcarProvincia(){
-
-        $("option[value="+'$provincia'+"]").attr("selected",true)
-    }
-
-    function marcarPoblacion(){
-
-        $("option[value="+'$poblacion'+"]").attr("selected",true)
-    }
-
-
+    
 
     (function(){
         $.ajax({
@@ -119,9 +102,9 @@ $this->registerJs($js);
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'provincia')->dropDownList([]);?>
+    <?= $form->field($model, 'provincia')->dropDownList(['' => 'Selecciona una provincia...']);?>
 
-    <?= $form->field($model, 'poblacion')->dropDownList([]);?>
+    <?= $form->field($model, 'poblacion')->dropDownList(['' => 'Selecciona una población...']);?>
 
     <?php if(!$model->isNewRecord){ ?>
         <?= $form->field($model, 'imageFile')->fileInput(['maxlength' => true]) ?>

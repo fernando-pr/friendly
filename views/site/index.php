@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 $this->title = 'friendly';
 ?>
@@ -15,6 +16,83 @@ EOT;
 $this->registerJs($js);
 ?>
 
+<?php
+
+$url = Url::to(['amigos/solicitud']);
+$url2 = Url::to(['amigos/cancelar']);
+
+
+$js = <<<EOT
+
+$(document).on('ready', function () {
+
+
+
+    $(".boton_solicitud").on("click", refrescarIndex);
+
+    var id;
+    var variable;
+    function refrescarIndex(e){
+        variable = $(this);
+        id = $(this).attr("name");
+
+        $.ajax({
+            data: "id="+id,
+            type:"GET",
+            url: '$url',
+            success:refrescar
+        });
+
+
+    }
+    function refrescar(r){
+
+        $(".boton_solicitud[name='"+id+"']").toggle();
+        $(".cancelar_peticion[name='"+id+"']").toggle();
+
+    }
+
+    $(".cancelar_peticion").on("click", cancelarPeticion);
+
+var variableCancelar;
+var idCancelar;
+
+    function cancelarPeticion(e)
+    {
+
+        variable = $(this);
+        id = $(this).attr("name");
+
+        $.ajax({
+            data: "id="+id,
+            type:"GET",
+            success:cancelar,
+
+            url: '$url2'
+        });
+
+
+    }
+
+    function cancelar(r){
+
+
+        $(".cancelar_peticion[name='"+id+"']").toggle();
+        $(".boton_solicitud[name='"+id+"']").toggle();
+    }
+
+
+    ocultos();
+
+    function ocultos() {
+        $(".oculto").hide();
+    }
+});
+EOT;
+$this->registerJs($js);
+
+
+?>
 <div class="site-index">
     <div class="galeria">
         <div class="foto">
@@ -77,12 +155,21 @@ $this->registerJs($js);
                                 </div>
                             </div>
                             <div class="panel-footer">
+
+                                <?php $peticion = Yii::$app->user->estaPeticionEnviada($usuario->id)==true;
+
+                                ?>
+
                                 <?php if(!Yii::$app->user->estaPeticionEnviada($usuario->id)) { ?>
-                                    <?= Html::a('Solicitud Amistad', ['/amigos/solicitud', 'id' => $usuario->id], ['class' => 'btn btn-primary']) ?>
+                                    <input type="button" name="<?=$usuario->id?>" value="Solicitud Amistad" class='btn btn-primary boton_solicitud'>
+                                    <input type="button" name="<?=$usuario->id?>" value="Cancelar Petición" class='btn btn-danger cancelar_peticion oculto'>
+
                                     <?php
                                 } else {
                                     ?>
-                                    <?= Html::a('Cancelar Solicitud', ['/amigos/cancelar', 'id' => $usuario->id], ['class' => 'btn btn-danger']) ?>
+                                    <input type="button" name="<?=$usuario->id?>" value="Solicitud Amistad" class='btn btn-primary boton_solicitud oculto'>
+                                    <input type="button" name="<?=$usuario->id?>" value="Cancelar Solicitud" class='btn btn-danger cancelar_peticion'>
+
                                     <?php
                                 }
                                 ?>
