@@ -154,7 +154,7 @@ class AmigosController extends Controller
     }
 
 
-    public function actionSolicitud($id)
+    public function actionSolicitud($id, $redirect = null)
     {
         $amigo = new Amigo();
         $existePeticion =$amigo->estaPeticionEnviada($id);
@@ -166,11 +166,13 @@ class AmigosController extends Controller
             $model->estado = 'Solicitado';
             $model->save();
         }
+        if ($redirect != null) {
+            return $this->goBack();
+        }
 
-        //return $this->goBack();
     }
 
-    public function actionCancelar($id)
+    public function actionCancelar($id, $redirect = null)
     {
         $amigo = new Amigo();
         $existePeticion = $amigo->estaPeticionEnviada($id);
@@ -181,7 +183,9 @@ class AmigosController extends Controller
             $model->delete();
         }
 
-        //return $this->goBack();
+        if ($redirect != null) {
+            return $this->goBack();
+        }
     }
 
     public function actionAceptar($id)
@@ -224,6 +228,7 @@ class AmigosController extends Controller
             $amigo = $usuario->getAmistad($id);
             $amigo->delete();
         }
-        return $this->redirect(['amigos/amigos']);
+        //return $this->redirect(['amigos/amigos']);
+        return $this->goBack();
     }
 }

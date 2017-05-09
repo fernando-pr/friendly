@@ -179,6 +179,7 @@ $this->registerJs($js);
         </span>
     </div>
 </div>
+<br>
 <div id="usuarios">
 
 </div>
