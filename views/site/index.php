@@ -54,8 +54,8 @@ $(document).on('ready', function () {
 
     $(".cancelar_peticion").on("click", cancelarPeticion);
 
-var variableCancelar;
-var idCancelar;
+    var variableCancelar;
+    var idCancelar;
 
     function cancelarPeticion(e)
     {
@@ -93,7 +93,62 @@ $this->registerJs($js);
 
 
 ?>
+
+<?php
+
+$url = Url::to(['amigos/solicitud']);
+$url2 = Url::to(['amigos/cancelar']);
+
+
+$js = <<<EOT
+
+// Ajax para las busquedas
+
+$(document).on('ready', function () {
+
+
+});
+EOT;
+$this->registerJs($js);
+
+
+?>
+
+
+
+<div class="col-md-14">
+    <div class="input-group">
+        <span class="input-group-btn">
+            <button class="btn btn-default boton_abrir_buscar" type="button">Buscar</button>
+        </span>
+
+        <span class="input-group-btn">
+            <form>
+
+                <select name="criterios" class="form-control lista_desple">
+                    <option value="todos">Criterios Todos</option>
+                    <option value="nombre">Nombre</option>
+                    <option value="poblacion">Población</option>
+                    <option value="provincia">Provincia</option>
+
+                </select>
+            </form>
+
+        </span>
+        <span class="input-group-btn">
+
+            <input type="text" class="form-control input_buscar col-xs-8">
+
+
+
+        </span>
+        <span class="input-group-btn">
+            <button class="btn btn-default boton_buscar" type="button"><img src="/img/search.png" height="18" width="18"></button>
+        </span>
+    </div>
+</div>
 <div class="site-index">
+    <br>
     <div class="galeria">
         <div class="foto">
 
