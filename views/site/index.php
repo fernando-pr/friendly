@@ -94,19 +94,49 @@ $this->registerJs($js);
 
 ?>
 
+
 <?php
-
-$url = Url::to(['amigos/solicitud']);
-$url2 = Url::to(['amigos/cancelar']);
-
-
+$url = Url::to(['ajax/buscar']);
+$urlActual = Url::to('');
 $js = <<<EOT
 
 // Ajax para las busquedas
 
 $(document).on('ready', function () {
 
+    var delay = (function() {
+        var timer = 0;
+        return function(callback, ms){
+            clearTimeout (timer);
+            timer = setTimeout(callback, ms);
+        };
+    })();
 
+    $('.input_buscar').keyup(function() {
+
+        delay(function() {
+            var cond = $('.lista_desple').val()
+            var q = $('.input_buscar').val();
+
+            if (q == '') {
+                $('#usuarios').html('');
+            }
+
+            $.ajax({
+                method: 'GET',
+                url: '$url',
+                data: {
+                    q: q,
+                    cond:cond
+                },
+                success: function (data, status, event) {
+
+                    $('#usuarios').html(data);
+                }
+            });
+        }, 500);
+
+    });
 });
 EOT;
 $this->registerJs($js);
@@ -146,6 +176,9 @@ $this->registerJs($js);
             <button class="btn btn-default boton_buscar" type="button"><img src="/img/search.png" height="18" width="18"></button>
         </span>
     </div>
+</div>
+<div id="usuarios">
+
 </div>
 <div class="site-index">
     <br>
