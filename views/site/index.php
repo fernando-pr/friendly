@@ -112,31 +112,37 @@ $(document).on('ready', function () {
         };
     })();
 
-    $('.input_buscar').keyup(function() {
-
+    function buscarAjax() {
         delay(function() {
             var cond = $('.lista_desple').val()
             var q = $('.input_buscar').val();
 
             if (q == '') {
                 $('#usuarios').html('');
+            } else {
+
+                $.ajax({
+                    method: 'GET',
+                    url: '$url',
+                    data: {
+                        q: q,
+                        cond:cond
+                    },
+                    success: function (data, status, event) {
+
+                        $('#usuarios').html(data);
+                    }
+                });
             }
-
-            $.ajax({
-                method: 'GET',
-                url: '$url',
-                data: {
-                    q: q,
-                    cond:cond
-                },
-                success: function (data, status, event) {
-
-                    $('#usuarios').html(data);
-                }
-            });
         }, 500);
+    }
 
-    });
+    $('.input_buscar').keyup(buscarAjax);
+
+    $(".lista_desple").change(buscarAjax);
+    $(".boton_buscar").on("click",buscarAjax);
+
+
 });
 EOT;
 $this->registerJs($js);
@@ -166,11 +172,7 @@ $this->registerJs($js);
 
         </span>
         <span class="input-group-btn">
-
             <input type="text" class="form-control input_buscar col-xs-8">
-
-
-
         </span>
         <span class="input-group-btn">
             <button class="btn btn-default boton_buscar" type="button"><img src="/img/search.png" height="18" width="18"></button>

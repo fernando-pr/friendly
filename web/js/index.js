@@ -13,15 +13,13 @@ $(document).on('ready', function () {
 
         if ($(".boton_abrir_buscar").text()=="Buscar") {
             $(".boton_abrir_buscar").text("Cerrar");
-           $("#usuarios").show();
+            $("#usuarios").show();
 
         } else {
             $(".boton_abrir_buscar").text("Buscar");
-            $("#usuarios").hide();
+            $("#usuarios").empty();
+                $(".input_buscar").val('');
         }
     });
-$(".lista_desple").on("change", function(){
-    console.log($(".lista_desple").val())
-});
 
 });
