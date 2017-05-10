@@ -131,6 +131,7 @@ $(document).on('ready', function () {
                     success: function (data, status, event) {
 
                         $('#usuarios').html(data);
+                        posicionar();
                     }
                 });
             }
@@ -142,6 +143,21 @@ $(document).on('ready', function () {
     $(".lista_desple").change(buscarAjax);
     $(".boton_buscar").on("click",buscarAjax);
 
+    //posicion del div que muestra los resultados
+
+    function posicionar() {
+
+        $('#usuarios').css({
+            "width" : '60%',
+            'margin-left': '15%',
+            'background-color': 'lavender',
+            'height' : '40%',
+            'z-index' :'2',
+            'position': 'absolute',
+            'overflow': 'auto'
+
+        });
+    }
 
 });
 EOT;

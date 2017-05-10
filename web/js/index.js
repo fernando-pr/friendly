@@ -18,8 +18,17 @@ $(document).on('ready', function () {
         } else {
             $(".boton_abrir_buscar").text("Buscar");
             $("#usuarios").empty();
-                $(".input_buscar").val('');
+            $(".input_buscar").val('');
+            $("#usuarios").css({
+                'z-index' :'-2',
+                'position': 'absolute',
+                'background-color': '#f1f5f7'
+            });
         }
     });
+
+
+
+
 
 });

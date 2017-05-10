@@ -16,3 +16,7 @@ div#foto {
     width: 40px;
     height: 40px;
 }
+
+div.caja_busqueda, div#caja_busqueda {
+    width:80% !important;
+}

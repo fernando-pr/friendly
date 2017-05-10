@@ -18,7 +18,7 @@ if (!empty($model)) { ?>
 
 
 
-            <div class="col-xs-8 col-sm-8 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
+            <div class="col-xs-8 col-sm-8 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-2 col-lg-offset-2 toppad caja_busqueda" id="caja_busqueda">
                 <div class="">
                     <ul class="list-group">
                         <li class="list-group-item">
