@@ -271,7 +271,7 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public function meHaEnviadoAmistad($id)
     {
         $cond = ['id_usuario' => $id , 'id_amigo' => Yii::$app->user->id, 'estado' => 'Solicitado'];
-        return Amigo::findOne($cond) == null;
+        return Amigo::findOne($cond) != null;
     }
 
     public function estaPeticionEnviada($id)

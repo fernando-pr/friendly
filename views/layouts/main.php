@@ -3,13 +3,29 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
+use app\helpers\Mensaje;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
+use yii\bootstrap\Alert;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
 AppAsset::register($this);
+
+$js = <<<JS
+$(".exito").fadeTo(2000, 500).slideUp(500, function() {
+    $(".exito").slideUp(500);
+});
+$(".exito").css({
+    position: 'relative',
+    width: '200px',
+    height: '60px',
+    'margin-Left':'40%'
+});
+
+JS;
+$this->registerJs($js);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -55,71 +71,98 @@ AppAsset::register($this);
                             ['usuarios/view/' . Yii::$app->user->id],
                             ['class' => 'img-circle', 'title'=>'Mi perfil']
                             )
-                        . Html::submitButton(
-                            '<img src="/encendido.png" width="27" height="27" title="Cerrar Sesión">',
-                            ['class' => 'btn btn-link logout']
-                            )
-                            . '</div>'
-                            . Html::endForm()
-                            . '</li>'
-                            )
-                        ];
-                        // if (Yii::$app->user->isGuest) {
-                        //     //Añadir aqui apartados de usuarios invitados
-                        //     array_unshift($items,  ['label' => 'Registrarse', 'url' => ['usuarios/create']]);
-                        // }
+                            . Html::submitButton(
+                                '<img src="/encendido.png" width="27" height="27" title="Cerrar Sesión">',
+                                ['class' => 'btn btn-link logout']
+                                )
+                                . '</div>'
+                                . Html::endForm()
+                                . '</li>'
+                                )
+                            ];
+                            // if (Yii::$app->user->isGuest) {
+                            //     //Añadir aqui apartados de usuarios invitados
+                            //     array_unshift($items,  ['label' => 'Registrarse', 'url' => ['usuarios/create']]);
+                            // }
 
 
-                        if (!Yii::$app->user->isGuest && !Yii::$app->user->esAdmin) {
-                            $peticiones = Yii::$app->user->numPeticionesUsuario();
+                            if (!Yii::$app->user->isGuest && !Yii::$app->user->esAdmin) {
+                                $peticiones = Yii::$app->user->numPeticionesUsuario();
 
-                            //Añadir aqui apartados de usuarios registrados
-                        //    array_unshift($items, ['label' => 'Mi perfil', 'url' => ['usuarios/view/' . Yii::$app->user->id]]);
-                            if ($peticiones > 0){
-                                array_unshift($items, ['label' => 'peticiones (' . $peticiones . ')', 'url' => ['usuarios/peticiones']]);
-                            } else {
-                                array_unshift($items, ['label' => 'peticiones', 'url' => ['usuarios/peticiones']]);
+                                //Añadir aqui apartados de usuarios registrados
+                                //    array_unshift($items, ['label' => 'Mi perfil', 'url' => ['usuarios/view/' . Yii::$app->user->id]]);
+                                if ($peticiones > 0){
+                                    array_unshift($items, ['label' => 'peticiones (' . $peticiones . ')', 'url' => ['usuarios/peticiones']]);
+                                } else {
+                                    array_unshift($items, ['label' => 'peticiones', 'url' => ['usuarios/peticiones']]);
+                                }
+                                array_unshift($items, ['label' => 'Amigos', 'url' => ['amigos/amigos']]);
+                                array_unshift($items, ['label' => 'Chat', 'url' => ['usuarios/index']]);
+                                array_unshift($items, ['label' => 'Foro', 'url' => ['usuarios/index']]);
                             }
-                            array_unshift($items, ['label' => 'Amigos', 'url' => ['amigos/amigos']]);
-                            array_unshift($items, ['label' => 'Chat', 'url' => ['usuarios/index']]);
-                            array_unshift($items, ['label' => 'Foro', 'url' => ['usuarios/index']]);
+
+                            if (Yii::$app->user->esAdmin) {
+                                //Añadir aqui apartados de usuarios administrador
+                                array_unshift($items, ['label' => 'Mensajes foro', 'url' => ['publicos/index']]);
+                                array_unshift($items, ['label' => 'Mensajes Chat', 'url' => ['privados/index']]);
+                                array_unshift($items, ['label' => 'Amistad', 'url' => ['amigos/index']]);
+                                array_unshift($items, ['label' => 'Conectados', 'url' => ['conectados/index']]);
+                                array_unshift($items, ['label' => 'Usuarios', 'url' => ['usuarios/index']]);
+
+                            }
+
+                            echo Nav::widget([
+                                'options' => ['class' => 'navbar-nav navbar-right'],
+                                'items' => $items,
+                            ]);
+                            NavBar::end();
                         }
+                        ?>
 
-                        if (Yii::$app->user->esAdmin) {
-                            //Añadir aqui apartados de usuarios administrador
-                            array_unshift($items, ['label' => 'Mensajes foro', 'url' => ['publicos/index']]);
-                            array_unshift($items, ['label' => 'Mensajes Chat', 'url' => ['privados/index']]);
-                            array_unshift($items, ['label' => 'Amistad', 'url' => ['amigos/index']]);
-                            array_unshift($items, ['label' => 'Conectados', 'url' => ['conectados/index']]);
-                            array_unshift($items, ['label' => 'Usuarios', 'url' => ['usuarios/index']]);
-
-                        }
-
-                        echo Nav::widget([
-                            'options' => ['class' => 'navbar-nav navbar-right'],
-                            'items' => $items,
-                        ]);
-                        NavBar::end();
-                    }
-                    ?>
-
-                    <div class="container">
-                        <?= Breadcrumbs::widget([
-                            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                            ]) ?>
-                            <?= $content ?>
-                        </div>
-                    </div>
-
-                    <footer class="footer">
                         <div class="container">
-                            <p class="pull-left">&copy; Friendly <?= date('Y') ?></p>
+                            <?= Breadcrumbs::widget([
+                                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                                ]) ?>
+                                <?php if (Mensaje::hayExito()) {
+                                    echo Alert::widget([
+                                        'closeButton' => false,
+                                        'options' => [
+                                            'class' => 'alert-success exito',
+                                        ],
+                                        'body' => Mensaje::exito(),
+                                    ]);
+                                } ?>
+                                <?php if (Mensaje::hayFracaso()) {
+                                    echo Alert::widget([
+                                        'closeButton' => false,
+                                        'options' => [
+                                            'class' => 'alert-danger fracaso',
+                                        ],
+                                        'body' => Mensaje::fracaso(),
+                                    ]);
+                                } ?>
 
-
+                                <?php if (Mensaje::hayInfo()) {
+                                    echo Alert::widget([
+                                        'options' => [
+                                            'class' => 'alert-info',
+                                        ],
+                                        'body' => Mensaje::info(),
+                                    ]);
+                                } ?>
+                                <?= $content ?>
+                            </div>
                         </div>
-                    </footer>
 
-                    <?php $this->endBody() ?>
-                </body>
-                </html>
-                <?php $this->endPage() ?>
+                        <footer class="footer">
+                            <div class="container">
+                                <p class="pull-left">&copy; Friendly <?= date('Y') ?></p>
+
+
+                            </div>
+                        </footer>
+
+                        <?php $this->endBody() ?>
+                    </body>
+                    </html>
+                    <?php $this->endPage() ?>

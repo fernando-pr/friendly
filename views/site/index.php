@@ -216,11 +216,6 @@ $this->registerJs($js);
 
         foreach ($model as $usuario) {
 
-            $esAmigo = Yii::$app->user->getEsMiAmigo($usuario->id);
-            $soyYo = Yii::$app->user->id == $usuario->id;
-            $meHaEnviadoAmistad = Yii::$app->user->meHaEnviadoAmistad($usuario->id);
-
-            if (!$esAmigo && !$soyYo && !$usuario->esAdmin() && $meHaEnviadoAmistad){
                 ?>
 
                 <div class="row caja_principal">
@@ -288,7 +283,6 @@ $this->registerJs($js);
 
 
                 <?php
-            }
         }
     }
     ?>

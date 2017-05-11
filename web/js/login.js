@@ -1,21 +1,34 @@
-
-
-    var ventana;
-
-    $(".registrate").on("click",function(){
-
-        abrirpopup("../usuarios/create",510,880);
+$(document).on('ready', function () {
+    $(".enlace").css({
+        width:'120px',
+        height:'80px'
     });
-
-    $(".boton_ok").on("click",function(){
-        window.close();
-
+    $(".enlaces").css({
+        'margin-left':'20%'
     });
+});
+var ventana1;
+var ventana2;
 
-    function abrirpopup(url,ancho,alto){
+$(".registrate").on("click",function(){
 
-        var x=(screen.width/2)-(ancho/2);
-        var y=(screen.height/2)-(alto/2);
+    abrirpopup("../usuarios/create",610,780, ventana1);
+});
 
-        ventana = window.open(url, 'registro', 'width=' + ancho + ', height=' + alto + ', left=' + x + ', top=' + y +'');
-    }
+$(".boton_enlace").on("click",function(){
+    var enlace = $(this).attr('href');
+    window.open(enlace)
+    window.close();
+});
+
+$(".boton_ok").on("click",function(){
+    window.close();
+});
+
+function abrirpopup(url,ancho,alto, ventana){
+
+    var x=(screen.width/2)-(ancho/2);
+    var y=(screen.height/2)-(alto/2);
+
+    ventana = window.open(url, 'registro', 'width=' + ancho + ', height=' + alto + ', left=' + x + ', top=' + y +'');
+}

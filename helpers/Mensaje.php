@@ -8,6 +8,7 @@ class Mensaje
 {
     const MENSAJE_EXITO = 'exito';
     const MENSAJE_FRACASO = 'fracaso';
+    const MENSAJE_INFO = 'Info';
 
     public static function exito($mensaje = null)
     {
@@ -25,9 +26,22 @@ class Mensaje
         static::mensaje($mensaje, self::MENSAJE_FRACASO);
     }
 
+    public static function info($mensaje = null)
+    {
+        if ($mensaje === null) {
+            return Yii::$app->session->getFlash(self::MENSAJE_INFO);
+        }
+        static::mensaje($mensaje, self::MENSAJE_INFO);
+    }
+
     public static function hayExito()
     {
         return Yii::$app->session->hasFlash(self::MENSAJE_EXITO);
+    }
+
+    public static function hayInfo()
+    {
+        return Yii::$app->session->hasFlash(self::MENSAJE_INFO);
     }
 
     public static function hayFracaso()

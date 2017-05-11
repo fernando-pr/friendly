@@ -13,8 +13,6 @@ use yii\web\UploadedFile;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
-use yii\helpers\Url;
-use kartik\widgets\AlertBlock;
 
 class SiteController extends Controller
 {
@@ -78,7 +76,19 @@ class SiteController extends Controller
         $provincia = Yii::$app->user->identity->provincia;
         $poblacion = Yii::$app->user->identity->poblacion;
 
-        $model = Usuario::find()->where(['poblacion' => $poblacion])->orWhere(['provincia' => $provincia])->all();
+        $yo = Usuario::findOne(Yii::$app->user->id);
+        $usuarios = Usuario::find()->where(['poblacion' => $poblacion])->orWhere(['provincia' => $provincia])->all();
+
+        $model = [];
+        foreach ($usuarios as $usuario) {
+            $esAmigo =  $yo->getAmistad($usuario->id) != null;
+            $soyYo = Yii::$app->user->id == $usuario->id;
+            $meHaEnviadoAmistad = $yo->meHaEnviadoAmistad($usuario->id);
+            $estaActivado = $usuario->getActivado();
+            if (!$esAmigo && !$soyYo && !$usuario->esAdmin() && !$meHaEnviadoAmistad && $estaActivado) {
+                $model[] = $usuario;
+            }
+        }
 
         return $this->render('index', [
             'model' => $model,
@@ -98,6 +108,7 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
+            Mensaje::exito('Bienvenido a friendly ' . $model->username);
             return $this->goBack();
         }
 

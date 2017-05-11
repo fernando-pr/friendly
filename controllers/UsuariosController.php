@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Yii;
+use app\helpers\Mensaje;
 use app\models\Usuario;
 use app\models\Amigo;
 use app\models\UsuarioSearch;
@@ -192,10 +193,10 @@ class UsuariosController extends Controller
                 <a href=\"$url\">Pinche aquí</a>")
                 ->send();
 
-                Yii::$app->session->setFlash(
-                    'exito',
-                    'Usuario creado correctamente. Por favor,mire su correo.'
-                );
+                Mensaje::info('Se ha registrado en friendly. Por favor revise su correo para ser activado <br>
+                <div class="usuario-view">
+                     <button type="button" class="btn btn-warning btn-lg boton_ok">Entendido</button>
+                </div>');
             }
             //return $this->redirect(['view', 'id' => $model->id]);
             return $this->render('aceptar');
