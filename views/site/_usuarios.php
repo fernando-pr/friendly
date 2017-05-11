@@ -47,8 +47,6 @@ if (!empty($model)) { ?>
                                             ?>
                                             <?= Html::a('Ver Perfil', ['/usuarios/view/' . $usuario->id], ['class' => 'btn btn-info']) ?>
                                             <br>
-                                            <?= Html::a('Borrar Amigo', ['/amigos/borrar', 'id' => $usuario->id], ['class' => 'btn btn-danger']) ?>
-
                                             <?php
                                         }
                                         ?>
