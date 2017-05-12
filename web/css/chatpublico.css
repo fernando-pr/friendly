@@ -1,0 +1,13 @@
+
+.caja_mensajes_publicos {
+    min-height: 200px;
+    max-height: 400px;
+    overflow: auto;
+
+}
+
+.panel_conectados {
+    min-height: 200px;
+    max-height: 400px;
+    overflow: auto;
+}

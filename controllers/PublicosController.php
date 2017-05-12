@@ -59,6 +59,11 @@ class PublicosController extends Controller
         ]);
     }
 
+    public function actionPublicos()
+    {
+        return $this->render('publico');
+    }
+
     /**
      * Displays a single Publico model.
      * @param integer $id

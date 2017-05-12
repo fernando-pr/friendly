@@ -21,6 +21,7 @@ class AppAsset extends AssetBundle
         'css/site.css',
         'css/login.css',
         'css/index.css',
+        'css/chatpublico.css',
     ];
     public $js = [
         'js/login.js',

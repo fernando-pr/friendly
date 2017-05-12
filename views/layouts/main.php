@@ -98,7 +98,7 @@ $this->registerJs($js);
                                 }
                                 array_unshift($items, ['label' => 'Amigos', 'url' => ['amigos/amigos']]);
                                 array_unshift($items, ['label' => 'Chat', 'url' => ['usuarios/index']]);
-                                array_unshift($items, ['label' => 'Foro', 'url' => ['usuarios/index']]);
+                                array_unshift($items, ['label' => 'Chat General', 'url' => ['publicos/publicos']]);
                             }
 
                             if (Yii::$app->user->esAdmin) {
