@@ -26,7 +26,7 @@ $(document).on('ready', function () {
         ordenar();
     }
 
-    
+
 
     (function(){
         $.ajax({
@@ -60,13 +60,10 @@ $(document).on('ready', function () {
 
     function poblacion(r){
         for (i in r){
-            $("#usuario-poblacion").append("<option value ="+r[i]+">"+r[i]+"</option>")
+            $("#usuario-poblacion").append("<option value =\""+r[i]+"\">"+r[i]+"</option>")
         }
         ordenar();
 
-        if('$poblacion' != null){
-            marcarPoblacion();
-        }
 
     }
 
