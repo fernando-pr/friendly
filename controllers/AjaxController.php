@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Conectado;
 use yii\filters\VerbFilter;
 use yii\data\ActiveDataProvider;
 use app\models\Usuario;
@@ -41,6 +42,19 @@ class AjaxController extends \yii\web\Controller
         }
 
         return $this->renderAjax('/site/_usuarios', [
+            'model' => $model,
+        ]);
+    }
+
+    public function actionConectados()
+    {
+        $conectados = Conectado::find()->all();
+        $model=[];
+        foreach ($conectados as $conectado) {
+            $model[] = Usuario::findOne($conectado->id_usuario);
+        }
+        
+        return $this->renderAjax('/publicos/_conectados', [
             'model' => $model,
         ]);
     }

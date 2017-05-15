@@ -3,7 +3,9 @@
 namespace app\controllers;
 
 use Yii;
+use app\models\Usuario;
 use app\models\Publico;
+use app\models\Conectado;
 use app\models\PublicoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -61,6 +63,12 @@ class PublicosController extends Controller
 
     public function actionPublicos()
     {
+        // $conectados = Conectado::find()->all();
+        // $user_conectados=[];
+        // foreach ($conectados as $conectado) {
+        //     $user_conectados[] = Usuario::findOne($conectado->id_usuario);
+        // }
+
         return $this->render('publico');
     }
 

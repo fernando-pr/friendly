@@ -6,6 +6,7 @@ use Yii;
 use app\helpers\Mensaje;
 use app\models\Amigo;
 use app\models\Usuario;
+use app\models\Conectado;
 use app\models\UploadForm;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -108,6 +109,19 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
+
+            //usuario conectado
+            //
+            //isset($_COOKIE['_identity'] tambien para ver si esta conectado
+            //
+            $id = Yii::$app->user->id;
+            $comprobar = Conectado::findOne(['id_usuario' => $id]);
+            if (!isset($comprobar)) {
+                $conectado = new Conectado();
+                $conectado->id_usuario = $id;
+                $conectado->save();
+            }
+
             Mensaje::exito('Bienvenido a friendly ' . $model->username);
             return $this->goBack();
         }
@@ -124,8 +138,16 @@ class SiteController extends Controller
     */
     public function actionLogout()
     {
-        Yii::$app->user->logout();
+        //desconectar usuario
+        $id = Yii::$app->user->id;
+        $conectado = Conectado::findOne(['id_usuario' => $id]);
 
+        if (isset($conectado)) {
+            $conectado->delete();
+        }
+
+
+        Yii::$app->user->logout();
         return $this->goHome();
     }
 

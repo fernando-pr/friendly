@@ -1,6 +1,6 @@
 <?php
 
-use yii\helpers\Html;
+use yii\helpers\Url;
 
 
 /* @var $this yii\web\View */
@@ -9,6 +9,7 @@ use yii\helpers\Html;
 
 $this->title = 'Chat público';
 
+$url = Url::to(['ajax/conectados']);
 $js = <<<EOT
 
 $(document).on('ready', function () {
@@ -23,8 +24,31 @@ $(document).on('ready', function () {
     // Funciones
     function bajarScroll(){
         document.getElementById('chat_publico').scrollTop=document.getElementById('chat_publico').scrollHeight;
-        document.getElementById('conectados_caja').scrollTop=document.getElementById('conectados_caja').scrollHeight;
     }
+
+
+    // Ajax para conectados
+
+    var intervalo = setInterval(function(){
+        obtenerDatos();
+    }, 4000);
+
+
+    function obtenerDatos() {
+        $.ajax({
+            method: 'GET',
+            url: '$url',
+            data: {
+
+            },
+            success: function (data, status, event) {
+
+                $(".panel_conectados").empty();
+                $(".panel_conectados").append(data);
+            }
+        });
+    }
+
 
 });
 EOT;
@@ -153,128 +177,7 @@ $this->registerJs($js);
                 Usuarios conectados
             </div>
             <div class="panel-body panel_conectados" id="conectados_caja">
-                <ul class="media-list">
-                    <li class="media">
-                        <div class="media-body">
-                            <div class="media">
-                                <a class="pull-left" href="#">
-                                    <!--  -->
-                                    <img class="media-object img-circle " src="/uploads/2.png" style="width: 50px; height: 50px;"/>
-                                </a>
-                                <div class="media-body" >
-                                    <h5>Demo </h5>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <!--  -->
 
-                    <li class="media">
-
-                        <div class="media-body">
-
-                            <div class="media">
-                                <a class="pull-left" href="#">
-                                    <img class="media-object img-circle " src="/uploads/3.png" style="width: 50px; height: 50px;"/>
-                                </a>
-                                <div class="media-body" >
-                                    <h5>Paco </h5>
-                                </div>
-                            </div>
-
-                        </div>
-                    </li>
-                    <li class="media">
-
-                        <div class="media-body">
-
-                            <div class="media">
-                                <a class="pull-left" href="#">
-                                    <img class="media-object img-circle " src="/uploads/4.png" style="width: 50px; height: 50px;"/>
-                                </a>
-                                <div class="media-body" >
-                                    <h5>pepe</h5>
-                                </div>
-                            </div>
-
-                        </div>
-                    </li>
-                    <li class="media">
-
-                        <div class="media-body">
-
-                            <div class="media">
-                                <a class="pull-left" href="#">
-                                    <img class="media-object img-circle " src="/uploads/5.png" style="width: 50px; height: 50px;"/>
-                                </a>
-                                <div class="media-body" >
-                                    <h5>Jose</h5>
-                                </div>
-                            </div>
-
-                        </div>
-                    </li>
-                    <li class="media">
-
-                        <div class="media-body">
-
-                            <div class="media">
-                                <a class="pull-left" href="#">
-                                    <img class="media-object img-circle " src="/uploads/5.png" style="width: 50px; height: 50px;"/>
-                                </a>
-                                <div class="media-body" >
-                                    <h5>Jose</h5>
-                                </div>
-                            </div>
-
-                        </div>
-                    </li>
-                    <li class="media">
-
-                        <div class="media-body">
-
-                            <div class="media">
-                                <a class="pull-left" href="#">
-                                    <img class="media-object img-circle " src="/uploads/5.png" style="width: 50px; height: 50px;"/>
-                                </a>
-                                <div class="media-body" >
-                                    <h5>Jose</h5>
-                                </div>
-                            </div>
-
-                        </div>
-                    </li>
-                    <li class="media">
-
-                        <div class="media-body">
-
-                            <div class="media">
-                                <a class="pull-left" href="#">
-                                    <img class="media-object img-circle " src="/uploads/5.png" style="width: 50px; height: 50px;"/>
-                                </a>
-                                <div class="media-body" >
-                                    <h5>Jose</h5>
-                                </div>
-                            </div>
-
-                        </div>
-                    </li>
-                    <li class="media">
-
-                        <div class="media-body">
-
-                            <div class="media">
-                                <a class="pull-left" href="#">
-                                    <img class="media-object img-circle " src="/uploads/5.png" style="width: 50px; height: 50px;"/>
-                                </a>
-                                <div class="media-body" >
-                                    <h5>Jose</h5>
-                                </div>
-                            </div>
-
-                        </div>
-                    </li>
-                </ul>
             </div>
         </div>
 
