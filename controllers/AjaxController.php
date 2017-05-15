@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Publico;
 use app\models\Conectado;
 use yii\filters\VerbFilter;
 use yii\data\ActiveDataProvider;
@@ -53,9 +54,20 @@ class AjaxController extends \yii\web\Controller
         foreach ($conectados as $conectado) {
             $model[] = Usuario::findOne($conectado->id_usuario);
         }
-        
+
         return $this->renderAjax('/publicos/_conectados', [
             'model' => $model,
         ]);
     }
+
+    public function actionPublicosmsg()
+    {
+        $model = Publico::find()->all();
+        
+
+        return $this->renderAjax('/publicos/_mensajesgrupo', [
+            'model' => $model,
+        ]);
+    }
+
 }

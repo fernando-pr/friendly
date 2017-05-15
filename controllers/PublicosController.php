@@ -13,13 +13,13 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 
 /**
- * PublicosController implements the CRUD actions for Publico model.
- */
+* PublicosController implements the CRUD actions for Publico model.
+*/
 class PublicosController extends Controller
 {
     /**
-     * @inheritdoc
-     */
+    * @inheritdoc
+    */
     public function behaviors()
     {
         return [
@@ -47,9 +47,9 @@ class PublicosController extends Controller
     }
 
     /**
-     * Lists all Publico models.
-     * @return mixed
-     */
+    * Lists all Publico models.
+    * @return mixed
+    */
     public function actionIndex()
     {
         $searchModel = new PublicoSearch();
@@ -69,14 +69,14 @@ class PublicosController extends Controller
         //     $user_conectados[] = Usuario::findOne($conectado->id_usuario);
         // }
 
-        return $this->render('publico');
+        return $this->render('publicos');
     }
 
     /**
-     * Displays a single Publico model.
-     * @param integer $id
-     * @return mixed
-     */
+    * Displays a single Publico model.
+    * @param integer $id
+    * @return mixed
+    */
     public function actionView($id)
     {
         return $this->render('view', [
@@ -85,10 +85,10 @@ class PublicosController extends Controller
     }
 
     /**
-     * Creates a new Publico model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
+    * Creates a new Publico model.
+    * If creation is successful, the browser will be redirected to the 'view' page.
+    * @return mixed
+    */
     public function actionCreate()
     {
         $model = new Publico();
@@ -102,12 +102,27 @@ class PublicosController extends Controller
         }
     }
 
+
+    public function actionEnviar($mensaje)
+    {
+        if ($mensaje != null || $mensaje != '') {
+            $model = new Publico();
+            $model->id_usuario = Yii::$app->user->id;
+            $model->mensaje = $mensaje;
+
+            $model->load(Yii::$app->request->post());
+            $model->save();
+        }
+    }
+
+
+
     /**
-     * Updates an existing Publico model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
-     * @return mixed
-     */
+    * Updates an existing Publico model.
+    * If update is successful, the browser will be redirected to the 'view' page.
+    * @param integer $id
+    * @return mixed
+    */
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
@@ -122,11 +137,11 @@ class PublicosController extends Controller
     }
 
     /**
-     * Deletes an existing Publico model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     */
+    * Deletes an existing Publico model.
+    * If deletion is successful, the browser will be redirected to the 'index' page.
+    * @param integer $id
+    * @return mixed
+    */
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
@@ -135,12 +150,12 @@ class PublicosController extends Controller
     }
 
     /**
-     * Finds the Publico model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return Publico the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
+    * Finds the Publico model based on its primary key value.
+    * If the model is not found, a 404 HTTP exception will be thrown.
+    * @param integer $id
+    * @return Publico the loaded model
+    * @throws NotFoundHttpException if the model cannot be found
+    */
     protected function findModel($id)
     {
         if (($model = Publico::findOne($id)) !== null) {
