@@ -88,7 +88,7 @@ $(document).on('ready', function () {
             enviarAjax();
         }
     });
-
+    
     function enviarAjax() {
         mensaje = $("#mensaje").val();
         $.ajax({

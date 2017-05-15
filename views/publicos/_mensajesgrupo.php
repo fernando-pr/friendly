@@ -19,7 +19,7 @@ if (!empty($model)) { ?>
                         <div class="media-body" >
                             <?= $publico->mensaje ?>
                             <br />
-                            <small class="text-muted"><?= $publico->usuario->nombre ?> | 12 Mayo a 12:00pm</small>
+                            <small class="text-muted"><?= $publico->usuario->nombre ?> | <?= Yii::$app->formatter->asDatetime($publico->fecha, 'HH:mm:ss dd/MM/yyyy' ) ?></small>
                             <hr />
                         </div>
                     </div>
