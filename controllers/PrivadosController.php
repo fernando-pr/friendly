@@ -121,6 +121,17 @@ class PrivadosController extends Controller
         return $this->redirect(['index']);
     }
 
+    public function actionPrivados()
+    {
+        // $conectados = Conectado::find()->all();
+        // $user_conectados=[];
+        // foreach ($conectados as $conectado) {
+        //     $user_conectados[] = Usuario::findOne($conectado->id_usuario);
+        // }
+
+        return $this->render('privados');
+    }
+
     /**
      * Finds the Privado model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
