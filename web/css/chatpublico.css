@@ -11,3 +11,9 @@
     max-height: 400px;
     overflow: auto;
 }
+
+li.oscura {
+    background-color: #F5F5DC !important;
+    border-radius: 7px;
+
+}
