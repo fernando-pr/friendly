@@ -25,11 +25,11 @@ class PublicosController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['create', 'update', 'view', 'delete', 'index'],
+                'only' => ['create', 'update', 'view', 'delete', 'index', 'publicos'],
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['create', 'update', 'view', 'delete', 'index'],
+                        'actions' => ['create', 'update', 'view', 'delete', 'index', 'publicos'],
                         'roles' => ['@'],
                         'matchCallback' => function ($rule, $action) {
                             return !Yii::$app->user->isGuest;
