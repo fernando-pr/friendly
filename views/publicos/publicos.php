@@ -88,7 +88,7 @@ $(document).on('ready', function () {
             enviarAjax();
         }
     });
-    
+
     function enviarAjax() {
         mensaje = $("#mensaje").val();
         $.ajax({
@@ -125,7 +125,7 @@ $this->registerJs($js);
 
             <div class="panel-footer">
                 <div class="input-group">
-                    <input type="text" class="form-control" id="mensaje" placeholder="" autofocus="true" />
+                    <input type="text" class="form-control" id="mensaje" placeholder="" autofocus="true" maxlength="140"/>
                     <span class="input-group-btn">
                         <button class="btn btn-info enviar" type="button">Enviar</button>
                     </span>

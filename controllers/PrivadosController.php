@@ -121,6 +121,24 @@ class PrivadosController extends Controller
         return $this->redirect(['index']);
     }
 
+
+    public function actionEnviar($id_amigo, $mensaje)
+    {
+        $id_mio = Yii::$app->user->id;
+
+        if ($mensaje != null || $mensaje != '') {
+            $model = new Privado();
+            $model->id_emisor = Yii::$app->user->id;
+            $model->id_receptor = $id_amigo;
+            $model->mensaje = $mensaje;
+
+            $model->load(Yii::$app->request->post());
+            $model->save();
+        }
+    }
+
+
+
     public function actionPrivados()
     {
         // $conectados = Conectado::find()->all();

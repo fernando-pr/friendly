@@ -97,7 +97,7 @@ $this->registerJs($js);
                                     array_unshift($items, ['label' => 'peticiones', 'url' => ['usuarios/peticiones']]);
                                 }
                                 array_unshift($items, ['label' => 'Amigos', 'url' => ['amigos/amigos']]);
-                                array_unshift($items, ['label' => 'Chat', 'url' => ['usuarios/index']]);
+                                array_unshift($items, ['label' => 'Chat', 'url' => ['privados/privados']]);
                                 array_unshift($items, ['label' => 'Foro', 'url' => ['publicos/publicos']]);
                             }
 

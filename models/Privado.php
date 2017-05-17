@@ -55,6 +55,15 @@ class Privado extends \yii\db\ActiveRecord
         ];
     }
 
+    public function getMensajesUsuario($id_amigo)
+    {
+        $id_mio = Yii::$app->user->id;
+        $mensajes = Privado::findBySql('SELECT * FROM privados where (id_emisor = ' . $id_mio . 'and id_receptor = ' . $id_amigo . ') or (id_emisor = ' . $id_amigo . 'and id_receptor = ' . $id_mio . ')')->all();
+
+
+        return $mensajes;
+    }
+
     /**
      * @return \yii\db\ActiveQuery
      */
