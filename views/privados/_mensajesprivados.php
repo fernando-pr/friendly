@@ -6,7 +6,7 @@ if (!empty($model)) { ?>
 
     <ul class="media-list">
         <?php foreach ($model as $privado) {
-            
+
             $media = 'media';
             $pull = 'pull-left';
             ?>

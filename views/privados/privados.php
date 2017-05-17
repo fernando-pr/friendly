@@ -7,10 +7,11 @@ use yii\helpers\Url;
 /* @var $searchModel app\models\AmigoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Chat público';
+$this->title = 'Chat Privado';
 
 $url = Url::to(['ajax/amigosconectados']);
 $urlmsg = Url::to(['ajax/privadosmsg']);
+$urlnombre = Url::to(['ajax/nombre']);
 $urlenviar = Url::to(['privados/enviar']);
 $js = <<<EOT
 
@@ -19,12 +20,8 @@ $(document).on('ready', function () {
 
 
     bajarScroll();
-
-
     // Eventos
     $('.enviar').on("click", bajarScroll);
-
-
     // Funciones
     function bajarScroll(){
         document.getElementById('chat_publico').scrollTop=document.getElementById('chat_publico').scrollHeight;
@@ -59,7 +56,7 @@ $(document).on('ready', function () {
     // Ajax para mostrar la conversacion con el usuario
 
 
-// si no eliges un amigo no puedes enviar nada
+    // si no eliges un amigo no puedes enviar nada
     $(".enviar").attr("disabled", true);
 
 
@@ -71,12 +68,12 @@ $(document).on('ready', function () {
         //habilito el boton y le doy el foco al input del mensaje
         $(".enviar").attr("disabled", false);
         $("#mensaje").focus();
-        
+
         clearInterval(interval);
         var id = $(this).attr("id");
         id_amigo = id;
         obtenerMensajes(id);
-         interval = setInterval(function(){
+        interval = setInterval(function(){
             obtenerMensajes(id);
         }, 4000);
         // console.log($(this).attr("id"));
@@ -96,6 +93,7 @@ $(document).on('ready', function () {
                 $("#chat_publico").empty();
                 $("#chat_publico").append(data);
                 bajarScroll();
+                obtenerNombre(id_amigo);
             }
         });
     }
@@ -103,6 +101,21 @@ $(document).on('ready', function () {
     var mensaje = null;
 
 
+    //Nombre de amigo para ponerlo de titulo
+    function obtenerNombre(id) {
+
+        $.ajax({
+            method: 'GET',
+            url: '$urlnombre',
+            data: {
+                id_amigo:id
+            },
+            success: function (data, status, event) {
+
+                $(".nombre_amigo").html("Mensajes recientes con "+data);
+            }
+        });
+    }
 
 
     //enviar ajax al usuario indicado
@@ -160,7 +173,7 @@ $this->registerJs($js);
     <div class="col-md-8">
         <div class="panel panel-info">
             <div class="panel-heading">
-                Mensajes recientes
+                <p class="nombre_amigo">Mensajes recientes</p>
             </div>
             <div class="panel-body caja_mensajes_publicos" id="chat_publico">
 

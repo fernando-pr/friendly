@@ -95,11 +95,23 @@ class AjaxController extends \yii\web\Controller
 
         $privado = new Privado();
         $model = $privado->getMensajesUsuario($id_amigo);
-        
+
 
         return $this->renderAjax('/privados/_mensajesprivados', [
             'model' => $model,
         ]);
+    }
+
+
+    public function actionNombre($id_amigo)
+    {
+
+        $usuario = new Usuario();
+
+        return $usuario->findOne($id_amigo)->nombre;
+
+
+
     }
 
 }
