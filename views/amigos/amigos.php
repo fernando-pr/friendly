@@ -71,7 +71,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                         'method' => 'post',
                                     ],
                                     ]) ?>
-
+                                    <?= Html::a('ver perfil Amigo', ['/usuarios/view', 'id' => $usuario->id], [
+                                        'class' => 'btn btn-info',
+                                        ]) ?>
                                 </div>
 
                             </div>

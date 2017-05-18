@@ -7,12 +7,20 @@ use yii\helpers\Html;
 /* @var $model app\models\Usuario */
 
 $this->title = 'Perfil ' . $model->nombre;
-$this->params['breadcrumbs'][] = (Yii::$app->user->esAdmin) ? ['label' => 'Usuarios', 'url' => ['index']] : 'Usuarios';
-$this->params['breadcrumbs'][] = $model->nombre;
+
+
 ?>
 <div class="usuario-view">
     <div class="text-center">
-        <h1>Mi Perfil</h1>
+        <?php if ($model->id == Yii::$app->user->id) { ?>
+            <h1>Mi Perfil</h1>
+            <?php
+        }  else {
+            ?>
+            <h1>Perfil de <?= $model->nombre ?></h1>
+            <?php
+        }
+        ?>
     </div>
     <div class="row">
 
