@@ -31,7 +31,7 @@ class AmigosController extends Controller
                         'actions' => ['create', 'update', 'view', 'delete', 'index'],
                         'roles' => ['@'],
                         'matchCallback' => function ($rule, $action) {
-                            return !Yii::$app->user->isGuest;
+                            return Yii::$app->user->esAdmin;
                         }
                     ],
                 ],

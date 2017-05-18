@@ -32,6 +32,14 @@ class PublicosController extends Controller
                         'actions' => ['create', 'update', 'view', 'delete', 'index', 'publicos'],
                         'roles' => ['@'],
                         'matchCallback' => function ($rule, $action) {
+                            return Yii::$app->user->esAdmin;
+                        }
+                    ],
+                    [
+                        'allow' => true,
+                        'actions' => ['publicos'],
+                        'roles' => ['@'],
+                        'matchCallback' => function ($rule, $action) {
                             return !Yii::$app->user->isGuest;
                         }
                     ],

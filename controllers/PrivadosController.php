@@ -30,6 +30,14 @@ class PrivadosController extends Controller
                         'actions' => ['create', 'update', 'view', 'delete', 'index', 'privados'],
                         'roles' => ['@'],
                         'matchCallback' => function ($rule, $action) {
+                            return Yii::$app->user->esAdmin;
+                        }
+                    ],
+                    [
+                        'allow' => true,
+                        'actions' => ['privados'],
+                        'roles' => ['@'],
+                        'matchCallback' => function ($rule, $action) {
                             return !Yii::$app->user->isGuest;
                         }
                     ],
