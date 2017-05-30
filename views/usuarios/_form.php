@@ -89,7 +89,7 @@ $this->registerJs($js);
 ?>
 <div class="usuario-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['id' => 'form-registro']); ?>
 
     <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
 
@@ -105,13 +105,13 @@ $this->registerJs($js);
 
     <?php if(!$model->isNewRecord){ ?>
         <?= $form->field($model, 'imageFile')->fileInput(['maxlength' => true]) ?>
-    <?php } ?>
-    <br><br>
+        <?php } ?>
+        <br><br>
 
-    <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success crear' : 'btn btn-primary']) ?>
+        <div class="form-group">
+            <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success crear' : 'btn btn-primary']) ?>
+        </div>
+
+        <?php ActiveForm::end(); ?>
+
     </div>
-
-    <?php ActiveForm::end(); ?>
-
-</div>
