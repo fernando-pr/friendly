@@ -8,7 +8,7 @@ use yii\helpers\Html;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Amigos';
-$this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="amigo-index">
 

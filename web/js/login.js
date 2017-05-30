@@ -30,5 +30,5 @@ function abrirpopup(url,ancho,alto, ventana){
     var x=(screen.width/2)-(ancho/2);
     var y=(screen.height/2)-(alto/2);
 
-    ventana = window.open(url, 'registro', 'width=' + ancho + ', height=' + alto + ', left=' + x + ', top=' + y +'');
+    ventana = window.open(url, 'nuevo usuario', 'width=' + ancho + ', height=' + alto + ', left=' + x + ', top=' + y +'');
 }

@@ -4,6 +4,8 @@
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model app\models\LoginForm */
 
+$this->title = 'Inicio Sesión';
+
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
