@@ -27,8 +27,10 @@ $(document).on('ready', function () {
         }
     });
 
+    // reproductor de musica
 
-
-
+    $(".play_musica").on('click', function() {
+         $.reproducir();
+    });
 
 });

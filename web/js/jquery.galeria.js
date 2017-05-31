@@ -59,22 +59,22 @@
                     index++;
 
                     if(index == rutas.length){
-                    index = 0;
+                        index = 0;
+                    }
                 }
-            }
 
 
 
-            imagen.on("mouseenter", function(){
-            clearInterval(interval);
-        });
+                imagen.on("mouseenter", function(){
+                    clearInterval(interval);
+                });
 
-        imagen.on("mouseleave", function(){
-        intervalo();
+                imagen.on("mouseleave", function(){
+                    intervalo();
+                });
+            });
+            return this;
+        }
     });
-});
-return this;
-}
-});
 
 })(jQuery);

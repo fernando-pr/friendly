@@ -179,6 +179,11 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
+    public function actionReproductor()
+    {
+        return $this->render('reproductor');
+    }
+
     public function actionVolver()
     {
         return $this->goBack();
