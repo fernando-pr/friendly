@@ -176,8 +176,9 @@ $this->registerJs($js);
                         <footer class="footer">
                             <div class="container">
                                 <p class="pull-left">&copy; Friendly <?= date('Y') ?></p>
-
-
+                                <p class="pull-right">
+                                    <?= Html::a('Sobre nosotros',['/site/about'], ['title'=>'sobre nosotros']) ?>
+                                </p>
                             </div>
                         </footer>
                         <?php $this->endBody() ?>
