@@ -1,7 +1,8 @@
 <?php
 
-use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\web\View;
+use yii\web\JqueryAsset;
 
 $this->title = 'friendly';
 ?>
@@ -9,6 +10,7 @@ $this->title = 'friendly';
 <?php
 $js = <<<EOT
 
+// llamada al plugin de galeria de imagenes.
 $(document).on('ready', function () {
     $(".galeria").galeriaImg();
 });
@@ -18,151 +20,39 @@ $this->registerJs($js);
 
 <?php
 
-$url = Url::to(['amigos/solicitud']);
-$url2 = Url::to(['amigos/cancelar']);
-
+// Ajax para la solicitud de amistad
+$urlSolicitud = Url::to(['amigos/solicitud']);
+$urlCancelar = Url::to(['amigos/cancelar']);
 
 $js = <<<EOT
 
-$(document).on('ready', function () {
+var urlSolicitud = "$urlSolicitud";
+var urlCancelar = "$urlCancelar";
 
-
-
-    $(".boton_solicitud").on("click", refrescarIndex);
-
-    var id;
-    var variable;
-    function refrescarIndex(e){
-        variable = $(this);
-        id = $(this).attr("name");
-
-        $.ajax({
-            data: "id="+id,
-            type:"GET",
-            url: '$url',
-            success:refrescar
-        });
-
-
-    }
-    function refrescar(r){
-
-        $(".boton_solicitud[name='"+id+"']").toggle();
-        $(".cancelar_peticion[name='"+id+"']").toggle();
-
-    }
-
-    $(".cancelar_peticion").on("click", cancelarPeticion);
-
-    var variableCancelar;
-    var idCancelar;
-
-    function cancelarPeticion(e)
-    {
-
-        variable = $(this);
-        id = $(this).attr("name");
-
-        $.ajax({
-            data: "id="+id,
-            type:"GET",
-            success:cancelar,
-
-            url: '$url2'
-        });
-
-
-    }
-
-    function cancelar(r){
-
-
-        $(".cancelar_peticion[name='"+id+"']").toggle();
-        $(".boton_solicitud[name='"+id+"']").toggle();
-    }
-
-
-    ocultos();
-
-    function ocultos() {
-        $(".oculto").hide();
-    }
-});
 EOT;
-$this->registerJs($js);
-
-
+$this->registerJs($js, View::POS_END);
+$this->registerJsFile(
+    '/js/ajaxIndexSolicitud.js',
+    ['depends' => [JqueryAsset::className()]]
+);
 ?>
 
 
 <?php
-$url = Url::to(['ajax/buscar']);
-$urlActual = Url::to('');
+
+// Ajax para buscar personas
+$urlBuscar = Url::to(['ajax/buscar']);
+
 $js = <<<EOT
 
-// Ajax para las busquedas
+var urlBuscar = "$urlBuscar";
 
-$(document).on('ready', function () {
-
-    var delay = (function() {
-        var timer = 0;
-        return function(callback, ms){
-            clearTimeout (timer);
-            timer = setTimeout(callback, ms);
-        };
-    })();
-
-    function buscarAjax() {
-        delay(function() {
-            var cond = $('.lista_desple').val()
-            var q = $('.input_buscar').val();
-
-            if (q == '') {
-                $('#usuarios').html('');
-            } else {
-
-                $.ajax({
-                    method: 'GET',
-                    url: '$url',
-                    data: {
-                        q: q,
-                        cond:cond
-                    },
-                    success: function (data, status, event) {
-
-                        $('#usuarios').html(data);
-                        posicionar();
-                    }
-                });
-            }
-        }, 500);
-    }
-
-    $('.input_buscar').keyup(buscarAjax);
-
-    $(".lista_desple").change(buscarAjax);
-    $(".boton_buscar").on("click",buscarAjax);
-
-    //posicion del div que muestra los resultados
-
-    function posicionar() {
-
-        $('#usuarios').css({
-            "width" : '60%',
-            'margin-left': '15%',
-            'background-color': 'lavender',
-            'height' : '40%',
-            'z-index' :'2',
-            'position': 'absolute',
-            'overflow': 'auto'
-
-        });
-    }
-
-});
 EOT;
-$this->registerJs($js);
-
+$this->registerJs($js, View::POS_END);
+$this->registerJsFile(
+    '/js/ajaxIndexBuscar.js',
+    ['depends' => [JqueryAsset::className()]]
+);
 
 ?>
 
