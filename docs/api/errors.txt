@@ -1,0 +1,416 @@
+Array
+(
+    [0] => Array
+        (
+            [line] => 17
+            [file] => controllers/AjaxController.php
+            [message] => Method behaviors has no parent to inherit from in app\controllers\AjaxController.
+        )
+
+    [1] => Array
+        (
+            [line] => 22
+            [file] => controllers/AmigosController.php
+            [message] => Method behaviors has no parent to inherit from in app\controllers\AmigosController.
+        )
+
+    [2] => Array
+        (
+            [line] => 21
+            [file] => controllers/ConectadosController.php
+            [message] => Method behaviors has no parent to inherit from in app\controllers\ConectadosController.
+        )
+
+    [3] => Array
+        (
+            [line] => 20
+            [file] => controllers/EstadosController.php
+            [message] => Method behaviors has no parent to inherit from in app\controllers\EstadosController.
+        )
+
+    [4] => Array
+        (
+            [line] => 12
+            [file] => controllers/PoblacionController.php
+            [message] => Method behaviors has no parent to inherit from in app\controllers\PoblacionController.
+        )
+
+    [5] => Array
+        (
+            [line] => 21
+            [file] => controllers/PrivadosController.php
+            [message] => Method behaviors has no parent to inherit from in app\controllers\PrivadosController.
+        )
+
+    [6] => Array
+        (
+            [line] => 12
+            [file] => controllers/ProvinciasController.php
+            [message] => Method behaviors has no parent to inherit from in app\controllers\ProvinciasController.
+        )
+
+    [7] => Array
+        (
+            [line] => 23
+            [file] => controllers/PublicosController.php
+            [message] => Method behaviors has no parent to inherit from in app\controllers\PublicosController.
+        )
+
+    [8] => Array
+        (
+            [line] => 23
+            [file] => controllers/SiteController.php
+            [message] => Method behaviors has no parent to inherit from in app\controllers\SiteController.
+        )
+
+    [9] => Array
+        (
+            [line] => 57
+            [file] => controllers/SiteController.php
+            [message] => Method actions has no parent to inherit from in app\controllers\SiteController.
+        )
+
+    [10] => Array
+        (
+            [line] => 24
+            [file] => controllers/UsuariosController.php
+            [message] => Method behaviors has no parent to inherit from in app\controllers\UsuariosController.
+        )
+
+    [11] => Array
+        (
+            [line] => 22
+            [file] => models/Amigo.php
+            [message] => Method tableName has no parent to inherit from in app\models\Amigo.
+        )
+
+    [12] => Array
+        (
+            [line] => 30
+            [file] => models/Amigo.php
+            [message] => Method rules has no parent to inherit from in app\models\Amigo.
+        )
+
+    [13] => Array
+        (
+            [line] => 45
+            [file] => models/Amigo.php
+            [message] => Method attributeLabels has no parent to inherit from in app\models\Amigo.
+        )
+
+    [14] => Array
+        (
+            [line] => 22
+            [file] => models/Amigo.php
+            [message] => Method tableName has no parent to inherit from in app\models\Amigo.
+        )
+
+    [15] => Array
+        (
+            [line] => 30
+            [file] => models/Amigo.php
+            [message] => Method rules has no parent to inherit from in app\models\Amigo.
+        )
+
+    [16] => Array
+        (
+            [line] => 45
+            [file] => models/Amigo.php
+            [message] => Method attributeLabels has no parent to inherit from in app\models\Amigo.
+        )
+
+    [17] => Array
+        (
+            [line] => 29
+            [file] => models/AmigoSearch.php
+            [message] => Method scenarios has no parent to inherit from in app\models\AmigoSearch.
+        )
+
+    [18] => Array
+        (
+            [line] => 20
+            [file] => models/Conectado.php
+            [message] => Method tableName has no parent to inherit from in app\models\Conectado.
+        )
+
+    [19] => Array
+        (
+            [line] => 28
+            [file] => models/Conectado.php
+            [message] => Method rules has no parent to inherit from in app\models\Conectado.
+        )
+
+    [20] => Array
+        (
+            [line] => 41
+            [file] => models/Conectado.php
+            [message] => Method attributeLabels has no parent to inherit from in app\models\Conectado.
+        )
+
+    [21] => Array
+        (
+            [line] => 20
+            [file] => models/Conectado.php
+            [message] => Method tableName has no parent to inherit from in app\models\Conectado.
+        )
+
+    [22] => Array
+        (
+            [line] => 28
+            [file] => models/Conectado.php
+            [message] => Method rules has no parent to inherit from in app\models\Conectado.
+        )
+
+    [23] => Array
+        (
+            [line] => 41
+            [file] => models/Conectado.php
+            [message] => Method attributeLabels has no parent to inherit from in app\models\Conectado.
+        )
+
+    [24] => Array
+        (
+            [line] => 29
+            [file] => models/ConectadoSearch.php
+            [message] => Method scenarios has no parent to inherit from in app\models\ConectadoSearch.
+        )
+
+    [25] => Array
+        (
+            [line] => 20
+            [file] => models/Estado.php
+            [message] => Method tableName has no parent to inherit from in app\models\Estado.
+        )
+
+    [26] => Array
+        (
+            [line] => 28
+            [file] => models/Estado.php
+            [message] => Method rules has no parent to inherit from in app\models\Estado.
+        )
+
+    [27] => Array
+        (
+            [line] => 40
+            [file] => models/Estado.php
+            [message] => Method attributeLabels has no parent to inherit from in app\models\Estado.
+        )
+
+    [28] => Array
+        (
+            [line] => 20
+            [file] => models/Estado.php
+            [message] => Method tableName has no parent to inherit from in app\models\Estado.
+        )
+
+    [29] => Array
+        (
+            [line] => 28
+            [file] => models/Estado.php
+            [message] => Method rules has no parent to inherit from in app\models\Estado.
+        )
+
+    [30] => Array
+        (
+            [line] => 40
+            [file] => models/Estado.php
+            [message] => Method attributeLabels has no parent to inherit from in app\models\Estado.
+        )
+
+    [31] => Array
+        (
+            [line] => 29
+            [file] => models/EstadoSearch.php
+            [message] => Method scenarios has no parent to inherit from in app\models\EstadoSearch.
+        )
+
+    [32] => Array
+        (
+            [line] => 24
+            [file] => models/Privado.php
+            [message] => Method tableName has no parent to inherit from in app\models\Privado.
+        )
+
+    [33] => Array
+        (
+            [line] => 32
+            [file] => models/Privado.php
+            [message] => Method rules has no parent to inherit from in app\models\Privado.
+        )
+
+    [34] => Array
+        (
+            [line] => 47
+            [file] => models/Privado.php
+            [message] => Method attributeLabels has no parent to inherit from in app\models\Privado.
+        )
+
+    [35] => Array
+        (
+            [line] => 24
+            [file] => models/Privado.php
+            [message] => Method tableName has no parent to inherit from in app\models\Privado.
+        )
+
+    [36] => Array
+        (
+            [line] => 32
+            [file] => models/Privado.php
+            [message] => Method rules has no parent to inherit from in app\models\Privado.
+        )
+
+    [37] => Array
+        (
+            [line] => 47
+            [file] => models/Privado.php
+            [message] => Method attributeLabels has no parent to inherit from in app\models\Privado.
+        )
+
+    [38] => Array
+        (
+            [line] => 29
+            [file] => models/PrivadoSearch.php
+            [message] => Method scenarios has no parent to inherit from in app\models\PrivadoSearch.
+        )
+
+    [39] => Array
+        (
+            [line] => 22
+            [file] => models/Publico.php
+            [message] => Method tableName has no parent to inherit from in app\models\Publico.
+        )
+
+    [40] => Array
+        (
+            [line] => 30
+            [file] => models/Publico.php
+            [message] => Method rules has no parent to inherit from in app\models\Publico.
+        )
+
+    [41] => Array
+        (
+            [line] => 44
+            [file] => models/Publico.php
+            [message] => Method attributeLabels has no parent to inherit from in app\models\Publico.
+        )
+
+    [42] => Array
+        (
+            [line] => 22
+            [file] => models/Publico.php
+            [message] => Method tableName has no parent to inherit from in app\models\Publico.
+        )
+
+    [43] => Array
+        (
+            [line] => 30
+            [file] => models/Publico.php
+            [message] => Method rules has no parent to inherit from in app\models\Publico.
+        )
+
+    [44] => Array
+        (
+            [line] => 44
+            [file] => models/Publico.php
+            [message] => Method attributeLabels has no parent to inherit from in app\models\Publico.
+        )
+
+    [45] => Array
+        (
+            [line] => 29
+            [file] => models/PublicoSearch.php
+            [message] => Method scenarios has no parent to inherit from in app\models\PublicoSearch.
+        )
+
+    [46] => Array
+        (
+            [line] => 56
+            [file] => models/Usuario.php
+            [message] => Method tableName has no parent to inherit from in app\models\Usuario.
+        )
+
+    [47] => Array
+        (
+            [line] => 64
+            [file] => models/Usuario.php
+            [message] => Method rules has no parent to inherit from in app\models\Usuario.
+        )
+
+    [48] => Array
+        (
+            [line] => 86
+            [file] => models/Usuario.php
+            [message] => Method attributeLabels has no parent to inherit from in app\models\Usuario.
+        )
+
+    [49] => Array
+        (
+            [line] => 134
+            [file] => models/Usuario.php
+            [message] => Method getId has no parent to inherit from in app\models\Usuario.
+        )
+
+    [50] => Array
+        (
+            [line] => 142
+            [file] => models/Usuario.php
+            [message] => Method getPoblacion has no parent to inherit from in app\models\Usuario.
+        )
+
+    [51] => Array
+        (
+            [line] => 149
+            [file] => models/Usuario.php
+            [message] => Method getAuthKey has no parent to inherit from in app\models\Usuario.
+        )
+
+    [52] => Array
+        (
+            [line] => 56
+            [file] => models/Usuario.php
+            [message] => Method tableName has no parent to inherit from in app\models\Usuario.
+        )
+
+    [53] => Array
+        (
+            [line] => 64
+            [file] => models/Usuario.php
+            [message] => Method rules has no parent to inherit from in app\models\Usuario.
+        )
+
+    [54] => Array
+        (
+            [line] => 86
+            [file] => models/Usuario.php
+            [message] => Method attributeLabels has no parent to inherit from in app\models\Usuario.
+        )
+
+    [55] => Array
+        (
+            [line] => 134
+            [file] => models/Usuario.php
+            [message] => Method getId has no parent to inherit from in app\models\Usuario.
+        )
+
+    [56] => Array
+        (
+            [line] => 142
+            [file] => models/Usuario.php
+            [message] => Method getPoblacion has no parent to inherit from in app\models\Usuario.
+        )
+
+    [57] => Array
+        (
+            [line] => 149
+            [file] => models/Usuario.php
+            [message] => Method getAuthKey has no parent to inherit from in app\models\Usuario.
+        )
+
+    [58] => Array
+        (
+            [line] => 29
+            [file] => models/UsuarioSearch.php
+            [message] => Method scenarios has no parent to inherit from in app\models\UsuarioSearch.
+        )
+
+)

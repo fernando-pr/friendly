@@ -1,0 +1,507 @@
+Array
+(
+    [0] => Array
+        (
+            [line] => 18
+            [file] => assets/AppAsset.php
+            [message] => No docblock for element '$basePath'
+        )
+
+    [1] => Array
+        (
+            [line] => 18
+            [file] => assets/AppAsset.php
+            [message] => No short description for element '$basePath'
+        )
+
+    [2] => Array
+        (
+            [line] => 19
+            [file] => assets/AppAsset.php
+            [message] => No docblock for element '$baseUrl'
+        )
+
+    [3] => Array
+        (
+            [line] => 19
+            [file] => assets/AppAsset.php
+            [message] => No short description for element '$baseUrl'
+        )
+
+    [4] => Array
+        (
+            [line] => 20
+            [file] => assets/AppAsset.php
+            [message] => No docblock for element '$css'
+        )
+
+    [5] => Array
+        (
+            [line] => 20
+            [file] => assets/AppAsset.php
+            [message] => No short description for element '$css'
+        )
+
+    [6] => Array
+        (
+            [line] => 26
+            [file] => assets/AppAsset.php
+            [message] => No docblock for element '$js'
+        )
+
+    [7] => Array
+        (
+            [line] => 26
+            [file] => assets/AppAsset.php
+            [message] => No short description for element '$js'
+        )
+
+    [8] => Array
+        (
+            [line] => 33
+            [file] => assets/AppAsset.php
+            [message] => No docblock for element '$depends'
+        )
+
+    [9] => Array
+        (
+            [line] => 33
+            [file] => assets/AppAsset.php
+            [message] => No short description for element '$depends'
+        )
+
+    [10] => Array
+        (
+            [line] => 12
+            [file] => controllers/AjaxController.php
+            [message] => No docblock for element 'app\controllers\AjaxController'
+        )
+
+    [11] => Array
+        (
+            [line] => 29
+            [file] => controllers/AjaxController.php
+            [message] => No docblock for element 'actionIndex'
+        )
+
+    [12] => Array
+        (
+            [line] => 34
+            [file] => controllers/AjaxController.php
+            [message] => No docblock for element 'actionBuscar'
+        )
+
+    [13] => Array
+        (
+            [line] => 51
+            [file] => controllers/AjaxController.php
+            [message] => No docblock for element 'actionConectados'
+        )
+
+    [14] => Array
+        (
+            [line] => 65
+            [file] => controllers/AjaxController.php
+            [message] => No docblock for element 'actionAmigosconectados'
+        )
+
+    [15] => Array
+        (
+            [line] => 83
+            [file] => controllers/AjaxController.php
+            [message] => No docblock for element 'actionPublicosmsg'
+        )
+
+    [16] => Array
+        (
+            [line] => 93
+            [file] => controllers/AjaxController.php
+            [message] => No docblock for element 'actionPrivadosmsg'
+        )
+
+    [17] => Array
+        (
+            [line] => 106
+            [file] => controllers/AjaxController.php
+            [message] => No docblock for element 'actionNombre'
+        )
+
+    [18] => Array
+        (
+            [line] => 157
+            [file] => controllers/AmigosController.php
+            [message] => No docblock for element 'actionSolicitud'
+        )
+
+    [19] => Array
+        (
+            [line] => 175
+            [file] => controllers/AmigosController.php
+            [message] => No docblock for element 'actionCancelar'
+        )
+
+    [20] => Array
+        (
+            [line] => 191
+            [file] => controllers/AmigosController.php
+            [message] => No docblock for element 'actionAceptar'
+        )
+
+    [21] => Array
+        (
+            [line] => 207
+            [file] => controllers/AmigosController.php
+            [message] => No docblock for element 'actionRechazar'
+        )
+
+    [22] => Array
+        (
+            [line] => 221
+            [file] => controllers/AmigosController.php
+            [message] => No docblock for element 'actionBorrar'
+        )
+
+    [23] => Array
+        (
+            [line] => 7
+            [file] => controllers/PoblacionController.php
+            [message] => No docblock for element 'app\controllers\PoblacionController'
+        )
+
+    [24] => Array
+        (
+            [line] => 24
+            [file] => controllers/PoblacionController.php
+            [message] => No docblock for element 'actionIndex'
+        )
+
+    [25] => Array
+        (
+            [line] => 29
+            [file] => controllers/PoblacionController.php
+            [message] => No docblock for element 'actionPoblacion'
+        )
+
+    [26] => Array
+        (
+            [line] => 133
+            [file] => controllers/PrivadosController.php
+            [message] => No docblock for element 'actionEnviar'
+        )
+
+    [27] => Array
+        (
+            [line] => 150
+            [file] => controllers/PrivadosController.php
+            [message] => No docblock for element 'actionPrivados'
+        )
+
+    [28] => Array
+        (
+            [line] => 7
+            [file] => controllers/ProvinciasController.php
+            [message] => No docblock for element 'app\controllers\ProvinciasController'
+        )
+
+    [29] => Array
+        (
+            [line] => 24
+            [file] => controllers/ProvinciasController.php
+            [message] => No docblock for element 'actionIndex'
+        )
+
+    [30] => Array
+        (
+            [line] => 29
+            [file] => controllers/ProvinciasController.php
+            [message] => No docblock for element 'actionProvincias'
+        )
+
+    [31] => Array
+        (
+            [line] => 72
+            [file] => controllers/PublicosController.php
+            [message] => No docblock for element 'actionPublicos'
+        )
+
+    [32] => Array
+        (
+            [line] => 114
+            [file] => controllers/PublicosController.php
+            [message] => No docblock for element 'actionEnviar'
+        )
+
+    [33] => Array
+        (
+            [line] => 18
+            [file] => controllers/SiteController.php
+            [message] => No docblock for element 'app\controllers\SiteController'
+        )
+
+    [34] => Array
+        (
+            [line] => 182
+            [file] => controllers/SiteController.php
+            [message] => No docblock for element 'actionReproductor'
+        )
+
+    [35] => Array
+        (
+            [line] => 187
+            [file] => controllers/SiteController.php
+            [message] => No docblock for element 'actionVolver'
+        )
+
+    [36] => Array
+        (
+            [line] => 102
+            [file] => controllers/UsuariosController.php
+            [message] => No docblock for element 'actionPeticiones'
+        )
+
+    [37] => Array
+        (
+            [line] => 154
+            [file] => controllers/UsuariosController.php
+            [message] => No docblock for element 'actionActivar'
+        )
+
+    [38] => Array
+        (
+            [line] => 55
+            [file] => models/Amigo.php
+            [message] => No docblock for element 'esMiAmigo'
+        )
+
+    [39] => Array
+        (
+            [line] => 64
+            [file] => models/Amigo.php
+            [message] => No docblock for element 'estaPeticionEnviada'
+        )
+
+    [40] => Array
+        (
+            [line] => 70
+            [file] => models/Amigo.php
+            [message] => No docblock for element 'estaPeticionRecibida'
+        )
+
+    [41] => Array
+        (
+            [line] => 13
+            [file] => models/ContactForm.php
+            [message] => No docblock for element '$name'
+        )
+
+    [42] => Array
+        (
+            [line] => 13
+            [file] => models/ContactForm.php
+            [message] => No short description for element '$name'
+        )
+
+    [43] => Array
+        (
+            [line] => 14
+            [file] => models/ContactForm.php
+            [message] => No docblock for element '$email'
+        )
+
+    [44] => Array
+        (
+            [line] => 14
+            [file] => models/ContactForm.php
+            [message] => No short description for element '$email'
+        )
+
+    [45] => Array
+        (
+            [line] => 15
+            [file] => models/ContactForm.php
+            [message] => No docblock for element '$subject'
+        )
+
+    [46] => Array
+        (
+            [line] => 15
+            [file] => models/ContactForm.php
+            [message] => No short description for element '$subject'
+        )
+
+    [47] => Array
+        (
+            [line] => 16
+            [file] => models/ContactForm.php
+            [message] => No docblock for element '$body'
+        )
+
+    [48] => Array
+        (
+            [line] => 16
+            [file] => models/ContactForm.php
+            [message] => No short description for element '$body'
+        )
+
+    [49] => Array
+        (
+            [line] => 17
+            [file] => models/ContactForm.php
+            [message] => No docblock for element '$verifyCode'
+        )
+
+    [50] => Array
+        (
+            [line] => 17
+            [file] => models/ContactForm.php
+            [message] => No short description for element '$verifyCode'
+        )
+
+    [51] => Array
+        (
+            [line] => 17
+            [file] => models/LoginForm.php
+            [message] => No docblock for element '$username'
+        )
+
+    [52] => Array
+        (
+            [line] => 17
+            [file] => models/LoginForm.php
+            [message] => No short description for element '$username'
+        )
+
+    [53] => Array
+        (
+            [line] => 18
+            [file] => models/LoginForm.php
+            [message] => No docblock for element '$password'
+        )
+
+    [54] => Array
+        (
+            [line] => 18
+            [file] => models/LoginForm.php
+            [message] => No short description for element '$password'
+        )
+
+    [55] => Array
+        (
+            [line] => 19
+            [file] => models/LoginForm.php
+            [message] => No docblock for element '$rememberMe'
+        )
+
+    [56] => Array
+        (
+            [line] => 19
+            [file] => models/LoginForm.php
+            [message] => No short description for element '$rememberMe'
+        )
+
+    [57] => Array
+        (
+            [line] => 39
+            [file] => models/LoginForm.php
+            [message] => No docblock for element 'attributeLabels'
+        )
+
+    [58] => Array
+        (
+            [line] => 58
+            [file] => models/Privado.php
+            [message] => No docblock for element 'getMensajesUsuario'
+        )
+
+    [59] => Array
+        (
+            [line] => 40
+            [file] => models/Usuario.php
+            [message] => No short description for element '$pass'
+        )
+
+    [60] => Array
+        (
+            [line] => 46
+            [file] => models/Usuario.php
+            [message] => No short description for element '$passConfirm'
+        )
+
+    [61] => Array
+        (
+            [line] => 154
+            [file] => models/Usuario.php
+            [message] => No docblock for element 'regenerarToken'
+        )
+
+    [62] => Array
+        (
+            [line] => 202
+            [file] => models/Usuario.php
+            [message] => No docblock for element 'getImageUrl'
+        )
+
+    [63] => Array
+        (
+            [line] => 210
+            [file] => models/Usuario.php
+            [message] => No docblock for element 'getActivado'
+        )
+
+    [64] => Array
+        (
+            [line] => 215
+            [file] => models/Usuario.php
+            [message] => No docblock for element 'beforeSave'
+        )
+
+    [65] => Array
+        (
+            [line] => 249
+            [file] => models/Usuario.php
+            [message] => No docblock for element 'getPeticiones'
+        )
+
+    [66] => Array
+        (
+            [line] => 263
+            [file] => models/Usuario.php
+            [message] => No docblock for element 'esMiAmigo'
+        )
+
+    [67] => Array
+        (
+            [line] => 271
+            [file] => models/Usuario.php
+            [message] => No docblock for element 'meHaEnviadoAmistad'
+        )
+
+    [68] => Array
+        (
+            [line] => 277
+            [file] => models/Usuario.php
+            [message] => No docblock for element 'estaPeticionEnviada'
+        )
+
+    [69] => Array
+        (
+            [line] => 283
+            [file] => models/Usuario.php
+            [message] => No docblock for element 'getAmigosUsuario'
+        )
+
+    [70] => Array
+        (
+            [line] => 299
+            [file] => models/Usuario.php
+            [message] => No docblock for element 'getAmigoUsuario'
+        )
+
+    [71] => Array
+        (
+            [line] => 315
+            [file] => models/Usuario.php
+            [message] => No docblock for element 'getAmistad'
+        )
+
+)
