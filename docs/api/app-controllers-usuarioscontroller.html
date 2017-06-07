@@ -9,7 +9,7 @@
 <link href="./assets/64f80fce/style.css" rel="stylesheet">
 <script src="./assets/f0991c28/jquery.js"></script>
 <script src="./assets/a9cb8cae/js/bootstrap.js"></script>
-<script src="./assets/7be1cfc2/jssearch.js"></script>    <title>UsuariosController, app\controllers\UsuariosController - VideoYii API</title>
+<script src="./assets/7be1cfc2/jssearch.js"></script>    <title>UsuariosController, app\controllers\UsuariosController - Friendly API</title>
 </head>
 <body>
 
@@ -17,7 +17,7 @@
     <nav id="w34" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w34-collapse"><span class="sr-only">Toggle navigation</span>
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
-<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">VideoYii API</a></div><div id="w34-collapse" class="collapse navbar-collapse"><ul id="w35" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Friendly API</a></div><div id="w34-collapse" class="collapse navbar-collapse"><ul id="w35" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
 <li><a href="../README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
   <div class="form-group">
     <input id="searchbox" type="text" class="form-control" placeholder="Search">
@@ -76,7 +76,7 @@ yii\web\Controller</td></tr>
                                         </table>
 
 <div class="class-description">
-    <p><strong>UsuariosController implements the CRUD actions for Usuario model.</strong></p>
+    <p><strong>UsuariosController implementa el CRUD y más acciones para el modelo Usuario.</strong></p>
     
     </div>
 
@@ -100,42 +100,46 @@ yii\web\Controller</td></tr>
 </tr>
         <tr id="actionActivar()">
         <td><a href="app-controllers-usuarioscontroller.html#actionActivar()-detail">actionActivar()</a></td>
-        <td></td>
+        <td>Activa un usuario registrado para que pase a ser un usuario validado.</td>
         <td><a href="app-controllers-usuarioscontroller.html">app\controllers\UsuariosController</a></td>
     </tr>
             <tr id="actionCreate()">
         <td><a href="app-controllers-usuarioscontroller.html#actionCreate()-detail">actionCreate()</a></td>
-        <td>Creates a new Usuario model.</td>
+        <td>Crea un nuevo registro del modelo Usuario
+Si el Usuario es creado correctamente será redireccionado
+al view de ese Usuario.</td>
         <td><a href="app-controllers-usuarioscontroller.html">app\controllers\UsuariosController</a></td>
     </tr>
             <tr id="actionDelete()">
         <td><a href="app-controllers-usuarioscontroller.html#actionDelete()-detail">actionDelete()</a></td>
-        <td>Deletes an existing Usuario model.</td>
+        <td>Borra un registro del modelo Usuario
+Si el borrado es satisfactorio es redireccionado a index.</td>
         <td><a href="app-controllers-usuarioscontroller.html">app\controllers\UsuariosController</a></td>
     </tr>
             <tr id="actionIndex()">
         <td><a href="app-controllers-usuarioscontroller.html#actionIndex()-detail">actionIndex()</a></td>
-        <td>Lists all Usuario models.</td>
+        <td>Lista todo el modelo Usuario.</td>
         <td><a href="app-controllers-usuarioscontroller.html">app\controllers\UsuariosController</a></td>
     </tr>
             <tr id="actionPeticiones()">
         <td><a href="app-controllers-usuarioscontroller.html#actionPeticiones()-detail">actionPeticiones()</a></td>
-        <td></td>
+        <td>Devuelve las peticiones recibidas por el usuario.</td>
         <td><a href="app-controllers-usuarioscontroller.html">app\controllers\UsuariosController</a></td>
     </tr>
             <tr id="actionUpdate()">
         <td><a href="app-controllers-usuarioscontroller.html#actionUpdate()-detail">actionUpdate()</a></td>
-        <td>Updates an existing Usuario model.</td>
+        <td>Modifica un registro del modelo Usuario
+Si la modificación es satisfactoria es redireccionado al view de ese Usuario.</td>
         <td><a href="app-controllers-usuarioscontroller.html">app\controllers\UsuariosController</a></td>
     </tr>
             <tr id="actionView()">
         <td><a href="app-controllers-usuarioscontroller.html#actionView()-detail">actionView()</a></td>
-        <td>Displays a single Usuario model.</td>
+        <td>Muestra un único registro del modelo Usuario.</td>
         <td><a href="app-controllers-usuarioscontroller.html">app\controllers\UsuariosController</a></td>
     </tr>
             <tr id="behaviors()">
         <td><a href="app-controllers-usuarioscontroller.html#behaviors()-detail">behaviors()</a></td>
-        <td></td>
+        <td>Define el comportamiento y el control de acceso a los componentes.</td>
         <td><a href="app-controllers-usuarioscontroller.html">app\controllers\UsuariosController</a></td>
     </tr>
         </table>
@@ -157,7 +161,7 @@ yii\web\Controller</td></tr>
 </tr>
                                         <tr id="findModel()">
         <td><a href="app-controllers-usuarioscontroller.html#findModel()-detail">findModel()</a></td>
-        <td>Finds the Usuario model based on its primary key value.</td>
+        <td>Busca el registro del modelo Usuario asociado al id pasado por parámetro.</td>
         <td><a href="app-controllers-usuarioscontroller.html">app\controllers\UsuariosController</a></td>
     </tr>
     </table>
@@ -183,19 +187,27 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Activa un usuario registrado para que pase a ser un usuario validado.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-controllers-usuarioscontroller.html#actionActivar()-detail">actionActivar</a></strong> ( <span style="color: #0000BB">$token</span> )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="app-controllers-usuarioscontroller.html#actionActivar()-detail">actionActivar</a></strong> ( <span style="color: #0000BB">$token</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$token</span></td>
-                  <td class="param-type-col"></td>
-                  <td class="param-desc-col"></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Token que recibe el usuario
+ en su correo para activas su usuario.</p>
+</td>
                 </tr>
-                                                </table>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Redirecciona a la pantalla de login.</p>
+</td>
+                </tr>
+                                    </table>
 
 <!--	-->
 
@@ -211,10 +223,11 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong>Creates a new Usuario model.</strong></p>
+        <p><strong>Crea un nuevo registro del modelo Usuario
+Si el Usuario es creado correctamente será redireccionado
+al view de ese Usuario.</strong></p>
 
-        <p>If creation is successful, the browser will be redirected to the 'view' page.</p>
-
+        
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
@@ -235,10 +248,10 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong>Deletes an existing Usuario model.</strong></p>
+        <p><strong>Borra un registro del modelo Usuario
+Si el borrado es satisfactorio es redireccionado a index.</strong></p>
 
-        <p>If deletion is successful, the browser will be redirected to the 'index' page.</p>
-
+        
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
@@ -264,7 +277,7 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong>Lists all Usuario models.</strong></p>
+        <p><strong>Lista todo el modelo Usuario.</strong></p>
 
         
             </div>
@@ -287,13 +300,13 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Devuelve las peticiones recibidas por el usuario.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-controllers-usuarioscontroller.html#actionPeticiones()-detail">actionPeticiones</a></strong> ( )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">\app\controllers\mixed.</span> <strong><a href="app-controllers-usuarioscontroller.html#actionPeticiones()-detail">actionPeticiones</a></strong> ( )</td></tr>
             </table>
 
 <!--	-->
@@ -310,10 +323,10 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong>Updates an existing Usuario model.</strong></p>
+        <p><strong>Modifica un registro del modelo Usuario
+Si la modificación es satisfactoria es redireccionado al view de ese Usuario.</strong></p>
 
-        <p>If update is successful, the browser will be redirected to the 'view' page.</p>
-
+        
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
@@ -339,7 +352,7 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong>Displays a single Usuario model.</strong></p>
+        <p><strong>Muestra un único registro del modelo Usuario.</strong></p>
 
         
             </div>
@@ -367,13 +380,13 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Define el comportamiento y el control de acceso a los componentes.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-controllers-usuarioscontroller.html#behaviors()-detail">behaviors</a></strong> ( )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="app-controllers-usuarioscontroller.html#behaviors()-detail">behaviors</a></strong> ( )</td></tr>
             </table>
 
 <!--	-->
@@ -390,9 +403,10 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong>Finds the Usuario model based on its primary key value.</strong></p>
+        <p><strong>Busca el registro del modelo Usuario asociado al id pasado por parámetro.</strong></p>
 
-        <p>If the model is not found, a 404 HTTP exception will be thrown.</p>
+        <p>Si el modelo no es encontrado se lanzará una Excepción
+NotFoundHttpException(página no encontrada).</p>
 
             </div>
 
@@ -406,13 +420,13 @@ yii\web\Controller</td></tr>
                                         <tr>
                   <th class="param-name-col">return</th>
                   <td class="param-type-col"><a href="app-models-usuario.html">app\models\Usuario</a></td>
-                  <td class="param-desc-col"><p>The loaded model</p>
+                  <td class="param-desc-col"><p>Del modelo cargado.</p>
 </td>
                 </tr>
                                         <tr>
                   <th class="param-name-col">throws</th>
                   <td class="param-type-col">\yii\web\NotFoundHttpException</td>
-                  <td class="param-desc-col"><p>if the model cannot be found</p>
+                  <td class="param-desc-col"><p>si el modelo no es encontrado.</p>
 </td>
                 </tr>
                         </table>
@@ -457,7 +471,7 @@ yii\web\Controller</td></tr>
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Mon, 05 Jun 2017 18:30:58 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Wed, 07 Jun 2017 19:29:09 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
 <script type="text/javascript">jQuery(document).ready(function () {

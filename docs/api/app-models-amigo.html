@@ -9,7 +9,7 @@
 <link href="./assets/64f80fce/style.css" rel="stylesheet">
 <script src="./assets/f0991c28/jquery.js"></script>
 <script src="./assets/a9cb8cae/js/bootstrap.js"></script>
-<script src="./assets/7be1cfc2/jssearch.js"></script>    <title>Amigo, app\models\Amigo - VideoYii API</title>
+<script src="./assets/7be1cfc2/jssearch.js"></script>    <title>Amigo, app\models\Amigo - Friendly API</title>
 </head>
 <body>
 
@@ -17,7 +17,7 @@
     <nav id="w154" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w154-collapse"><span class="sr-only">Toggle navigation</span>
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
-<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">VideoYii API</a></div><div id="w154-collapse" class="collapse navbar-collapse"><ul id="w155" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Friendly API</a></div><div id="w154-collapse" class="collapse navbar-collapse"><ul id="w155" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
 <li><a href="../README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
   <div class="form-group">
     <input id="searchbox" type="text" class="form-control" placeholder="Search">
@@ -77,7 +77,7 @@ yii\db\ActiveRecord</td></tr>
                         </table>
 
 <div class="class-description">
-    <p><strong>This is the model class for table "amigos".</strong></p>
+    <p><strong>Modelo de la tabla "amigos".</strong></p>
     
     </div>
 
@@ -101,22 +101,24 @@ yii\db\ActiveRecord</td></tr>
 </tr>
         <tr id="attributeLabels()">
         <td><a href="app-models-amigo.html#attributeLabels()-detail">attributeLabels()</a></td>
-        <td></td>
+        <td>Son los nombres de los atributos del modelo.</td>
         <td><a href="app-models-amigo.html">app\models\Amigo</a></td>
     </tr>
             <tr id="esMiAmigo()">
         <td><a href="app-models-amigo.html#esMiAmigo()-detail">esMiAmigo()</a></td>
-        <td></td>
+        <td>Devuelve si un usuario dado por el id es amigo del usuario logueado.</td>
         <td><a href="app-models-amigo.html">app\models\Amigo</a></td>
     </tr>
             <tr id="estaPeticionEnviada()">
         <td><a href="app-models-amigo.html#estaPeticionEnviada()-detail">estaPeticionEnviada()</a></td>
-        <td></td>
+        <td>Comprueba si el usuario conectado ha enviado una solicitud de
+amistad al usuario dado por parametro.</td>
         <td><a href="app-models-amigo.html">app\models\Amigo</a></td>
     </tr>
             <tr id="estaPeticionRecibida()">
         <td><a href="app-models-amigo.html#estaPeticionRecibida()-detail">estaPeticionRecibida()</a></td>
-        <td></td>
+        <td>Devuelve si un usuario ha enviado una solicitud
+de amistad al usuario logueado.</td>
         <td><a href="app-models-amigo.html">app\models\Amigo</a></td>
     </tr>
             <tr id="getAmigo()">
@@ -136,12 +138,12 @@ yii\db\ActiveRecord</td></tr>
     </tr>
             <tr id="rules()">
         <td><a href="app-models-amigo.html#rules()-detail">rules()</a></td>
-        <td></td>
+        <td>Reglas de validación para el modelo Amigo.</td>
         <td><a href="app-models-amigo.html">app\models\Amigo</a></td>
     </tr>
             <tr id="tableName()">
         <td><a href="app-models-amigo.html#tableName()-detail">tableName()</a></td>
-        <td></td>
+        <td>Este método indica el nombre de la tabla que esta asociada al modelo.</td>
         <td><a href="app-models-amigo.html">app\models\Amigo</a></td>
     </tr>
     </table>
@@ -167,13 +169,13 @@ yii\db\ActiveRecord</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Son los nombres de los atributos del modelo.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-models-amigo.html#attributeLabels()-detail">attributeLabels</a></strong> ( )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="app-models-amigo.html#attributeLabels()-detail">attributeLabels</a></strong> ( )</td></tr>
             </table>
 
 <!--	-->
@@ -190,19 +192,26 @@ yii\db\ActiveRecord</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Devuelve si un usuario dado por el id es amigo del usuario logueado.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-models-amigo.html#esMiAmigo()-detail">esMiAmigo</a></strong> ( <span style="color: #0000BB">$id</span> )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="app-models-amigo.html#esMiAmigo()-detail">esMiAmigo</a></strong> ( <span style="color: #0000BB">$id</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$id</span></td>
-                  <td class="param-type-col"></td>
-                  <td class="param-desc-col"></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>Id del posible amigo.</p>
+</td>
                 </tr>
-                                                </table>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>True si el usuario es amigo.</p>
+</td>
+                </tr>
+                                    </table>
 
 <!--	-->
 
@@ -218,19 +227,27 @@ yii\db\ActiveRecord</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Comprueba si el usuario conectado ha enviado una solicitud de
+amistad al usuario dado por parametro.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-models-amigo.html#estaPeticionEnviada()-detail">estaPeticionEnviada</a></strong> ( <span style="color: #0000BB">$id</span> )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="app-models-amigo.html#estaPeticionEnviada()-detail">estaPeticionEnviada</a></strong> ( <span style="color: #0000BB">$id</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$id</span></td>
-                  <td class="param-type-col"></td>
-                  <td class="param-desc-col"></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>Id del usuario que recibe la solicitud.</p>
+</td>
                 </tr>
-                                                </table>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>True si la petición ya está enviada.</p>
+</td>
+                </tr>
+                                    </table>
 
 <!--	-->
 
@@ -246,19 +263,27 @@ yii\db\ActiveRecord</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Devuelve si un usuario ha enviado una solicitud
+de amistad al usuario logueado.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-models-amigo.html#estaPeticionRecibida()-detail">estaPeticionRecibida</a></strong> ( <span style="color: #0000BB">$id</span> )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.boolean">boolean</a></span> <strong><a href="app-models-amigo.html#estaPeticionRecibida()-detail">estaPeticionRecibida</a></strong> ( <span style="color: #0000BB">$id</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$id</span></td>
-                  <td class="param-type-col"></td>
-                  <td class="param-desc-col"></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>Id del usuario que envia la solicitud.</p>
+</td>
                 </tr>
-                                                </table>
+                                        <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.boolean">boolean</a></td>
+                  <td class="param-desc-col"><p>True si ha enviado solicitud de amistad.</p>
+</td>
+                </tr>
+                                    </table>
 
 <!--	-->
 
@@ -343,14 +368,20 @@ yii\db\ActiveRecord</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Reglas de validación para el modelo Amigo.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-models-amigo.html#rules()-detail">rules</a></strong> ( )</td></tr>
-            </table>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="app-models-amigo.html#rules()-detail">rules</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Devuelve las reglas de validación.</p>
+</td>
+                </tr>
+                                    </table>
 
 <!--	-->
 
@@ -366,14 +397,20 @@ yii\db\ActiveRecord</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Este método indica el nombre de la tabla que esta asociada al modelo.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public static</span> <span class="signature-type">void</span> <strong><a href="app-models-amigo.html#tableName()-detail">tableName</a></strong> ( )</td></tr>
-            </table>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public static</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="app-models-amigo.html#tableName()-detail">tableName</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Nombre de la tabla asociada al modelo.</p>
+</td>
+                </tr>
+                                    </table>
 
 <!--	-->
 </div>
@@ -415,7 +452,7 @@ yii\db\ActiveRecord</td></tr>
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Mon, 05 Jun 2017 18:30:58 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Wed, 07 Jun 2017 19:29:09 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
 <script type="text/javascript">jQuery(document).ready(function () {

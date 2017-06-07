@@ -9,7 +9,7 @@
 <link href="./assets/64f80fce/style.css" rel="stylesheet">
 <script src="./assets/f0991c28/jquery.js"></script>
 <script src="./assets/a9cb8cae/js/bootstrap.js"></script>
-<script src="./assets/7be1cfc2/jssearch.js"></script>    <title>PublicosController, app\controllers\PublicosController - VideoYii API</title>
+<script src="./assets/7be1cfc2/jssearch.js"></script>    <title>PublicosController, app\controllers\PublicosController - Friendly API</title>
 </head>
 <body>
 
@@ -17,7 +17,7 @@
     <nav id="w28" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w28-collapse"><span class="sr-only">Toggle navigation</span>
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
-<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">VideoYii API</a></div><div id="w28-collapse" class="collapse navbar-collapse"><ul id="w29" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Friendly API</a></div><div id="w28-collapse" class="collapse navbar-collapse"><ul id="w29" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
 <li><a href="../README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
   <div class="form-group">
     <input id="searchbox" type="text" class="form-control" placeholder="Search">
@@ -76,7 +76,7 @@ yii\web\Controller</td></tr>
                                         </table>
 
 <div class="class-description">
-    <p><strong>PublicosController implements the CRUD actions for Publico model.</strong></p>
+    <p><strong>PublicosController implementa el CRUD y más acciones para el modelo Publico.</strong></p>
     
     </div>
 
@@ -100,42 +100,46 @@ yii\web\Controller</td></tr>
 </tr>
         <tr id="actionCreate()">
         <td><a href="app-controllers-publicoscontroller.html#actionCreate()-detail">actionCreate()</a></td>
-        <td>Creates a new Publico model.</td>
+        <td>Crea un nuevo registro del modelo Publico
+Si el mensaje Publico es creado correctamente será redireccionado
+al view de ese Publico.</td>
         <td><a href="app-controllers-publicoscontroller.html">app\controllers\PublicosController</a></td>
     </tr>
             <tr id="actionDelete()">
         <td><a href="app-controllers-publicoscontroller.html#actionDelete()-detail">actionDelete()</a></td>
-        <td>Deletes an existing Publico model.</td>
+        <td>Borra un registro del modelo Publico
+Si el borrado es satisfactorio es redireccionado a index.</td>
         <td><a href="app-controllers-publicoscontroller.html">app\controllers\PublicosController</a></td>
     </tr>
             <tr id="actionEnviar()">
         <td><a href="app-controllers-publicoscontroller.html#actionEnviar()-detail">actionEnviar()</a></td>
-        <td></td>
+        <td>Este metodo envia un mensaje pasado por parametro al chat de grupo.</td>
         <td><a href="app-controllers-publicoscontroller.html">app\controllers\PublicosController</a></td>
     </tr>
             <tr id="actionIndex()">
         <td><a href="app-controllers-publicoscontroller.html#actionIndex()-detail">actionIndex()</a></td>
-        <td>Lists all Publico models.</td>
+        <td>Lista todo el modelo Publico.</td>
         <td><a href="app-controllers-publicoscontroller.html">app\controllers\PublicosController</a></td>
     </tr>
             <tr id="actionPublicos()">
         <td><a href="app-controllers-publicoscontroller.html#actionPublicos()-detail">actionPublicos()</a></td>
-        <td></td>
+        <td>Renderiza la vista publicos</td>
         <td><a href="app-controllers-publicoscontroller.html">app\controllers\PublicosController</a></td>
     </tr>
             <tr id="actionUpdate()">
         <td><a href="app-controllers-publicoscontroller.html#actionUpdate()-detail">actionUpdate()</a></td>
-        <td>Updates an existing Publico model.</td>
+        <td>Modifica un registro del modelo Publico
+Si la modificación es satisfactoria es redireccionado al view de ese Publico.</td>
         <td><a href="app-controllers-publicoscontroller.html">app\controllers\PublicosController</a></td>
     </tr>
             <tr id="actionView()">
         <td><a href="app-controllers-publicoscontroller.html#actionView()-detail">actionView()</a></td>
-        <td>Displays a single Publico model.</td>
+        <td>Muestra un único registro del modelo Publico.</td>
         <td><a href="app-controllers-publicoscontroller.html">app\controllers\PublicosController</a></td>
     </tr>
             <tr id="behaviors()">
         <td><a href="app-controllers-publicoscontroller.html#behaviors()-detail">behaviors()</a></td>
-        <td></td>
+        <td>Define el comportamiento y el control de acceso a los componentes.</td>
         <td><a href="app-controllers-publicoscontroller.html">app\controllers\PublicosController</a></td>
     </tr>
         </table>
@@ -157,7 +161,7 @@ yii\web\Controller</td></tr>
 </tr>
                                         <tr id="findModel()">
         <td><a href="app-controllers-publicoscontroller.html#findModel()-detail">findModel()</a></td>
-        <td>Finds the Publico model based on its primary key value.</td>
+        <td>Busca el registro del modelo Publico asociado al id pasado por parámetro.</td>
         <td><a href="app-controllers-publicoscontroller.html">app\controllers\PublicosController</a></td>
     </tr>
     </table>
@@ -183,10 +187,11 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong>Creates a new Publico model.</strong></p>
+        <p><strong>Crea un nuevo registro del modelo Publico
+Si el mensaje Publico es creado correctamente será redireccionado
+al view de ese Publico.</strong></p>
 
-        <p>If creation is successful, the browser will be redirected to the 'view' page.</p>
-
+        
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
@@ -207,10 +212,10 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong>Deletes an existing Publico model.</strong></p>
+        <p><strong>Borra un registro del modelo Publico
+Si el borrado es satisfactorio es redireccionado a index.</strong></p>
 
-        <p>If deletion is successful, the browser will be redirected to the 'index' page.</p>
-
+        
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
@@ -236,7 +241,7 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Este metodo envia un mensaje pasado por parametro al chat de grupo.</strong></p>
 
         
             </div>
@@ -245,8 +250,9 @@ yii\web\Controller</td></tr>
         <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-controllers-publicoscontroller.html#actionEnviar()-detail">actionEnviar</a></strong> ( <span style="color: #0000BB">$mensaje</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$mensaje</span></td>
-                  <td class="param-type-col"></td>
-                  <td class="param-desc-col"></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Mensaje a enviar</p>
+</td>
                 </tr>
                                                 </table>
 
@@ -264,7 +270,7 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong>Lists all Publico models.</strong></p>
+        <p><strong>Lista todo el modelo Publico.</strong></p>
 
         
             </div>
@@ -287,13 +293,13 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Renderiza la vista publicos</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-controllers-publicoscontroller.html#actionPublicos()-detail">actionPublicos</a></strong> ( )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="app-controllers-publicoscontroller.html#actionPublicos()-detail">actionPublicos</a></strong> ( )</td></tr>
             </table>
 
 <!--	-->
@@ -310,10 +316,10 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong>Updates an existing Publico model.</strong></p>
+        <p><strong>Modifica un registro del modelo Publico
+Si la modificación es satisfactoria es redireccionado al view de ese Publico.</strong></p>
 
-        <p>If update is successful, the browser will be redirected to the 'view' page.</p>
-
+        
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
@@ -339,7 +345,7 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong>Displays a single Publico model.</strong></p>
+        <p><strong>Muestra un único registro del modelo Publico.</strong></p>
 
         
             </div>
@@ -367,13 +373,13 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Define el comportamiento y el control de acceso a los componentes.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-controllers-publicoscontroller.html#behaviors()-detail">behaviors</a></strong> ( )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="app-controllers-publicoscontroller.html#behaviors()-detail">behaviors</a></strong> ( )</td></tr>
             </table>
 
 <!--	-->
@@ -390,9 +396,10 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong>Finds the Publico model based on its primary key value.</strong></p>
+        <p><strong>Busca el registro del modelo Publico asociado al id pasado por parámetro.</strong></p>
 
-        <p>If the model is not found, a 404 HTTP exception will be thrown.</p>
+        <p>Si el modelo no es encontrado se lanzará una Excepción
+NotFoundHttpException(página no encontrada).</p>
 
             </div>
 
@@ -406,13 +413,13 @@ yii\web\Controller</td></tr>
                                         <tr>
                   <th class="param-name-col">return</th>
                   <td class="param-type-col"><a href="app-models-publico.html">app\models\Publico</a></td>
-                  <td class="param-desc-col"><p>The loaded model</p>
+                  <td class="param-desc-col"><p>Del modelo cargado.</p>
 </td>
                 </tr>
                                         <tr>
                   <th class="param-name-col">throws</th>
                   <td class="param-type-col">\yii\web\NotFoundHttpException</td>
-                  <td class="param-desc-col"><p>if the model cannot be found</p>
+                  <td class="param-desc-col"><p>si el modelo no es encontrado.</p>
 </td>
                 </tr>
                         </table>
@@ -457,7 +464,7 @@ yii\web\Controller</td></tr>
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Mon, 05 Jun 2017 18:30:58 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Wed, 07 Jun 2017 19:29:09 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
 <script type="text/javascript">jQuery(document).ready(function () {

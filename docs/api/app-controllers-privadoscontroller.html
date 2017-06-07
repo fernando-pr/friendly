@@ -9,7 +9,7 @@
 <link href="./assets/64f80fce/style.css" rel="stylesheet">
 <script src="./assets/f0991c28/jquery.js"></script>
 <script src="./assets/a9cb8cae/js/bootstrap.js"></script>
-<script src="./assets/7be1cfc2/jssearch.js"></script>    <title>PrivadosController, app\controllers\PrivadosController - VideoYii API</title>
+<script src="./assets/7be1cfc2/jssearch.js"></script>    <title>PrivadosController, app\controllers\PrivadosController - Friendly API</title>
 </head>
 <body>
 
@@ -17,7 +17,7 @@
     <nav id="w46" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w46-collapse"><span class="sr-only">Toggle navigation</span>
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
-<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">VideoYii API</a></div><div id="w46-collapse" class="collapse navbar-collapse"><ul id="w47" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Friendly API</a></div><div id="w46-collapse" class="collapse navbar-collapse"><ul id="w47" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
 <li><a href="../README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
   <div class="form-group">
     <input id="searchbox" type="text" class="form-control" placeholder="Search">
@@ -76,7 +76,7 @@ yii\web\Controller</td></tr>
                                         </table>
 
 <div class="class-description">
-    <p><strong>PrivadosController implements the CRUD actions for Privado model.</strong></p>
+    <p><strong>PrivadosController implementa el CRUD y más acciones para el modelo Privados.</strong></p>
     
     </div>
 
@@ -100,42 +100,47 @@ yii\web\Controller</td></tr>
 </tr>
         <tr id="actionCreate()">
         <td><a href="app-controllers-privadoscontroller.html#actionCreate()-detail">actionCreate()</a></td>
-        <td>Creates a new Privado model.</td>
+        <td>Crea un nuevo registro del modelo Privado
+Si el Privado es creado correctamente será redireccionado
+al view de ese Privado.</td>
         <td><a href="app-controllers-privadoscontroller.html">app\controllers\PrivadosController</a></td>
     </tr>
             <tr id="actionDelete()">
         <td><a href="app-controllers-privadoscontroller.html#actionDelete()-detail">actionDelete()</a></td>
-        <td>Deletes an existing Privado model.</td>
+        <td>Borra un registro del modelo Privado
+Si el borrado es satisfactorio es redireccionado a index.</td>
         <td><a href="app-controllers-privadoscontroller.html">app\controllers\PrivadosController</a></td>
     </tr>
             <tr id="actionEnviar()">
         <td><a href="app-controllers-privadoscontroller.html#actionEnviar()-detail">actionEnviar()</a></td>
-        <td></td>
+        <td>Este metodo envia un mensaje pasado por parametro a otro
+usuario que sea amigo del usuario logueado.</td>
         <td><a href="app-controllers-privadoscontroller.html">app\controllers\PrivadosController</a></td>
     </tr>
             <tr id="actionIndex()">
         <td><a href="app-controllers-privadoscontroller.html#actionIndex()-detail">actionIndex()</a></td>
-        <td>Lists all Privado models.</td>
+        <td>Lista todo el modelo Privado.</td>
         <td><a href="app-controllers-privadoscontroller.html">app\controllers\PrivadosController</a></td>
     </tr>
             <tr id="actionPrivados()">
         <td><a href="app-controllers-privadoscontroller.html#actionPrivados()-detail">actionPrivados()</a></td>
-        <td></td>
+        <td>Renderiza la vista privados</td>
         <td><a href="app-controllers-privadoscontroller.html">app\controllers\PrivadosController</a></td>
     </tr>
             <tr id="actionUpdate()">
         <td><a href="app-controllers-privadoscontroller.html#actionUpdate()-detail">actionUpdate()</a></td>
-        <td>Updates an existing Privado model.</td>
+        <td>Modifica un registro del modelo Privado
+Si la modificación es satisfactoria es redireccionado al view de ese privado.</td>
         <td><a href="app-controllers-privadoscontroller.html">app\controllers\PrivadosController</a></td>
     </tr>
             <tr id="actionView()">
         <td><a href="app-controllers-privadoscontroller.html#actionView()-detail">actionView()</a></td>
-        <td>Displays a single Privado model.</td>
+        <td>Muestra un único registro del modelo Privado.</td>
         <td><a href="app-controllers-privadoscontroller.html">app\controllers\PrivadosController</a></td>
     </tr>
             <tr id="behaviors()">
         <td><a href="app-controllers-privadoscontroller.html#behaviors()-detail">behaviors()</a></td>
-        <td></td>
+        <td>Define el comportamiento y el control de acceso a los componentes.</td>
         <td><a href="app-controllers-privadoscontroller.html">app\controllers\PrivadosController</a></td>
     </tr>
         </table>
@@ -157,7 +162,7 @@ yii\web\Controller</td></tr>
 </tr>
                                         <tr id="findModel()">
         <td><a href="app-controllers-privadoscontroller.html#findModel()-detail">findModel()</a></td>
-        <td>Finds the Privado model based on its primary key value.</td>
+        <td>Busca el registro del modelo Privado asociado al id pasado por parámetro.</td>
         <td><a href="app-controllers-privadoscontroller.html">app\controllers\PrivadosController</a></td>
     </tr>
     </table>
@@ -183,10 +188,11 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong>Creates a new Privado model.</strong></p>
+        <p><strong>Crea un nuevo registro del modelo Privado
+Si el Privado es creado correctamente será redireccionado
+al view de ese Privado.</strong></p>
 
-        <p>If creation is successful, the browser will be redirected to the 'view' page.</p>
-
+        
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
@@ -207,10 +213,10 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong>Deletes an existing Privado model.</strong></p>
+        <p><strong>Borra un registro del modelo Privado
+Si el borrado es satisfactorio es redireccionado a index.</strong></p>
 
-        <p>If deletion is successful, the browser will be redirected to the 'index' page.</p>
-
+        
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
@@ -236,7 +242,8 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Este metodo envia un mensaje pasado por parametro a otro
+usuario que sea amigo del usuario logueado.</strong></p>
 
         
             </div>
@@ -245,13 +252,15 @@ yii\web\Controller</td></tr>
         <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-controllers-privadoscontroller.html#actionEnviar()-detail">actionEnviar</a></strong> ( <span style="color: #0000BB">$id_amigo</span>, <span style="color: #0000BB">$mensaje</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$id_amigo</span></td>
-                  <td class="param-type-col"></td>
-                  <td class="param-desc-col"></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>Receptor del mensaje</p>
+</td>
                 </tr>
                             <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$mensaje</span></td>
-                  <td class="param-type-col"></td>
-                  <td class="param-desc-col"></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Mensaje a enviar</p>
+</td>
                 </tr>
                                                 </table>
 
@@ -269,7 +278,7 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong>Lists all Privado models.</strong></p>
+        <p><strong>Lista todo el modelo Privado.</strong></p>
 
         
             </div>
@@ -292,13 +301,13 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Renderiza la vista privados</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-controllers-privadoscontroller.html#actionPrivados()-detail">actionPrivados</a></strong> ( )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="app-controllers-privadoscontroller.html#actionPrivados()-detail">actionPrivados</a></strong> ( )</td></tr>
             </table>
 
 <!--	-->
@@ -315,10 +324,10 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong>Updates an existing Privado model.</strong></p>
+        <p><strong>Modifica un registro del modelo Privado
+Si la modificación es satisfactoria es redireccionado al view de ese privado.</strong></p>
 
-        <p>If update is successful, the browser will be redirected to the 'view' page.</p>
-
+        
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
@@ -344,7 +353,7 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong>Displays a single Privado model.</strong></p>
+        <p><strong>Muestra un único registro del modelo Privado.</strong></p>
 
         
             </div>
@@ -372,13 +381,13 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Define el comportamiento y el control de acceso a los componentes.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-controllers-privadoscontroller.html#behaviors()-detail">behaviors</a></strong> ( )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="app-controllers-privadoscontroller.html#behaviors()-detail">behaviors</a></strong> ( )</td></tr>
             </table>
 
 <!--	-->
@@ -395,9 +404,10 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong>Finds the Privado model based on its primary key value.</strong></p>
+        <p><strong>Busca el registro del modelo Privado asociado al id pasado por parámetro.</strong></p>
 
-        <p>If the model is not found, a 404 HTTP exception will be thrown.</p>
+        <p>Si el modelo no es encontrado se lanzará una Excepción
+NotFoundHttpException(página no encontrada).</p>
 
             </div>
 
@@ -411,13 +421,13 @@ yii\web\Controller</td></tr>
                                         <tr>
                   <th class="param-name-col">return</th>
                   <td class="param-type-col"><a href="app-models-privado.html">app\models\Privado</a></td>
-                  <td class="param-desc-col"><p>The loaded model</p>
+                  <td class="param-desc-col"><p>Del modelo cargado.</p>
 </td>
                 </tr>
                                         <tr>
                   <th class="param-name-col">throws</th>
                   <td class="param-type-col">\yii\web\NotFoundHttpException</td>
-                  <td class="param-desc-col"><p>if the model cannot be found</p>
+                  <td class="param-desc-col"><p>si el modelo no es encontrado.</p>
 </td>
                 </tr>
                         </table>
@@ -462,7 +472,7 @@ yii\web\Controller</td></tr>
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Mon, 05 Jun 2017 18:30:58 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Wed, 07 Jun 2017 19:29:09 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
 <script type="text/javascript">jQuery(document).ready(function () {

@@ -9,7 +9,7 @@
 <link href="./assets/64f80fce/style.css" rel="stylesheet">
 <script src="./assets/f0991c28/jquery.js"></script>
 <script src="./assets/a9cb8cae/js/bootstrap.js"></script>
-<script src="./assets/7be1cfc2/jssearch.js"></script>    <title>AjaxController, app\controllers\AjaxController - VideoYii API</title>
+<script src="./assets/7be1cfc2/jssearch.js"></script>    <title>AjaxController, app\controllers\AjaxController - Friendly API</title>
 </head>
 <body>
 
@@ -17,7 +17,7 @@
     <nav id="w22" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w22-collapse"><span class="sr-only">Toggle navigation</span>
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
-<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">VideoYii API</a></div><div id="w22-collapse" class="collapse navbar-collapse"><ul id="w23" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Friendly API</a></div><div id="w22-collapse" class="collapse navbar-collapse"><ul id="w23" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
 <li><a href="../README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
   <div class="form-group">
     <input id="searchbox" type="text" class="form-control" placeholder="Search">
@@ -76,7 +76,8 @@ yii\web\Controller</td></tr>
                                         </table>
 
 <div class="class-description">
-    <p><strong></strong></p>
+    <p><strong>AjaxController, controlador que se encarga de todas las acciones que
+tienen que var con la tecnología ajax.</strong></p>
     
     </div>
 
@@ -100,42 +101,45 @@ yii\web\Controller</td></tr>
 </tr>
         <tr id="actionAmigosconectados()">
         <td><a href="app-controllers-ajaxcontroller.html#actionAmigosconectados()-detail">actionAmigosconectados()</a></td>
-        <td></td>
+        <td>Muestra los usuarios que estan conectados en ese momento y que además
+son amigos del usuario logueado.</td>
         <td><a href="app-controllers-ajaxcontroller.html">app\controllers\AjaxController</a></td>
     </tr>
             <tr id="actionBuscar()">
         <td><a href="app-controllers-ajaxcontroller.html#actionBuscar()-detail">actionBuscar()</a></td>
-        <td></td>
+        <td>Método que se encarga de buscar los usuarios que coincidan
+con el parámetro $q y cumplan la condición de $cond.</td>
         <td><a href="app-controllers-ajaxcontroller.html">app\controllers\AjaxController</a></td>
     </tr>
             <tr id="actionConectados()">
         <td><a href="app-controllers-ajaxcontroller.html#actionConectados()-detail">actionConectados()</a></td>
-        <td></td>
+        <td>Muestra los usuarios que estan conectados en ese momento.</td>
         <td><a href="app-controllers-ajaxcontroller.html">app\controllers\AjaxController</a></td>
     </tr>
             <tr id="actionIndex()">
         <td><a href="app-controllers-ajaxcontroller.html#actionIndex()-detail">actionIndex()</a></td>
-        <td></td>
+        <td>Renderiza la vista raiz(index) de la aplicación.</td>
         <td><a href="app-controllers-ajaxcontroller.html">app\controllers\AjaxController</a></td>
     </tr>
             <tr id="actionNombre()">
         <td><a href="app-controllers-ajaxcontroller.html#actionNombre()-detail">actionNombre()</a></td>
-        <td></td>
+        <td>Devuelve el nombre del usuario cuyo id sea $id_amigo.</td>
         <td><a href="app-controllers-ajaxcontroller.html">app\controllers\AjaxController</a></td>
     </tr>
             <tr id="actionPrivadosmsg()">
         <td><a href="app-controllers-ajaxcontroller.html#actionPrivadosmsg()-detail">actionPrivadosmsg()</a></td>
-        <td></td>
+        <td>Muestra los mensajes que están enviados en el chat privado entre el
+usuario logueado y el usuario cuyo id sea $id_amigo.</td>
         <td><a href="app-controllers-ajaxcontroller.html">app\controllers\AjaxController</a></td>
     </tr>
             <tr id="actionPublicosmsg()">
         <td><a href="app-controllers-ajaxcontroller.html#actionPublicosmsg()-detail">actionPublicosmsg()</a></td>
-        <td></td>
+        <td>Muestra los mensajes que están enviados en el chat de grupo.</td>
         <td><a href="app-controllers-ajaxcontroller.html">app\controllers\AjaxController</a></td>
     </tr>
             <tr id="behaviors()">
         <td><a href="app-controllers-ajaxcontroller.html#behaviors()-detail">behaviors()</a></td>
-        <td></td>
+        <td>Define el comportamiento y el control de acceso a los componentes.</td>
         <td><a href="app-controllers-ajaxcontroller.html">app\controllers\AjaxController</a></td>
     </tr>
     </table>
@@ -161,13 +165,14 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Muestra los usuarios que estan conectados en ese momento y que además
+son amigos del usuario logueado.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-controllers-ajaxcontroller.html#actionAmigosconectados()-detail">actionAmigosconectados</a></strong> ( )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="app-controllers-ajaxcontroller.html#actionAmigosconectados()-detail">actionAmigosconectados</a></strong> ( )</td></tr>
             </table>
 
 <!--	-->
@@ -184,22 +189,27 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Método que se encarga de buscar los usuarios que coincidan
+con el parámetro $q y cumplan la condición de $cond.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-controllers-ajaxcontroller.html#actionBuscar()-detail">actionBuscar</a></strong> ( <span style="color: #0000BB">$q</span>, <span style="color: #0000BB">$cond</span> )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="app-controllers-ajaxcontroller.html#actionBuscar()-detail">actionBuscar</a></strong> ( <span style="color: #0000BB">$q</span>, <span style="color: #0000BB">$cond</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$q</span></td>
-                  <td class="param-type-col"></td>
-                  <td class="param-desc-col"></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Cadena a buscar entre los usuarios.</p>
+</td>
                 </tr>
                             <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$cond</span></td>
-                  <td class="param-type-col"></td>
-                  <td class="param-desc-col"></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.string">string</a></td>
+                  <td class="param-desc-col"><p>Condición para buscar por nombre,</p>
+<pre><code class="hljs ">    población, provincia o todos.
+</code></pre>
+</td>
                 </tr>
                                                 </table>
 
@@ -217,13 +227,13 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Muestra los usuarios que estan conectados en ese momento.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-controllers-ajaxcontroller.html#actionConectados()-detail">actionConectados</a></strong> ( )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="app-controllers-ajaxcontroller.html#actionConectados()-detail">actionConectados</a></strong> ( )</td></tr>
             </table>
 
 <!--	-->
@@ -240,13 +250,13 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Renderiza la vista raiz(index) de la aplicación.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-controllers-ajaxcontroller.html#actionIndex()-detail">actionIndex</a></strong> ( )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="app-controllers-ajaxcontroller.html#actionIndex()-detail">actionIndex</a></strong> ( )</td></tr>
             </table>
 
 <!--	-->
@@ -263,17 +273,18 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Devuelve el nombre del usuario cuyo id sea $id_amigo.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-controllers-ajaxcontroller.html#actionNombre()-detail">actionNombre</a></strong> ( <span style="color: #0000BB">$id_amigo</span> )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.string">string</a></span> <strong><a href="app-controllers-ajaxcontroller.html#actionNombre()-detail">actionNombre</a></strong> ( <span style="color: #0000BB">$id_amigo</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$id_amigo</span></td>
-                  <td class="param-type-col"></td>
-                  <td class="param-desc-col"></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>Id del usuario que queremos el nombre</p>
+</td>
                 </tr>
                                                 </table>
 
@@ -291,17 +302,19 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Muestra los mensajes que están enviados en el chat privado entre el
+usuario logueado y el usuario cuyo id sea $id_amigo.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-controllers-ajaxcontroller.html#actionPrivadosmsg()-detail">actionPrivadosmsg</a></strong> ( <span style="color: #0000BB">$id_amigo</span> )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="app-controllers-ajaxcontroller.html#actionPrivadosmsg()-detail">actionPrivadosmsg</a></strong> ( <span style="color: #0000BB">$id_amigo</span> )</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$id_amigo</span></td>
-                  <td class="param-type-col"></td>
-                  <td class="param-desc-col"></td>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.integer">integer</a></td>
+                  <td class="param-desc-col"><p>Id del amigo del usuario logueado</p>
+</td>
                 </tr>
                                                 </table>
 
@@ -319,13 +332,13 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Muestra los mensajes que están enviados en el chat de grupo.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-controllers-ajaxcontroller.html#actionPublicosmsg()-detail">actionPublicosmsg</a></strong> ( )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="app-controllers-ajaxcontroller.html#actionPublicosmsg()-detail">actionPublicosmsg</a></strong> ( )</td></tr>
             </table>
 
 <!--	-->
@@ -342,13 +355,13 @@ yii\web\Controller</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Define el comportamiento y el control de acceso a los componentes.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-controllers-ajaxcontroller.html#behaviors()-detail">behaviors</a></strong> ( )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">mixed</span> <strong><a href="app-controllers-ajaxcontroller.html#behaviors()-detail">behaviors</a></strong> ( )</td></tr>
             </table>
 
 <!--	-->
@@ -391,7 +404,7 @@ yii\web\Controller</td></tr>
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Mon, 05 Jun 2017 18:30:58 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Wed, 07 Jun 2017 19:29:09 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
 <script type="text/javascript">jQuery(document).ready(function () {

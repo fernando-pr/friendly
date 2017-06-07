@@ -9,7 +9,7 @@
 <link href="./assets/64f80fce/style.css" rel="stylesheet">
 <script src="./assets/f0991c28/jquery.js"></script>
 <script src="./assets/a9cb8cae/js/bootstrap.js"></script>
-<script src="./assets/7be1cfc2/jssearch.js"></script>    <title>UsuarioSearch, app\models\UsuarioSearch - VideoYii API</title>
+<script src="./assets/7be1cfc2/jssearch.js"></script>    <title>UsuarioSearch, app\models\UsuarioSearch - Friendly API</title>
 </head>
 <body>
 
@@ -17,7 +17,7 @@
     <nav id="w142" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w142-collapse"><span class="sr-only">Toggle navigation</span>
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
-<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">VideoYii API</a></div><div id="w142-collapse" class="collapse navbar-collapse"><ul id="w143" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Friendly API</a></div><div id="w142-collapse" class="collapse navbar-collapse"><ul id="w143" class="navbar-nav nav"><li><a href="./index.html">Class reference</a></li>
 <li><a href="../README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
   <div class="form-group">
     <input id="searchbox" type="text" class="form-control" placeholder="Search">
@@ -80,7 +80,7 @@ yii\db\ActiveRecord</td></tr>
                                     </table>
 
 <div class="class-description">
-    <p><strong>UsuarioSearch represents the model behind the search form about <code>app\models\Usuario</code>.</strong></p>
+    <p><strong>UsuarioSearch representa el modelo de búsqueda para <code>app\models\Usuario</code>.</strong></p>
     
     </div>
 
@@ -103,20 +103,21 @@ yii\db\ActiveRecord</td></tr>
 </tr>
         <tr class="inherited" id="$imageFile">
         <td><a href="app-models-usuario.html#$imageFile-detail">$imageFile</a></td>
-        <td></td>
-        <td>[tableName description]</td>
+        <td><a href="http://www.php.net/language.types.string">string</a></td>
+        <td>Campo de archivo de imagen usado para imagen de perfil.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="$pass">
         <td><a href="app-models-usuario.html#$pass-detail">$pass</a></td>
         <td><a href="http://www.php.net/language.types.string">string</a></td>
-        <td></td>
+        <td>Campo de contraseña en el formulario de alta y modificación de usuarios</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="$passConfirm">
         <td><a href="app-models-usuario.html#$passConfirm-detail">$passConfirm</a></td>
         <td><a href="http://www.php.net/language.types.string">string</a></td>
-        <td></td>
+        <td>Campo de confirmación de contraseña en el formulario de alta y
+modificación de usuarios</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
     </table>
@@ -140,12 +141,13 @@ yii\db\ActiveRecord</td></tr>
 </tr>
         <tr class="inherited" id="attributeLabels()">
         <td><a href="app-models-usuario.html#attributeLabels()-detail">attributeLabels()</a></td>
-        <td></td>
+        <td>Son los nombres de los atributos del modelo.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="beforeSave()">
         <td><a href="app-models-usuario.html#beforeSave()-detail">beforeSave()</a></td>
-        <td></td>
+        <td>Acciones a ejecutar justo el momento antes de
+registrar un nuevo usuario en la base de datos.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="buscarPorNombre()">
@@ -155,7 +157,7 @@ yii\db\ActiveRecord</td></tr>
     </tr>
             <tr class="inherited" id="confirmarPassword()">
         <td><a href="app-models-usuario.html#confirmarPassword()-detail">confirmarPassword()</a></td>
-        <td>[confirmarPassword description]</td>
+        <td>Confirmar contraseña.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="esAdmin()">
@@ -165,127 +167,132 @@ yii\db\ActiveRecord</td></tr>
     </tr>
             <tr class="inherited" id="esMiAmigo()">
         <td><a href="app-models-usuario.html#esMiAmigo()-detail">esMiAmigo()</a></td>
-        <td></td>
+        <td>Devuelve si un usuario dado por el id es amigo del usuario logueado.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="estaPeticionEnviada()">
         <td><a href="app-models-usuario.html#estaPeticionEnviada()-detail">estaPeticionEnviada()</a></td>
-        <td></td>
+        <td>Comprueba si el usuario conectado ha enviado una solicitud de
+amistad al usuario dado por parametro.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="findIdentity()">
         <td><a href="app-models-usuario.html#findIdentity()-detail">findIdentity()</a></td>
-        <td>[find    Identity description]</td>
+        <td>Busca un Usuario por su id.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="findIdentityByAccessToken()">
         <td><a href="app-models-usuario.html#findIdentityByAccessToken()-detail">findIdentityByAccessToken()</a></td>
-        <td>[findIdentityByAccessToken description]</td>
+        <td>Busca una identidad por un token y un tipo.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="getActivado()">
         <td><a href="app-models-usuario.html#getActivado()-detail">getActivado()</a></td>
-        <td></td>
+        <td>Compueba si el usuario ya está activado</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="getAmigoUsuario()">
         <td><a href="app-models-usuario.html#getAmigoUsuario()-detail">getAmigoUsuario()</a></td>
-        <td></td>
+        <td>Busca un amigo del usuario logueado según el id dado por parámetro.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="getAmigos()">
         <td><a href="app-models-usuario.html#getAmigos()-detail">getAmigos()</a></td>
-        <td></td>
+        <td>Devuelve amigos del usuario.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="getAmigosUsuario()">
         <td><a href="app-models-usuario.html#getAmigosUsuario()-detail">getAmigosUsuario()</a></td>
-        <td></td>
+        <td>Busca los amigos del usuario logueado y los devuelve</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="getAmistad()">
         <td><a href="app-models-usuario.html#getAmistad()-detail">getAmistad()</a></td>
-        <td></td>
+        <td>Se encarga de devolver el registro en la tabla amigos entre el usuario
+logueado y el pasado por paramentro.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="getAuthKey()">
         <td><a href="app-models-usuario.html#getAuthKey()-detail">getAuthKey()</a></td>
-        <td></td>
+        <td>Devuelve el token del usuario.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="getConectado()">
         <td><a href="app-models-usuario.html#getConectado()-detail">getConectado()</a></td>
-        <td></td>
+        <td>Devuelve conectado.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="getEnviados()">
         <td><a href="app-models-usuario.html#getEnviados()-detail">getEnviados()</a></td>
-        <td></td>
+        <td>Devuelve mensajes enviados.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="getId()">
         <td><a href="app-models-usuario.html#getId()-detail">getId()</a></td>
-        <td></td>
+        <td>Devuelve el id del usuario del modelo.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="getImageUrl()">
         <td><a href="app-models-usuario.html#getImageUrl()-detail">getImageUrl()</a></td>
-        <td></td>
+        <td>Devuelve la ruta a la imagen del usuario si existe,
+si no existe devuelve la ruta por defecto.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="getPeticiones()">
         <td><a href="app-models-usuario.html#getPeticiones()-detail">getPeticiones()</a></td>
-        <td></td>
+        <td>Devuelve las peticiones de amistad recibidas y no aceptadas todavía.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="getPoblacion()">
         <td><a href="app-models-usuario.html#getPoblacion()-detail">getPoblacion()</a></td>
-        <td></td>
+        <td>Devuelve la población del usuario.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="getPublicos()">
         <td><a href="app-models-usuario.html#getPublicos()-detail">getPublicos()</a></td>
-        <td></td>
+        <td>Devuelve mensajes publicos.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="getRecibidos()">
         <td><a href="app-models-usuario.html#getRecibidos()-detail">getRecibidos()</a></td>
-        <td></td>
+        <td>Devuelve mensajes recibidos.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="getUsuarios()">
         <td><a href="app-models-usuario.html#getUsuarios()-detail">getUsuarios()</a></td>
-        <td></td>
+        <td>Devuelve usuarios.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="meHaEnviadoAmistad()">
         <td><a href="app-models-usuario.html#meHaEnviadoAmistad()-detail">meHaEnviadoAmistad()</a></td>
-        <td></td>
+        <td>Devuelve si un usuario ha enviado una solicitud
+de amistad al usuario logueado.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="regenerarToken()">
         <td><a href="app-models-usuario.html#regenerarToken()-detail">regenerarToken()</a></td>
-        <td></td>
+        <td>Da token nuevos a todos los usuarios de forma aleatoria.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr id="rules()">
         <td><a href="app-models-usuariosearch.html#rules()-detail">rules()</a></td>
-        <td></td>
+        <td>Reglas de validación para el modelo Usuario.</td>
         <td><a href="app-models-usuariosearch.html">app\models\UsuarioSearch</a></td>
     </tr>
             <tr id="scenarios()">
         <td><a href="app-models-usuariosearch.html#scenarios()-detail">scenarios()</a></td>
-        <td></td>
+        <td>Devuelve los Escenarios relacionados a este modelo.</td>
         <td><a href="app-models-usuariosearch.html">app\models\UsuarioSearch</a></td>
     </tr>
             <tr id="search()">
         <td><a href="app-models-usuariosearch.html#search()-detail">search()</a></td>
-        <td>Creates data provider instance with search query applied</td>
+        <td>Crea una instancia de ActiveDataProvider con los
+parámetros de búsqueda aplicados.</td>
         <td><a href="app-models-usuariosearch.html">app\models\UsuarioSearch</a></td>
     </tr>
             <tr class="inherited" id="tableName()">
         <td><a href="app-models-usuario.html#tableName()-detail">tableName()</a></td>
-        <td></td>
+        <td>Este método indica el nombre de la tabla que esta asociada al modelo.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
             <tr class="inherited" id="validarPassword()">
@@ -295,7 +302,7 @@ yii\db\ActiveRecord</td></tr>
     </tr>
             <tr class="inherited" id="validateAuthKey()">
         <td><a href="app-models-usuario.html#validateAuthKey()-detail">validateAuthKey()</a></td>
-        <td>[validateAuthKey description]</td>
+        <td>Devuelve si el token coincide con el token del usuario.</td>
         <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
     </tr>
     </table>
@@ -322,7 +329,7 @@ yii\db\ActiveRecord</td></tr>
             <tr class="inherited" id="ESCENARIO_CREATE">
           <td id="ESCENARIO_CREATE-detail">ESCENARIO_CREATE</td>
           <td>'create'</td>
-          <td>Escenario para cuando se crea un usuario
+          <td>
                         </td>
           <td><a href="app-models-usuario.html">app\models\Usuario</a></td>
         </tr>
@@ -345,14 +352,20 @@ yii\db\ActiveRecord</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Reglas de validación para el modelo Usuario.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-models-usuariosearch.html#rules()-detail">rules</a></strong> ( )</td></tr>
-            </table>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type"><a href="http://www.php.net/language.types.array">array</a></span> <strong><a href="app-models-usuariosearch.html#rules()-detail">rules</a></strong> ( )</td></tr>
+                                                <tr>
+                  <th class="param-name-col">return</th>
+                  <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
+                  <td class="param-desc-col"><p>Devuelve las reglas de validación.</p>
+</td>
+                </tr>
+                                    </table>
 
 <!--	-->
 
@@ -368,13 +381,13 @@ yii\db\ActiveRecord</td></tr>
 
     
     <div class="doc-description">
-        <p><strong></strong></p>
+        <p><strong>Devuelve los Escenarios relacionados a este modelo.</strong></p>
 
         
             </div>
 
     <table class="detail-table table table-striped table-bordered table-hover">
-        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">void</span> <strong><a href="app-models-usuariosearch.html#scenarios()-detail">scenarios</a></strong> ( )</td></tr>
+        <tr><td colspan="3" class="signature"><span class="signature-defs">public</span> <span class="signature-type">\app\models\mixed.</span> <strong><a href="app-models-usuariosearch.html#scenarios()-detail">scenarios</a></strong> ( )</td></tr>
             </table>
 
 <!--	-->
@@ -391,7 +404,8 @@ yii\db\ActiveRecord</td></tr>
 
     
     <div class="doc-description">
-        <p><strong>Creates data provider instance with search query applied</strong></p>
+        <p><strong>Crea una instancia de ActiveDataProvider con los
+parámetros de búsqueda aplicados.</strong></p>
 
         
             </div>
@@ -401,7 +415,8 @@ yii\db\ActiveRecord</td></tr>
                                     <tr>
                   <td class="param-name-col"><span style="color: #0000BB">$params</span></td>
                   <td class="param-type-col"><a href="http://www.php.net/language.types.array">array</a></td>
-                  <td class="param-desc-col"></td>
+                  <td class="param-desc-col"><p>Parámetros de búsqueda.</p>
+</td>
                 </tr>
                                                 </table>
 
@@ -445,7 +460,7 @@ yii\db\ActiveRecord</td></tr>
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Mon, 05 Jun 2017 18:30:58 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Wed, 07 Jun 2017 19:29:09 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
 <script type="text/javascript">jQuery(document).ready(function () {
