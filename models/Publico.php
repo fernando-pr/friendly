@@ -2,31 +2,29 @@
 
 namespace app\models;
 
-use Yii;
-
 /**
- * This is the model class for table "publicos".
+ * TModelo de la tabla "publicos".
  *
  * @property integer $id
  * @property integer $id_usuario
  * @property string $mensaje
  * @property string $fecha
- *
- * @property Usuarios $idUsuario
  */
 class Publico extends \yii\db\ActiveRecord
 {
     /**
-     * @inheritdoc
-     */
+    * Este método indica el nombre de la tabla que esta asociada al modelo.
+    * @return string nombre de la tabla asociada al modelo.
+    */
     public static function tableName()
     {
         return 'publicos';
     }
 
     /**
-     * @inheritdoc
-     */
+    * Reglas de validación para el modelo Publico.
+    * @return array Devuelve las reglas de validación.
+    */
     public function rules()
     {
         return [
@@ -39,8 +37,9 @@ class Publico extends \yii\db\ActiveRecord
     }
 
     /**
-     * @inheritdoc
-     */
+    * Son los nombres de los atributos del modelo.
+    * @return array
+    */
     public function attributeLabels()
     {
         return [

@@ -8,12 +8,13 @@ use yii\data\ActiveDataProvider;
 use app\models\Usuario;
 
 /**
-* UsuarioSearch represents the model behind the search form about `app\models\Usuario`.
+* UsuarioSearch representa el modelo de búsqueda para `app\models\Usuario`.
 */
 class UsuarioSearch extends Usuario
 {
     /**
-    * @inheritdoc
+    * Reglas de validación para el modelo Usuario.
+    * @return array Devuelve las reglas de validación.
     */
     public function rules()
     {
@@ -24,8 +25,9 @@ class UsuarioSearch extends Usuario
     }
 
     /**
-    * @inheritdoc
-    */
+     * devuelve los Escenarios relacionados a este modelo.
+     * @return mixed.
+     */
     public function scenarios()
     {
         // bypass scenarios() implementation in the parent class
@@ -33,12 +35,13 @@ class UsuarioSearch extends Usuario
     }
 
     /**
-    * Creates data provider instance with search query applied
-    *
-    * @param array $params
-    *
-    * @return ActiveDataProvider
-    */
+     * Crea una instancia de ActiveDataProvider con los
+     * parámetros de búsqueda aplicados.
+     *
+     * @param array $params parámetros de búsqueda.
+     *
+     * @return ActiveDataProvider
+     */
     public function search($params)
     {
         $query = Usuario::find();
