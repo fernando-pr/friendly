@@ -4,10 +4,15 @@ namespace app\controllers;
 
 use yii\filters\VerbFilter;
 
+/**
+* PoblacionController, controlador que se encarga de todas las acciones que
+* tienen que var con las poblaciones.
+*/
 class PoblacionController extends \yii\web\Controller
 {
     /**
-     * @inheritdoc
+     * Define el comportamiento y el control de acceso a los componentes.
+     * @return mixed
      */
     public function behaviors()
     {
@@ -21,11 +26,20 @@ class PoblacionController extends \yii\web\Controller
         ];
     }
 
+    /**
+    * Renderiza la vista raiz(index) de la aplicación.
+    * @return mixed
+    */
     public function actionIndex()
     {
         return $this->render('index');
     }
 
+        /**
+     *  Método que se encarga de dar a la vista un objeto json
+     *   con las poblaciones disponibles según una provincia.
+     * @return string    Objeto json.
+     */
     public function actionPoblacion()
     {
         $municipios["01"]["0014"] = "Alegría-Dulantzi";

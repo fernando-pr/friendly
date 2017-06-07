@@ -10,9 +10,9 @@ namespace app\commands;
 use yii\console\Controller;
 
 /**
- * This command echoes the first argument that you have entered.
+ * Este comando muestra la cadena pasada como parámetro.
  *
- * This command is provided as an example for you to learn how to create console commands.
+ * Este comando es un ejamplo para hacer más comandos.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
@@ -20,8 +20,8 @@ use yii\console\Controller;
 class HelloController extends Controller
 {
     /**
-     * This command echoes what you have entered as the message.
-     * @param string $message the message to be echoed.
+     * This command muestra el mensaje que quieras.
+     * @param string $message mensaje que quieres mostrar.
      */
     public function actionIndex($message = 'hello world')
     {

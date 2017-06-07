@@ -11,12 +11,13 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 
 /**
- * PrivadosController implements the CRUD actions for Privado model.
+ * PrivadosController implementa el CRUD y más acciones para el modelo Privados.
  */
 class PrivadosController extends Controller
 {
     /**
-     * @inheritdoc
+     * Define el comportamiento y el control de acceso a los componentes.
+     * @return mixed
      */
     public function behaviors()
     {
@@ -53,7 +54,7 @@ class PrivadosController extends Controller
     }
 
     /**
-     * Lists all Privado models.
+     * Lista todo el modelo Privado.
      * @return mixed
      */
     public function actionIndex()
@@ -68,8 +69,8 @@ class PrivadosController extends Controller
     }
 
     /**
-     * Displays a single Privado model.
-     * @param integer $id
+     * Muestra un único registro del modelo Privado.
+     * @param int $id
      * @return mixed
      */
     public function actionView($id)
@@ -80,8 +81,9 @@ class PrivadosController extends Controller
     }
 
     /**
-     * Creates a new Privado model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
+     * Crea un nuevo registro del modelo Privado
+     * Si el Privado es creado correctamente será redireccionado
+     * al view de ese Privado.
      * @return mixed
      */
     public function actionCreate()
@@ -98,9 +100,9 @@ class PrivadosController extends Controller
     }
 
     /**
-     * Updates an existing Privado model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
+     * Modifica un registro del modelo Privado
+     * Si la modificación es satisfactoria es redireccionado al view de ese privado.
+     * @param int $id
      * @return mixed
      */
     public function actionUpdate($id)
@@ -117,9 +119,9 @@ class PrivadosController extends Controller
     }
 
     /**
-     * Deletes an existing Privado model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
+     * Borra un registro del modelo Privado
+     * Si el borrado es satisfactorio es redireccionado a index.
+     * @param int $id
      * @return mixed
      */
     public function actionDelete($id)
@@ -129,7 +131,13 @@ class PrivadosController extends Controller
         return $this->redirect(['index']);
     }
 
-
+    /**
+     * Este metodo envia un mensaje pasado por parametro a otro
+     * usuario que sea amigo del usuario logueado.
+     * @param  int  $id_amigo receptor del mensaje
+     * @param  string  $mensaje  mensaje a enviar
+     *
+     */
     public function actionEnviar($id_amigo, $mensaje)
     {
         $id_mio = Yii::$app->user->id;
@@ -146,7 +154,10 @@ class PrivadosController extends Controller
     }
 
 
-
+    /**
+     * Renderiza la vista privados
+     * @return mixed
+     */
     public function actionPrivados()
     {
         // $conectados = Conectado::find()->all();
@@ -159,12 +170,13 @@ class PrivadosController extends Controller
     }
 
     /**
-     * Finds the Privado model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return Privado the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
+    * Busca el registro del modelo Privado asociado al id pasado por parámetro.
+    * Si el modelo no es encontrado se lanzará una Excepción
+    * NotFoundHttpException(página no encontrada).
+    * @param int $id
+    * @return Privado del modelo cargado.
+    * @throws NotFoundHttpException si el modelo no es encontrado.
+    */
     protected function findModel($id)
     {
         if (($model = Privado::findOne($id)) !== null) {

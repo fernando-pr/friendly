@@ -12,7 +12,7 @@ use yii\console\Controller;
 /**
  * Acciones relacionadas con el token de un usuario.
  *
- * @author Qiang Xue <qiang.xue@gmail.com>
+ * @author Fernando 
  * @since 2.0
  */
 class TokenController extends Controller

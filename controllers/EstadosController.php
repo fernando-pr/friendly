@@ -10,12 +10,13 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * EstadosController implements the CRUD actions for Estado model.
+ * EstadosController implementa el CRUD y más acciones para el modelo Estado.
  */
 class EstadosController extends Controller
 {
     /**
-     * @inheritdoc
+     * Define el comportamiento y el control de acceso a los componentes.
+     * @return mixed
      */
     public function behaviors()
     {
@@ -30,7 +31,7 @@ class EstadosController extends Controller
     }
 
     /**
-     * Lists all Estado models.
+     * Lista todo el modelo Estado.
      * @return mixed
      */
     public function actionIndex()
@@ -45,8 +46,8 @@ class EstadosController extends Controller
     }
 
     /**
-     * Displays a single Estado model.
-     * @param integer $id
+     * Muestra un único registro del modelo Estado.
+     * @param int $id
      * @return mixed
      */
     public function actionView($id)
@@ -57,8 +58,9 @@ class EstadosController extends Controller
     }
 
     /**
-     * Creates a new Estado model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
+     * Crea un nuevo registro del modelo Estado
+     * Si el Estado es creado correctamente será redireccionado
+     * al view de ese Estado.
      * @return mixed
      */
     public function actionCreate()
@@ -75,9 +77,9 @@ class EstadosController extends Controller
     }
 
     /**
-     * Updates an existing Estado model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
+     * Modifica un registro del modelo Estado
+     * Si la modificación es satisfactoria es redireccionado al view de ese conectado.
+     * @param int $id
      * @return mixed
      */
     public function actionUpdate($id)
@@ -93,12 +95,12 @@ class EstadosController extends Controller
         }
     }
 
-    /**
-     * Deletes an existing Estado model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     */
+     /**
+      * Borra un registro del modelo Estado
+      * Si el borrado es satisfactorio es redireccionado a index.
+      * @param int $id
+      * @return mixed
+      */
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
@@ -107,12 +109,13 @@ class EstadosController extends Controller
     }
 
     /**
-     * Finds the Estado model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return Estado the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
+    * Busca el registro del modelo Estado asociado al id pasado por parámetro.
+    * Si el modelo no es encontrado se lanzará una Excepción
+    * NotFoundHttpException(página no encontrada).
+    * @param int $id
+    * @return Estado del modelo cargado.
+    * @throws NotFoundHttpException si el modelo no es encontrado.
+    */
     protected function findModel($id)
     {
         if (($model = Estado::findOne($id)) !== null) {

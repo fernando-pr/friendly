@@ -12,12 +12,13 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 
 /**
-* AmigosController implements the CRUD actions for Amigo model.
+* AmigosController implementa el CRUD y más acciones para el modelo amigos.
 */
 class AmigosController extends Controller
 {
     /**
-    * @inheritdoc
+    * Define el comportamiento y el control de acceso a los componentes.
+    * @return mixed
     */
     public function behaviors()
     {
@@ -46,7 +47,7 @@ class AmigosController extends Controller
     }
 
     /**
-    * Lists all Amigo models.
+    * Lista todo el modelo amigo.
     * @return mixed
     */
     public function actionIndex()
@@ -76,8 +77,8 @@ class AmigosController extends Controller
     }
 
     /**
-    * Displays a single Amigo model.
-    * @param integer $id
+    * Muestra un amigo cuyo id es pasado por parámetro.
+    * @param int $id    id del amigo
     * @return mixed
     */
     public function actionView($id)
@@ -88,8 +89,8 @@ class AmigosController extends Controller
     }
 
     /**
-    * Creates a new Amigo model.
-    * If creation is successful, the browser will be redirected to the 'view' page.
+    * Crea un nuevo amigo.
+    * Si el amigo es creado correctamente será redireccionado al view de ese amigo.
     * @return mixed
     */
     public function actionCreate()
@@ -106,9 +107,9 @@ class AmigosController extends Controller
     }
 
     /**
-    * Updates an existing Amigo model.
-    * If update is successful, the browser will be redirected to the 'view' page.
-    * @param integer $id
+    * Modifica un amigo ya existente.
+    * Si la modificación es satisfactoria es redireccionado al view de ese amigo.
+    * @param int $id
     * @return mixed
     */
     public function actionUpdate($id)
@@ -125,9 +126,9 @@ class AmigosController extends Controller
     }
 
     /**
-    * Deletes an existing Amigo model.
-    * If deletion is successful, the browser will be redirected to the 'index' page.
-    * @param integer $id
+    * Borra el amigo que coincida con el id parado por parámetro.
+    * Si el borrado es satisfactorio es redireccionado a index.
+    * @param int $id
     * @return mixed
     */
     public function actionDelete($id)
@@ -138,11 +139,12 @@ class AmigosController extends Controller
     }
 
     /**
-    * Finds the Amigo model based on its primary key value.
-    * If the model is not found, a 404 HTTP exception will be thrown.
-    * @param integer $id
-    * @return Amigo the loaded model
-    * @throws NotFoundHttpException if the model cannot be found
+    * Busca el amigo asociado al id pasado por parámetro.
+    * Si el model no es encontrado se lanzará una Excepción
+    * NotFoundHttpException(página no encontrada).
+    * @param int $id
+    * @return Amigo del modelo cargado.
+    * @throws NotFoundHttpException si el modelo no es encontrado.
     */
     protected function findModel($id)
     {
@@ -153,7 +155,12 @@ class AmigosController extends Controller
         }
     }
 
-
+    /**
+    * Manda una solicitud de amistad al usuario indicado por parámetro.
+    * @param  int  $id      id del usuario que queremos mandar petición.
+    * @param  string  $redirect url a la que hay que redireccionar la página.
+    * @return mixed
+    */
     public function actionSolicitud($id, $redirect = null)
     {
         $amigo = new Amigo();
@@ -169,9 +176,16 @@ class AmigosController extends Controller
         if ($redirect != null) {
             return $this->goBack();
         }
-
     }
 
+    /**
+     * Cancela la solicitud de amistad en el caso que todavía no
+     * haya sido aceptada por el otro usuario.
+     *
+     * @param  int  $id      id del usuario que queremos cancelar la petición.
+     * @param  string  $redirect url a la que hay que redireccionar la página.
+     * @return mixed
+     */
     public function actionCancelar($id, $redirect = null)
     {
         $amigo = new Amigo();
@@ -188,6 +202,12 @@ class AmigosController extends Controller
         }
     }
 
+    /**
+     * Acepta la solicitud de amistad recibida por otro usuario.
+     *
+     * @param  int  $id     id del usuario que envia la solicitud.
+     * @return mixed
+     */
     public function actionAceptar($id)
     {
         $amigo = new Amigo();
@@ -204,6 +224,12 @@ class AmigosController extends Controller
         return $this->redirect(['usuarios/peticiones']);
     }
 
+    /**
+     * Rechaza la solicitud de amistad recibida por otro usuario.
+     *
+     * @param  int  $id     id del usuario que envia la solicitud.
+     * @return mixed
+     */
     public function actionRechazar($id)
     {
         $amigo = new Amigo();
@@ -218,6 +244,12 @@ class AmigosController extends Controller
         return $this->redirect(['usuarios/peticiones']);
     }
 
+    /**
+     * Borra a un amigo pasado por parámetro (borra la amistad).
+     *
+     * @param  int  $id     id del usuario que es amigo del usuario logueado.
+     * @return mixed
+     */
     public function actionBorrar($id)
     {
         $amigo = new Amigo();

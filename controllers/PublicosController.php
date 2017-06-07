@@ -13,13 +13,14 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 
 /**
-* PublicosController implements the CRUD actions for Publico model.
+* PublicosController implementa el CRUD y más acciones para el modelo Publico.
 */
 class PublicosController extends Controller
 {
     /**
-    * @inheritdoc
-    */
+     * Define el comportamiento y el control de acceso a los componentes.
+     * @return mixed
+     */
     public function behaviors()
     {
         return [
@@ -55,9 +56,9 @@ class PublicosController extends Controller
     }
 
     /**
-    * Lists all Publico models.
-    * @return mixed
-    */
+     * Lista todo el modelo Publico.
+     * @return mixed
+     */
     public function actionIndex()
     {
         $searchModel = new PublicoSearch();
@@ -69,6 +70,10 @@ class PublicosController extends Controller
         ]);
     }
 
+    /**
+     * Renderiza la vista publicos
+     * @return mixed
+     */
     public function actionPublicos()
     {
         // $conectados = Conectado::find()->all();
@@ -81,10 +86,10 @@ class PublicosController extends Controller
     }
 
     /**
-    * Displays a single Publico model.
-    * @param integer $id
-    * @return mixed
-    */
+     * Muestra un único registro del modelo Publico.
+     * @param int $id
+     * @return mixed
+     */
     public function actionView($id)
     {
         return $this->render('view', [
@@ -93,10 +98,11 @@ class PublicosController extends Controller
     }
 
     /**
-    * Creates a new Publico model.
-    * If creation is successful, the browser will be redirected to the 'view' page.
-    * @return mixed
-    */
+     * Crea un nuevo registro del modelo Publico
+     * Si el mensaje Publico es creado correctamente será redireccionado
+     * al view de ese Publico.
+     * @return mixed
+     */
     public function actionCreate()
     {
         $model = new Publico();
@@ -110,7 +116,12 @@ class PublicosController extends Controller
         }
     }
 
-
+    /**
+     * Este metodo envia un mensaje pasado por parametro al chat de grupo.
+     *
+     * @param  string  $mensaje  mensaje a enviar
+     *
+     */
     public function actionEnviar($mensaje)
     {
         if ($mensaje != null || $mensaje != '') {
@@ -126,11 +137,11 @@ class PublicosController extends Controller
 
 
     /**
-    * Updates an existing Publico model.
-    * If update is successful, the browser will be redirected to the 'view' page.
-    * @param integer $id
-    * @return mixed
-    */
+     * Modifica un registro del modelo Publico
+     * Si la modificación es satisfactoria es redireccionado al view de ese Publico.
+     * @param int $id
+     * @return mixed
+     */
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
@@ -145,11 +156,11 @@ class PublicosController extends Controller
     }
 
     /**
-    * Deletes an existing Publico model.
-    * If deletion is successful, the browser will be redirected to the 'index' page.
-    * @param integer $id
-    * @return mixed
-    */
+     * Borra un registro del modelo Publico
+     * Si el borrado es satisfactorio es redireccionado a index.
+     * @param int $id
+     * @return mixed
+     */
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
@@ -158,11 +169,12 @@ class PublicosController extends Controller
     }
 
     /**
-    * Finds the Publico model based on its primary key value.
-    * If the model is not found, a 404 HTTP exception will be thrown.
-    * @param integer $id
-    * @return Publico the loaded model
-    * @throws NotFoundHttpException if the model cannot be found
+    * Busca el registro del modelo Publico asociado al id pasado por parámetro.
+    * Si el modelo no es encontrado se lanzará una Excepción
+    * NotFoundHttpException(página no encontrada).
+    * @param int $id
+    * @return Publico del modelo cargado.
+    * @throws NotFoundHttpException si el modelo no es encontrado.
     */
     protected function findModel($id)
     {
