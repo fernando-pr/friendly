@@ -1,12 +1,48 @@
-Proyecto Integrado
+![Friendly](images/logo.png) **Friendly**
 ==================
 
-Este es el documento que explica de qué va el proyecto bla bla bla...
+### Descripción general del Proyecto.
+-------------------------------------
+> [Funcionalidad principal de la aplicación.](funcionalidad_principal.md)
+> [Objetivos generales.](objetivos.md)
+> [URL del repositorio en GitHub.](github.md)
+> [URL de la documentación en GitHub Pages o similar.](documentacion.md)
 
-```php
-function prueba($x)
-{
-    echo $x;
-}
-```
+### Instrucciones de instalación y despliegue.
+-------------------------------------
+> [En local.](local.md)
+> [en la nube.](nube.md)
 
+### Catálogo de requisitos.
+-------------------------------------
+> [Definición detallada.](detallada.md)
+> [Cuadro resumen.](cuadro_resumen.md)
+
+### Manual básico de usuario.
+-------------------------------------
+> [Manual básico.](manual.md)
+
+### Decisiones adoptadas y su justificación.
+-------------------------------------
+> [Decisiones adoptadas y su justificación.](decisiones.md)
+
+### Dificultades encontradas y soluciones aplicadas.
+-------------------------------------
+> [Dificultades encontradas y soluciones aplicadas.](dificultades.md)
+
+### Diagramas.
+-------------------------------------
+> [Diagrama De clases.](diagrama_clases.md)
+> [Diagrama De estructura lógica de datos.](diagrama_eld.md)
+
+### Glosario de términos.
+-------------------------------------
+> [Glosario.](glosario.md)
+
+### Conclusiones.
+-------------------------------------
+> [Conclusiones.](conclusiones.md)
+
+### Anexos.
+-------------------------------------
+> [Anexos.](Anexos.md)
