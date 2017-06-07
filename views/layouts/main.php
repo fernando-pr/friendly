@@ -24,6 +24,10 @@ $(".exito").css({
     'margin-Left':'40%'
 });
 
+$(".play_musica").on('click', function() {
+     $.reproducir();
+});
+
 JS;
 $this->registerJs($js);
 ?>
