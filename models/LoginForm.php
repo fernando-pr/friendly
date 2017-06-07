@@ -7,23 +7,38 @@ use yii\base\Model;
 use app\models\Usuario;
 
 /**
- * LoginForm is the model behind the login form.
+ * LoginForm es el modelo para el formulario de login.
  *
  * @property User|null $user This property is read-only.
  *
  */
 class LoginForm extends Model
 {
+    /**
+    * @var string Campo de nombre de usuario en el formulario de login.
+    */
     public $username;
+
+    /**
+    * @var string Campo contraseña en el formulario de login.
+    */
     public $password;
+
+    /**
+    * @var string Campo remember me en el formulario de login.
+    */
     public $rememberMe = true;
 
+    /**
+    * @var string usuario $_user.
+    */
     private $_user = false;
 
 
     /**
-     * @return array the validation rules.
-     */
+    * Reglas de validación.
+    * @return array Devuelve las reglas de validación.
+    */
     public function rules()
     {
         return [
@@ -36,6 +51,10 @@ class LoginForm extends Model
         ];
     }
 
+    /**
+    * Son los nombres de los atributos personalizados.
+    * @return array
+    */
     public function attributeLabels()
     {
         return [
@@ -46,11 +65,11 @@ class LoginForm extends Model
     }
 
     /**
-     * Validates the password.
-     * This method serves as the inline validation for password.
+     * Valida la contraseña.
+     * Este método valida la contraseña en el formulario de login.
      *
-     * @param string $attribute the attribute currently being validated
-     * @param array $params the additional name-value pairs given in the rule
+     * @param string $attribute atributo actual a ser validado.
+     * @param array $params
      */
     public function validatePassword($attribute, $params)
     {
@@ -64,8 +83,8 @@ class LoginForm extends Model
     }
 
     /**
-     * Logs in a user using the provided username and password.
-     * @return bool whether the user is logged in successfully
+     * loguea un usuario usando su nombre y su contraseña.
+     * @return bool true si el usuario es logueado correctamente.
      */
     public function login()
     {
@@ -84,9 +103,9 @@ class LoginForm extends Model
     }
 
     /**
-     * Finds user by [[username]]
+     * Busca un usuari por su nombre.
      *
-     * @return User|null
+     * @return Usuario|null
      */
     public function getUser()
     {

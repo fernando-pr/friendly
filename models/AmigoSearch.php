@@ -2,19 +2,19 @@
 
 namespace app\models;
 
-use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\models\Amigo;
 
 /**
- * AmigoSearch represents the model behind the search form about `app\models\Amigo`.
+ * AmigoSearch representa el modelo de búsqueda para `app\models\Amigo`.
  */
 class AmigoSearch extends Amigo
 {
     /**
-     * @inheritdoc
-     */
+    * Reglas de validación para el modelo Amigo.
+    * @return array Devuelve las reglas de validación.
+    */
     public function rules()
     {
         return [
@@ -24,7 +24,8 @@ class AmigoSearch extends Amigo
     }
 
     /**
-     * @inheritdoc
+     * devuelve los Escenarios relacionados a este modelo.
+     * @return mixed.
      */
     public function scenarios()
     {
@@ -33,9 +34,10 @@ class AmigoSearch extends Amigo
     }
 
     /**
-     * Creates data provider instance with search query applied
+     * Crea una instancia de ActiveDataProvider con los
+     * parámetros de búsqueda aplicados.
      *
-     * @param array $params
+     * @param array $params parámetros de búsqueda.
      *
      * @return ActiveDataProvider
      */
@@ -63,7 +65,7 @@ class AmigoSearch extends Amigo
             'id_usuario' => $this->id_usuario,
             'id_amigo' => $this->id_amigo,
         ]);
-        
+
         $query->andFilterWhere(['like', 'estado', $this->estado]);
 
         return $dataProvider;

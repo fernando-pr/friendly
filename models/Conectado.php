@@ -2,29 +2,27 @@
 
 namespace app\models;
 
-use Yii;
-
 /**
- * This is the model class for table "conectados".
+ * Modelo de la tabla "Conectado".
  *
  * @property integer $id_usuario
  * @property string $instante
- *
- * @property Usuarios $idUsuario
  */
 class Conectado extends \yii\db\ActiveRecord
 {
     /**
-     * @inheritdoc
-     */
+    * Este método indica el nombre de la tabla que esta asociada al modelo.
+    * @return string nombre de la tabla asociada al modelo.
+    */
     public static function tableName()
     {
         return 'conectados';
     }
 
     /**
-     * @inheritdoc
-     */
+    * Reglas de validación para el modelo Conectado.
+    * @return array Devuelve las reglas de validación.
+    */
     public function rules()
     {
         return [
@@ -36,8 +34,9 @@ class Conectado extends \yii\db\ActiveRecord
     }
 
     /**
-     * @inheritdoc
-     */
+    * Son los nombres de los atributos del modelo.
+    * @return array
+    */
     public function attributeLabels()
     {
         return [

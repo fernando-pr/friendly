@@ -5,30 +5,29 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "privados".
+ * Modelo de la tabla "privados".
  *
  * @property integer $id
  * @property integer $id_emisor
  * @property integer $id_receptor
  * @property string $mensaje
  * @property string $fecha
- *
- * @property Usuarios $idEmisor
- * @property Usuarios $idReceptor
  */
 class Privado extends \yii\db\ActiveRecord
 {
     /**
-     * @inheritdoc
-     */
+    * Este método indica el nombre de la tabla que esta asociada al modelo.
+    * @return string nombre de la tabla asociada al modelo.
+    */
     public static function tableName()
     {
         return 'privados';
     }
 
     /**
-     * @inheritdoc
-     */
+    * Reglas de validación para el modelo Privado.
+    * @return array Devuelve las reglas de validación.
+    */
     public function rules()
     {
         return [
@@ -42,8 +41,9 @@ class Privado extends \yii\db\ActiveRecord
     }
 
     /**
-     * @inheritdoc
-     */
+    * Son los nombres de los atributos del modelo.
+    * @return array
+    */
     public function attributeLabels()
     {
         return [
@@ -55,6 +55,12 @@ class Privado extends \yii\db\ActiveRecord
         ];
     }
 
+    /**
+     * Devuelve los mensajes privados enviados o recividos entre el usuario
+     * logueado y el usuario dado por parámetros.
+     * @param  int  $id_amigo id del amigo
+     * @return Privado        mensajes privados.
+     */
     public function getMensajesUsuario($id_amigo)
     {
         $id_mio = Yii::$app->user->id;

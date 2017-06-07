@@ -8,13 +8,14 @@ use yii\data\ActiveDataProvider;
 use app\models\Conectado;
 
 /**
- * ConectadoSearch represents the model behind the search form about `app\models\Conectado`.
+ * ConectadoSearch representa el modelo de búsqueda para `app\models\Conectado`.
  */
 class ConectadoSearch extends Conectado
 {
     /**
-     * @inheritdoc
-     */
+    * Reglas de validación para el modelo Conectado.
+    * @return array Devuelve las reglas de validación.
+    */
     public function rules()
     {
         return [
@@ -24,7 +25,8 @@ class ConectadoSearch extends Conectado
     }
 
     /**
-     * @inheritdoc
+     * devuelve los Escenarios relacionados a este modelo.
+     * @return mixed.
      */
     public function scenarios()
     {
@@ -33,9 +35,10 @@ class ConectadoSearch extends Conectado
     }
 
     /**
-     * Creates data provider instance with search query applied
+     * Crea una instancia de ActiveDataProvider con los
+     * parámetros de búsqueda aplicados.
      *
-     * @param array $params
+     * @param array $params parámetros de búsqueda.
      *
      * @return ActiveDataProvider
      */
