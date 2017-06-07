@@ -4,22 +4,24 @@ namespace app\controllers;
 
 use Yii;
 use app\helpers\Mensaje;
-use app\models\Amigo;
 use app\models\Usuario;
 use app\models\Conectado;
-use app\models\UploadForm;
 use yii\filters\AccessControl;
 use yii\web\Controller;
-use yii\web\UploadedFile;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 
+/**
+ * SiteController, controlador que se encarga de todas las acciones que
+ * tienen que ver con la web en general.
+ */
 class SiteController extends Controller
 {
     /**
-    * @inheritdoc
-    */
+     * Define el comportamiento y el control de acceso a los componentes.
+     * @return mixed
+     */
     public function behaviors()
     {
         return [
@@ -52,7 +54,7 @@ class SiteController extends Controller
     }
 
     /**
-    * @inheritdoc
+    * Acciones y configuración del controlador
     */
     public function actions()
     {
@@ -68,7 +70,7 @@ class SiteController extends Controller
     }
 
     /**
-    * Displays homepage.
+    * Muestra la página principal.
     *
     * @return string
     */
@@ -97,7 +99,7 @@ class SiteController extends Controller
     }
 
     /**
-    * Login action.
+    * Acciones para iniciar sesión.
     *
     * @return string
     */
@@ -109,7 +111,6 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-
             //usuario conectado
             //
             //isset($_COOKIE['_identity'] tambien para ver si esta conectado
@@ -132,7 +133,7 @@ class SiteController extends Controller
     }
 
     /**
-    * Logout action.
+    * Acciones para cerrar sesión
     *
     * @return string
     */
@@ -170,7 +171,7 @@ class SiteController extends Controller
     }
 
     /**
-    * Displays about page.
+    * Muestra la pagina about.
     *
     * @return string
     */
@@ -179,11 +180,19 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
+    /**
+     * Muestra la vistra que contiene el reproductor.
+     * @return string
+     */
     public function actionReproductor()
     {
         return $this->render('reproductor');
     }
 
+    /**
+     * Redirecciona a la página anterior.
+     * @return string
+     */
     public function actionVolver()
     {
         return $this->goBack();

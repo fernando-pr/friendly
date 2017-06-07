@@ -7,7 +7,7 @@ use yii\web\UploadedFile;
 use yii\imagine\Image;
 
 /**
-* This is the model class for table "usuarios".
+* Modelo de la tabla "usuarios".
 *
 * @property integer $id
 * @property string $nombre
@@ -16,42 +16,34 @@ use yii\imagine\Image;
 * @property string $token
 * @property string $activacion
 * @property string $created_at
-*
-* @property Amigos[] $amigos
-* @property Amigos[] $amigos0
-* @property Conectados $conectados
-* @property Privados[] $privados
-* @property Privados[] $privados0
-* @property Publicos[] $publicos
 */
 class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
 {
 
     /**
-    * Escenario para cuando se crea un usuario
-    * @var string
+    * @var string Escenario para cuando se crea un usuario
     */
     const ESCENARIO_CREATE = 'create';
 
     /**
-    * Campo de contraseña en el formulario de alta y modificación de usuarios
-    * @var string
+    * @var string Campo de contraseña en el formulario de alta y modificación de usuarios
     */
     public $pass;
+
     /**
-    * Campo de confirmación de contraseña en el formulario de alta y
+    * @var string Campo de confirmación de contraseña en el formulario de alta y
     * modificación de usuarios
-    * @var string
     */
     public $passConfirm;
 
     /**
-    * [tableName description]
-    * @return {[type] [description]
+    * @var string Campo de archivo de imagen usado para imagen de perfil.
     */
     public $imageFile;
+
     /**
-    * @inheritdoc
+    * Este método indica el nombre de la tabla que esta asociada al modelo.
+    * @return string nombre de la tabla asociada al modelo.
     */
     public static function tableName()
     {
@@ -59,7 +51,8 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     }
 
     /**
-    * @inheritdoc
+    * Reglas de validación para el modelo Usuario.
+    * @return array Devuelve las reglas de validación.
     */
     public function rules()
     {
@@ -81,7 +74,8 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     }
 
     /**
-    * @inheritdoc
+    * Son los nombres de los atributos del modelo.
+    * @return array
     */
     public function attributeLabels()
     {
@@ -101,19 +95,20 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     }
 
     /**
-    * [find    Identity description]
-    * @param  [type]  $id [description]
-    * @return {[type]     [description]
+    * Busca un Usuario por su id.
+    * @param  int  $id id del usuario
+    * @return Usuario   el usuario que tenga ese id.
     */
     public static function findIdentity($id)
     {
         return static::findOne($id);
     }
+
     /**
-    * [findIdentityByAccessToken description]
-    * @param  [type]  $token [description]
-    * @param  [type]  $type  [description]
-    * @return {[type]        [description]
+    * Busca una identidad por un token y un tipo.
+    * @param  string  $token
+    * @param  string  $type
+    * @return mixed
     */
     public static function findIdentityByAccessToken($token, $type = null)
     {
@@ -129,7 +124,8 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         return static::findOne(['nombre' => $nombre]);
     }
     /**
-    * @inheritdoc
+    * Devuelve el id del usuario del modelo.
+    * @return int id del usuario
     */
     public function getId()
     {
@@ -137,29 +133,35 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     }
 
     /**
-    * @inheritdoc
+    * Devuelve la población del usuario.
+    * @return string población del usuario
     */
     public function getPoblacion()
     {
         return $this->poblacion;
     }
     /**
-    * @inheritdoc
+    * Devuelve el token del usuario.
+    * @return string token del usuario
     */
     public function getAuthKey()
     {
         return $this->token;
     }
 
+    /**
+    * Da token nuevos a todos los usuarios de forma aleatoria.
+    * @return void.
+    */
     public function regenerarToken()
     {
         $this->token = Yii::$app->security->generateRandomString();
     }
 
     /**
-    * [validateAuthKey description]
-    * @param  [type]  $authKey [description]
-    * @return {[type]          [description]
+    * Devuelve si el token coincide con el token del usuario.
+    * @param  string $authKey token dado.
+    * @return bool.
     */
     public function validateAuthKey($authKey)
     {
@@ -177,10 +179,10 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     }
 
     /**
-    * [confirmarPassword description]
-    * @param  [type]  $attribute [description]
-    * @param  [type]  $params    [description]
-    * @return {[type]            [description]
+    * Confirmar contraseña.
+    * @param  string  $attribute contraseña a confirmar.
+    * @param  array  $params
+    * @return void   comprueba que las contraseñas coinciden.
     */
     public function confirmarPassword($attribute, $params)
     {
@@ -199,6 +201,11 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         return $this->nombre === 'admin';
     }
 
+    /**
+    * Devuelve la ruta a la imagen del usuario si existe,
+    * si no existe devuelve la ruta por defecto.
+    * @return string la ruta a la imagen.
+    */
     public function getImageUrl()
     {
         $uploads = Yii::getAlias('@uploads');
@@ -206,12 +213,21 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         return file_exists($ruta) ? "/$ruta" : "/$uploads/default.png";
     }
 
-
+    /**
+    * Compueba si el usuario ya está activado
+    * @return bool si esta activado.
+    */
     public function getActivado()
     {
         return $this->activacion === null;
     }
 
+    /**
+    * Acciones a ejecutar justo el momento antes de
+    * registrar un nuevo usuario en la base de datos.
+    * @param  bool $insert
+    * @return bool    devuelve si se ha guardado los datos correctamente.
+    */
     public function beforeSave($insert)
     {
         if (parent::beforeSave($insert)) {
@@ -245,7 +261,10 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         }
     }
 
-
+    /**
+    * Devuelve las peticiones de amistad recibidas y no aceptadas todavía.
+    * @return mixed devuelve las peticiones recibidas.
+    */
     public function getPeticiones()
     {
         $items = ['id_amigo' => Yii::$app->user->id, 'estado' => 'Solicitado'];
@@ -260,6 +279,11 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         return $model;
     }
 
+    /**
+    * Devuelve si un usuario dado por el id es amigo del usuario logueado.
+    * @param  int  $id id del posible amigo.
+    * @return bool    true si el usuario es amigo.
+    */
     public function esMiAmigo($id)
     {
         $usuario = self::findOne(['id' => $id]);
@@ -268,18 +292,34 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         return in_array($usuario, $amigos);
     }
 
+    /**
+    * Devuelve si un usuario ha enviado una solicitud
+    * de amistad al usuario logueado.
+    * @param  int  $id     id del usuario que envia la solicitud.
+    * @return bool     true si ha enviado solicitud de amistad.
+    */
     public function meHaEnviadoAmistad($id)
     {
         $cond = ['id_usuario' => $id , 'id_amigo' => Yii::$app->user->id, 'estado' => 'Solicitado'];
         return Amigo::findOne($cond) != null;
     }
 
+    /**
+    * comprueba si el usuario conectado ha enviado una solicitud de
+    * amistad al usuario dado por parametro.
+    * @param  int  $id id del usuario que recibe la solicitud.
+    * @return bool   true si la petición ya está enviada.
+    */
     public function estaPeticionEnviada($id)
     {
         $items = ['id_usuario' => Yii::$app->user->id, 'id_amigo' => $id, 'estado' => 'Solicitado'];
         return Amigo::findOne($items) != null;
     }
 
+    /**
+    * Busca los amigos del usuario logueado y los devuelve
+    * @return array array con los amigos del usuario.
+    */
     public function getAmigosUsuario()
     {
         $id = Yii::$app->user->id;
@@ -296,11 +336,16 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         return self::findAll($user_id);
     }
 
+    /**
+    * Busca un amigo del usuario logueado según el id dado por parámetro.
+    * @param  int  $id_amigo id del amigo a buscar.
+    * @return Usuario    usuario amigo.
+    */
     public function getAmigoUsuario($id_amigo)
     {
         $id = Yii::$app->user->id;
         $amigo = Amigo::findBySql('select * from amigos where ((id_usuario = ' . $id . ' and id_amigo = ' . $id_amigo . ' ) or (id_usuario = ' . $id_amigo . ' and id_amigo = ' . $id . ')) and estado =' . "'Aceptado'")->one();
-        var_dump($amigo);die();
+
         $user_id= null;
 
         if ($amigo->id_usuario == $id) {
@@ -312,6 +357,12 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         return self::findOne($user_id);
     }
 
+    /**
+    * Se encarga de devolver el registro en la tabla amigos entre el usuario
+    * logueado y el pasado por paramentro.
+    * @param  int  $id_amigo id usuario amigo
+    * @return Amigo.
+    */
     public function getAmistad($id_amigo)
     {
         $id = Yii::$app->user->id;
@@ -322,6 +373,8 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     }
 
     /**
+    * Devuelve usuarios.
+    *
     * @return \yii\db\ActiveQuery
     */
     public function getUsuarios()
@@ -330,6 +383,8 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     }
 
     /**
+    * Devuelve amigos del usuario.
+    *
     * @return \yii\db\ActiveQuery
     */
     public function getAmigos()
@@ -338,6 +393,8 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     }
 
     /**
+    * Devuelve conectado.
+    *
     * @return \yii\db\ActiveQuery
     */
     public function getConectado()
@@ -346,6 +403,8 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     }
 
     /**
+    * Devuelve mensajes enviados.
+    *
     * @return \yii\db\ActiveQuery
     */
     public function getEnviados()
@@ -354,6 +413,8 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     }
 
     /**
+    * Devuelve mensajes recibidos.
+    *
     * @return \yii\db\ActiveQuery
     */
     public function getRecibidos()
@@ -362,6 +423,7 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     }
 
     /**
+    * Devuelve mensajes publicos.
     * @return \yii\db\ActiveQuery
     */
     public function getPublicos()

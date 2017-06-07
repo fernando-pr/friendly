@@ -14,13 +14,14 @@ use yii\filters\AccessControl;
 use yii\helpers\Url;
 
 /**
-* UsuariosController implements the CRUD actions for Usuario model.
+* UsuariosController implementa el CRUD y más acciones para el modelo Usuario.
 */
 class UsuariosController extends Controller
 {
     /**
-    * @inheritdoc
-    */
+     * Define el comportamiento y el control de acceso a los componentes.
+     * @return mixed
+     */
     public function behaviors()
     {
         return [
@@ -73,9 +74,9 @@ class UsuariosController extends Controller
     }
 
     /**
-    * Lists all Usuario models.
-    * @return mixed
-    */
+     * Lista todo el modelo Usuario.
+     * @return mixed
+     */
     public function actionIndex()
     {
         $searchModel = new UsuarioSearch();
@@ -88,17 +89,20 @@ class UsuariosController extends Controller
     }
 
     /**
-    * Displays a single Usuario model.
-    * @param integer $id
-    * @return mixed
-    */
+     * Muestra un único registro del modelo Usuario.
+     * @param int $id
+     * @return mixed
+     */
     public function actionView($id = null)
     {
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
     }
-
+    /**
+     * Devuelve las peticiones recibidas por el usuario.
+     * @return mixed.
+     */
     public function actionPeticiones()
     {
 
@@ -109,7 +113,6 @@ class UsuariosController extends Controller
         $model = [];
 
         foreach ($peticiones as $peticion) {
-
             $esAmigo = \Yii::$app->user->getEsMiAmigo($peticion->id);
             $soyYo = \Yii::$app->user->id == $peticion->id;
 
@@ -150,7 +153,12 @@ class UsuariosController extends Controller
     //     return $this->goBack();
     // }
 
-
+    /**
+     * Activa un usuario registrado para que pase a ser un usuario validado.
+     * @param  string  $token token que recibe el usuario
+     *  en su correo para activas su usuario.
+     * @return string       redirecciona a la pantalla de login.
+     */
     public function actionActivar($token)
     {
         $usuario = Usuario::findOne(['activacion' => $token]);
@@ -169,10 +177,11 @@ class UsuariosController extends Controller
     }
 
     /**
-    * Creates a new Usuario model.
-    * If creation is successful, the browser will be redirected to the 'view' page.
-    * @return mixed
-    */
+     * Crea un nuevo registro del modelo Usuario
+     * Si el Usuario es creado correctamente será redireccionado
+     * al view de ese Usuario.
+     * @return mixed
+     */
     public function actionCreate()
     {
         $model = new Usuario([
@@ -208,11 +217,11 @@ class UsuariosController extends Controller
     }
 
     /**
-    * Updates an existing Usuario model.
-    * If update is successful, the browser will be redirected to the 'view' page.
-    * @param integer $id
-    * @return mixed
-    */
+     * Modifica un registro del modelo Usuario
+     * Si la modificación es satisfactoria es redireccionado al view de ese Usuario.
+     * @param int $id
+     * @return mixed
+     */
     public function actionUpdate($id = null)
     {
         $model = $this->findModel($id);
@@ -237,11 +246,11 @@ class UsuariosController extends Controller
     }
 
     /**
-    * Deletes an existing Usuario model.
-    * If deletion is successful, the browser will be redirected to the 'index' page.
-    * @param integer $id
-    * @return mixed
-    */
+     * Borra un registro del modelo Usuario
+     * Si el borrado es satisfactorio es redireccionado a index.
+     * @param int $id
+     * @return mixed
+     */
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
@@ -250,11 +259,12 @@ class UsuariosController extends Controller
     }
 
     /**
-    * Finds the Usuario model based on its primary key value.
-    * If the model is not found, a 404 HTTP exception will be thrown.
-    * @param integer $id
-    * @return Usuario the loaded model
-    * @throws NotFoundHttpException if the model cannot be found
+    * Busca el registro del modelo Usuario asociado al id pasado por parámetro.
+    * Si el modelo no es encontrado se lanzará una Excepción
+    * NotFoundHttpException(página no encontrada).
+    * @param int $id
+    * @return Usuario del modelo cargado.
+    * @throws NotFoundHttpException si el modelo no es encontrado.
     */
     protected function findModel($id)
     {
