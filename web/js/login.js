@@ -17,7 +17,7 @@ $(".registrate").on("click",function(){
 
 $(".boton_enlace").on("click",function(){
     var enlace = $(this).attr('href');
-    window.open(enlace)
+    window.open(enlace);
     window.close();
 });
 

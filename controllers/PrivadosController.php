@@ -134,18 +134,17 @@ class PrivadosController extends Controller
     /**
      * Este metodo envia un mensaje pasado por parametro a otro
      * usuario que sea amigo del usuario logueado.
-     * @param  int  $id_amigo receptor del mensaje
+     * @param  int  $idAmigo receptor del mensaje
      * @param  string  $mensaje  mensaje a enviar
      *
      */
-    public function actionEnviar($id_amigo, $mensaje)
+    public function actionEnviar($idAmigo, $mensaje)
     {
-        $id_mio = Yii::$app->user->id;
 
         if ($mensaje != null || $mensaje != '') {
             $model = new Privado();
             $model->id_emisor = Yii::$app->user->id;
-            $model->id_receptor = $id_amigo;
+            $model->id_receptor = $idAmigo;
             $model->mensaje = $mensaje;
 
             $model->load(Yii::$app->request->post());

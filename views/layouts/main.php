@@ -179,6 +179,19 @@ $this->registerJs($js);
 
                         <footer class="footer">
                             <div class="container">
+
+                                <p>
+                                    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                                        <img style="border:0;width:88px;height:31px"
+                                        src="http://jigsaw.w3.org/css-validator/images/vcss"
+                                        alt="¡CSS Válido!" />
+                                    </a>
+                                    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                                        <img style="border:0;width:88px;height:31px"
+                                        src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+                                        alt="¡CSS Válido!" />
+                                    </a>
+                                </p>
                                 <p class="pull-left">&copy; Friendly <?= date('Y') ?></p>
                                 <p class="pull-right">
                                     <?= Html::a('Sobre nosotros',['/site/about'], ['title'=>'sobre_nosotros']) ?>

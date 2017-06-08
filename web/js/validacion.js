@@ -43,7 +43,7 @@ $(document).on('ready', function () {
             var texto = "Introduce un email valido";
             error.append(texto);
         } else {
-            $(this).css("backgroundColor","limegreen")
+            $(this).css("backgroundColor","limegreen");
             $(this).siblings('p').remove();
         }
     }
