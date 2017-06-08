@@ -6,7 +6,6 @@ $(document).on('ready', function () {
     $(".enlaces").css({
         'margin-left':'20%'
     });
-    $("form").removeAttr("role");
 });
 var ventana1;
 var ventana2;

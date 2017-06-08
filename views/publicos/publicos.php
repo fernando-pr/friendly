@@ -42,7 +42,7 @@ $this->registerJsFile(
 
             <div class="panel-footer">
                 <div class="input-group">
-                    <input type="text" class="form-control" id="mensaje" placeholder="" autofocus="true" maxlength="140"/>
+                    <input type="text" class="form-control" id="mensaje" placeholder="" autofocus maxlength="140"/>
                     <span class="input-group-btn">
                         <button class="btn btn-info enviar" type="button">Enviar</button>
                     </span>

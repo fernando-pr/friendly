@@ -33,5 +33,5 @@ $(document).on('ready', function () {
         $.reproducir();
     });
 
-    $("input[type=hidden]").attr("title", "oculto");
+    
 });
