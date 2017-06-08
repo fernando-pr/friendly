@@ -26,8 +26,12 @@ body {
     background-color: transparent;
 }
 
+
+h1 {
+    font-size: 1.5em !important;
+}
 .jumbotron .btn {
-    font-size: 21px;
+    font-size: 1em;
     padding: 14px 24px;
 }
 
@@ -92,8 +96,8 @@ a.desc:after {
 
 /* align the logout "link" (button in form) of the navbar */
 .nav li > form > button.logout {
-    padding: 15px;
     border: none;
+    padding: 15px;
 }
 
 @media(max-width:767px) {

@@ -20,3 +20,7 @@ div#foto {
 div.caja_busqueda, div#caja_busqueda {
     width:80% !important;
 }
+
+.vacio {
+    display: none;
+}

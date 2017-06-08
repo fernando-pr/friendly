@@ -25,7 +25,7 @@ $(".exito").css({
 });
 
 $(".play_musica").on('click', function() {
-     $.reproducir();
+    $.reproducir();
 });
 
 JS;
@@ -44,7 +44,6 @@ $this->registerJs($js);
 </head>
 <body>
     <?php $this->beginBody() ?>
-
     <div class="wrap">
         <?php
         if (!Yii::$app->user->isGuest && Yii::$app->requestedRoute != "site/reproductor"){
@@ -68,8 +67,8 @@ $this->registerJs($js);
                     . Html::beginForm(['/site/logout'], 'post')
                     . '<div class="fotos_login">'
                     . Html::submitButton(
-                        '<img src="/encendido.png" width="37" height="37" title="Cerrar Sesión">',
-                        ['class' => 'btn btn-link logout']
+                        '<img src="/encendido.png" width="37" height="37" title="Cerrar Sesión" alt="encendito">',
+                        ['class' => 'btn btn-link logout', 'title' =>'encender']
                         )
                         . '</div>'
                         . Html::endForm()
@@ -86,16 +85,16 @@ $this->registerJs($js);
                                 . Html::beginForm(['/site/logout'], 'post')
 
                                 . '<div class="fotos_login">'
-                                . Html::a('<img src="/img/grupo.png" width="37" height="37", class="img-circle">', ['publicos/publicos'], ['class' => 'img-circle', 'title'=>'chat grupo'] ) . ' '
-                                . Html::a('<img src="/img/chat.png" width="37" height="37", class="img-circle">',['privados/privados'], ['class' => 'img-circle', 'title'=>'chat']) . ' '
-                                . Html::a('<img src="/img/amistad.jpg" width="37" height="37", class="img-circle">', ['amigos/amigos'], ['class' => 'img-circle', 'title'=>'Amigos']) . ' '
-                                . Html::a('<img src="/img/peticion.png" width="37" height="37", class="img-circle">', ['usuarios/peticiones'], ['class' => 'img-circle', 'title'=>'Peticiones Amistad']) . ' '
-                                . Html::a('<img src="/' . $ruta . '" width="37" height="37", class="img-circle">',['usuarios/view/' . Yii::$app->user->id], ['class' => 'img-circle', 'title'=>'perfil ' . Yii::$app->user->identity->nombre]) . ' '
-                                . Html::a('<img src="/img/play.jpg" width="37" height="37", class="img-circle play_musica">',[''], ['class' => 'img-circle play', 'title'=>'reproductor de música ']) . ' '
+                                . Html::a('<img src="/img/grupo.png" width="37" height="37" class="img-circle" alt="grupo">', ['publicos/publicos'], ['class' => 'img-circle', 'title'=>'chat grupo'] ) . ' '
+                                . Html::a('<img src="/img/chat.png" width="37" height="37" class="img-circle" alt="chat">',['privados/privados'], ['class' => 'img-circle', 'title'=>'chat']) . ' '
+                                . Html::a('<img src="/img/amistad.jpg" width="37" height="37" class="img-circle" alt="amistad">', ['amigos/amigos'], ['class' => 'img-circle', 'title'=>'Amigos']) . ' '
+                                . Html::a('<img src="/img/peticion.png" width="37" height="37" class="img-circle"  alt="peticiones">', ['usuarios/peticiones'], ['class' => 'img-circle', 'title'=>'Peticiones Amistad']) . ' '
+                                . Html::a('<img src="/' . $ruta . '" width="37" height="37" class="img-circle"  alt="perfil">',['usuarios/view/' . Yii::$app->user->id], ['class' => 'img-circle', 'title'=>'perfil ' . Yii::$app->user->identity->nombre]) . ' '
+                                . Html::a('<img src="/img/play.jpg" width="37" height="37" class="img-circle play_musica"  alt="musica">',[''], ['class' => 'img-circle play', 'title'=>'reproductor de música ']) . ' '
 
                                 . Html::submitButton(
-                                    '<img src="/encendido.png" width="37" height="37" title="Cerrar Sesión">',
-                                    ['class' => 'btn btn-link logout']
+                                    '<img src="/encendido.png" width="37" height="37" title="Cerrar Sesión" alt="encendito">',
+                                    ['class' => 'btn btn-link logout', 'title' =>'logou']
                                     )
                                     . '</div>'
                                     . Html::endForm()
@@ -142,7 +141,7 @@ $this->registerJs($js);
                         }
                         ?>
 
-                        <div class="container">
+                        <div class="container" name="container">
                             <?= Breadcrumbs::widget([
                                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
                                 ]) ?>
@@ -173,15 +172,16 @@ $this->registerJs($js);
                                         'body' => Mensaje::info(),
                                     ]);
                                 } ?>
+
                                 <?= $content ?>
                             </div>
                         </div>
 
-                        <footer class="footer">
+                        <footer class="footer" name="footer">
                             <div class="container">
                                 <p class="pull-left">&copy; Friendly <?= date('Y') ?></p>
                                 <p class="pull-right">
-                                    <?= Html::a('Sobre nosotros',['/site/about'], ['title'=>'nosotros']) ?>
+                                    <?= Html::a('Sobre nosotros',['/site/about'], ['title'=>'sobre_nosotros']) ?>
                                 </p>
                             </div>
                         </footer>

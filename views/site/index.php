@@ -74,14 +74,15 @@ $this->registerJsFile(
                     <option value="provincia">Provincia</option>
 
                 </select>
+                <input type="submit" name="vacio" value="" title="vacio" class="vacio">
             </form>
 
         </span>
         <span class="input-group-btn">
-            <input type="text" class="form-control input_buscar col-xs-8">
+            <input type="text" class="form-control input_buscar col-xs-8" title="Search">
         </span>
         <span class="input-group-btn">
-            <button class="btn btn-default boton_buscar" type="button"><img src="/img/search.png" height="18" width="18"></button>
+            <button class="btn btn-default boton_buscar" type="button" title="busca"><img src="/img/search.png" height="18" width="18" alt="buscar"></button>
         </span>
     </div>
 </div>
@@ -122,8 +123,11 @@ $this->registerJsFile(
                                     <div class="col-md-3 col-lg-3 " align="center"> <img alt="No imagen" src="<?= $usuario->imageUrl ?>" class="img-circle img-responsive imagen"> </div>
 
                                     <div class=" col-md-9 col-lg-9 ">
-                                        <table class="table table-user-information">
+                                        <table class="table table-user-information" summary="Tabla que muestra la información de un usuario">
+
+                                            <th><?= $usuario->nombre?></th>
                                             <tbody>
+
                                                 <tr>
                                                     <td>Nombre</td>
                                                     <td><?= $usuario->nombre?></td>
@@ -153,14 +157,14 @@ $this->registerJsFile(
                                 ?>
 
                                 <?php if(!Yii::$app->user->estaPeticionEnviada($usuario->id)) { ?>
-                                    <input type="button" name="<?=$usuario->id?>" value="Solicitud Amistad" class='btn btn-primary boton_solicitud'>
-                                    <input type="button" name="<?=$usuario->id?>" value="Cancelar Petición" class='btn btn-danger cancelar_peticion oculto'>
+                                    <input type="button" name="<?=$usuario->id?>" value="Solicitud Amistad" class='btn btn-primary boton_solicitud' title="solicitud">
+                                    <input type="button" name="<?=$usuario->id?>" value="Cancelar Petición" class='btn btn-danger cancelar_peticion oculto' title="cancelar">
 
                                     <?php
                                 } else {
                                     ?>
-                                    <input type="button" name="<?=$usuario->id?>" value="Solicitud Amistad" class='btn btn-primary boton_solicitud oculto'>
-                                    <input type="button" name="<?=$usuario->id?>" value="Cancelar Solicitud" class='btn btn-danger cancelar_peticion'>
+                                    <input type="button" name="<?=$usuario->id?>" value="Solicitud Amistad" class='btn btn-primary boton_solicitud oculto' title="slicitud">
+                                    <input type="button" name="<?=$usuario->id?>" value="Cancelar Solicitud" class='btn btn-danger cancelar_peticion' title="cancela">
 
                                     <?php
                                 }
