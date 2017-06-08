@@ -141,7 +141,7 @@ $this->registerJs($js);
                         }
                         ?>
 
-                        <div class="container" name="container">
+                        <div class="container">
                             <?= Breadcrumbs::widget([
                                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
                                 ]) ?>
@@ -177,7 +177,7 @@ $this->registerJs($js);
                             </div>
                         </div>
 
-                        <footer class="footer" name="footer">
+                        <footer class="footer">
                             <div class="container">
                                 <p class="pull-left">&copy; Friendly <?= date('Y') ?></p>
                                 <p class="pull-right">
