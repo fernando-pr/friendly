@@ -36,10 +36,10 @@ class ProvinciasController extends \yii\web\Controller
     }
 
     /**
-     *  Método que se encarga de dar a la vista un objeto json
-     *   con las provincias disponibles.
-     * @return string    Objeto json.
-     */
+    *  Método que se encarga de dar a la vista un objeto json
+    *   con las provincias disponibles.
+    * @return string    Objeto json.
+    */
     public function actionProvincias()
     {
         $provincias['01'] = 'Álava/Araba';
@@ -95,12 +95,11 @@ class ProvinciasController extends \yii\web\Controller
         $provincias['49'] = 'Zamora';
         $provincias['50'] = 'Zaragoza';
 
-
-
         foreach ($provincias as $codigo => $nombre) {
-            $elementos_json[] = '\'$codigo\': \'$nombre\'';
+            $elementos_json[] = "\"$codigo\": \"$nombre\"";
         }
 
-        return '{' . implode(',', $elementos_json) . '}';
+        return "{".implode(",", $elementos_json)."}";
+
     }
 }
