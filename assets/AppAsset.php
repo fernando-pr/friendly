@@ -10,8 +10,8 @@ namespace app\assets;
 use yii\web\AssetBundle;
 
 /**
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @since 2.0
+ * Clase donde añadir archivos css, javascript, dependencias, etc.
+ *
  */
 class AppAsset extends AssetBundle
 {
