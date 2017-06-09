@@ -125,7 +125,7 @@ $this->registerJsFile(
                                     <div class=" col-md-9 col-lg-9 ">
                                         <table class="table table-user-information" summary="Tabla que muestra la información de un usuario">
 
-                                            <th><?= $usuario->nombre?></th>
+                                            
                                             <tbody>
 
                                                 <tr>

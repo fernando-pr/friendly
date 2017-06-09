@@ -57,18 +57,18 @@ class Usuario extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public function rules()
     {
         return [
-            [['nombre', 'email'], 'required'],
-            [['pass', 'passConfirm'], 'required', 'on' => self::ESCENARIO_CREATE],
+            [['nombre', 'email'], 'required','message' => 'No puedes dejar el campo vacio'],
+            [['pass', 'passConfirm'], 'required','message' => 'No puedes dejar el campo vacio', 'on' => self::ESCENARIO_CREATE],
             [['pass'], 'safe'],
             [['email'], 'required'],
-            [['poblacion', 'provincia'],'required', 'on' => self::ESCENARIO_CREATE],
+            [['poblacion', 'provincia'],'required','message' => 'No puedes dejar el campo vacio','on' => self::ESCENARIO_CREATE],
             [['created_at'], 'safe'],
             [['nombre'], 'string', 'max' => 15],
             [['email', 'poblacion', 'provincia'], 'string', 'max' => 255],
             [['token', 'activacion'], 'string', 'max' => 32],
-            [['nombre'], 'unique'],
+            [['nombre'], 'unique', 'message' => 'El nombre ya existe, elige otro'],
             [['passConfirm'], 'confirmarPassword'],
-            [['email'], 'email'],
+            [['email'], 'email','message' => 'Introduce un email valido'],
             [['imageFile'], 'file', 'extensions' =>  ['png', 'jpg']],
         ];
     }
