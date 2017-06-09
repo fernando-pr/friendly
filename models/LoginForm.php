@@ -7,11 +7,11 @@ use yii\base\Model;
 use app\models\Usuario;
 
 /**
- * LoginForm es el modelo para el formulario de login.
- *
- * @property User|null $user This property is read-only.
- *
- */
+* LoginForm es el modelo para el formulario de login.
+*
+* @property User|null $user This property is read-only.
+*
+*/
 class LoginForm extends Model
 {
     /**
@@ -43,7 +43,8 @@ class LoginForm extends Model
     {
         return [
             // username and password are both required
-            [['username', 'password'], 'required'],
+            [['username'], 'required','message' => 'Nombre no puede estar vacio'],
+            [['password'], 'required','message' => 'Contraseña no puede estar vacia'],
             // rememberMe must be a boolean value
             ['rememberMe', 'boolean'],
             // password is validated by validatePassword()
@@ -65,12 +66,12 @@ class LoginForm extends Model
     }
 
     /**
-     * Valida la contraseña.
-     * Este método valida la contraseña en el formulario de login.
-     *
-     * @param string $attribute atributo actual a ser validado.
-     * @param array $params
-     */
+    * Valida la contraseña.
+    * Este método valida la contraseña en el formulario de login.
+    *
+    * @param string $attribute atributo actual a ser validado.
+    * @param array $params
+    */
     public function validatePassword($attribute, $params)
     {
         if (!$this->hasErrors()) {
@@ -83,9 +84,9 @@ class LoginForm extends Model
     }
 
     /**
-     * loguea un usuario usando su nombre y su contraseña.
-     * @return bool true si el usuario es logueado correctamente.
-     */
+    * loguea un usuario usando su nombre y su contraseña.
+    * @return bool true si el usuario es logueado correctamente.
+    */
     public function login()
     {
         if ($this->validate()) {
@@ -103,10 +104,10 @@ class LoginForm extends Model
     }
 
     /**
-     * Busca un usuari por su nombre.
-     *
-     * @return Usuario|null
-     */
+    * Busca un usuari por su nombre.
+    *
+    * @return Usuario|null
+    */
     public function getUser()
     {
         if ($this->_user === false) {

@@ -22,13 +22,13 @@ use yii\bootstrap\ActiveForm;
         <?php $form = ActiveForm::begin(['id' => 'login-form','layout' => 'horizontal',]); ?>
 
         <div id="form-login-username" class="form-group">
-            <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+            <?= $form->field($model, 'username')->textInput(['autofocus' => true, 'class'=>'usuario']) ?>
         </div>
         <div id="form-login-password" class="form-group">
-            <?= $form->field($model, 'password')->passwordInput() ?>
+            <?= $form->field($model, 'password')->passwordInput(['class' => 'clave']) ?>
         </div>
         <div>
-            <?= Html::submitButton('Login', ['class' => 'btn btn-primary btn btn-block btn-info ripple-effect', 'name' => 'login-button']) ?>
+            <?= Html::submitButton('Login', ['class' => 'btn btn-primary btn btn-block btn-info ripple-effect boton_login', 'name' => 'login-button']) ?>
         </div>
         <br>
         <div>
