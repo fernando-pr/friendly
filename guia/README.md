@@ -7,7 +7,7 @@ Descripción general del Proyecto.
 * [Funcionalidad principal de la aplicación.](funcionalidad_principal.md)   
 * [Objetivos generales.](objetivos.md)   
 * [URL del repositorio en GitHub.](https://github.com/fernando3287/friendly)   
-* [URL de la documentación en GitHub Pages o similar.](documentacion.md)   
+* [URL de la documentación en GitHub Pages o similar.](https://fernando3287.github.io/friendly/)   
 
 
 Instrucciones de instalación y despliegue.
@@ -18,7 +18,7 @@ Instrucciones de instalación y despliegue.
 
 
 Catálogo de requisitos.
-------------------------
+-----------------------
 
 * [Definición detallada.](detallada.md)   
 * [Cuadro resumen.](cuadro_resumen.md)

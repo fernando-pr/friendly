@@ -5,15 +5,16 @@
 ------------------------
 
 > #####Los objetivos generales de la aplicación son:#####
-> - **La gestión de usuarios**, con la creación, modificación , borrado, y la consulta de usuarios
-> junto con sus privilegios y login/logout.
+> - **La gestión de usuarios**
 >
-> - **La gestión de la amistad entre usuarios**, solicitudes de amistad, recibimiento de solicitudes, etc.
+> - **Gestión de mensajes.**
 >
-> - **La gestión de mensajes de chat entre amigos**, gestión usuarios con sus respectivos mensajes en el chat.
+> - **Gestión de listas de amigos.**
 >
-> - **La gestión de mensajes de chat entre usuarios conectados**, gestión usuarios conectados con sus respectivos mensajes en el chat publico.
+> - **Gestión de búsqueda de amigos.**
 >
-> - **La gestión de privilegios de usuario**, unos algunas acciones según los privilegios del usuario.
+> - **Gestión de chat**
 >
-> - **La opción de buscar usuarios**, permite a los usuarios buscar según unos criterios.
+> - **Gestión de foro general**
+>
+> - **Gestión de geolocalización.**
