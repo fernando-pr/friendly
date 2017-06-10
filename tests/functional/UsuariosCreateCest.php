@@ -85,6 +85,8 @@ class UsuariosCreateCest
         ]);
         $I->expectTo('see validations errors');
         $I->seeResponseCodeIs(200);
+        $I->dontSee('Entendido', 'button');
+        $I->dontSee('Algunas sugerencias...', 'h3');
         $I->see('Nombre', 'label');
         $I->see('Registrar', 'button');
         $I->see('Introduce un email valido');
