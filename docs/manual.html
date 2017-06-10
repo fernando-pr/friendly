@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="language" content="en" />
+        <link href="./assets/a9cb8cae/css/bootstrap.css" rel="stylesheet">
+<link href="./assets/a408446c/solarized_light.css" rel="stylesheet">
+<link href="./assets/64f80fce/style.css" rel="stylesheet">
+<script src="./assets/f0991c28/jquery.js"></script>
+<script src="./assets/a9cb8cae/js/bootstrap.js"></script>
+<script src="./assets/7be1cfc2/jssearch.js"></script>    <title>Manual básico. - Manual básico de usuario. - Guía de Friendly</title>
+</head>
+<body>
+
+<div class="wrap">
+    <nav id="w58" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w58-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="./index.html">Guía de Friendly</a></div><div id="w58-collapse" class="collapse navbar-collapse"><ul id="w59" class="navbar-nav nav"><li><a href="api/index.html">Class reference</a></li>
+<li><a href="./README.html">Guide</a></li></ul><div class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input id="searchbox" type="text" class="form-control" placeholder="Search">
+  </div>
+</div>
+</div></nav>
+    <div id="search-resultbox" style="display: none;" class="modal-content">
+        <ul id="search-results">
+        </ul>
+    </div>
+
+    
+<div class="row">
+    <div class="col-md-2">
+                <div id="navigation" class="list-group"><a class="list-group-item" href="#navigation-48" data-toggle="collapse" data-parent="#navigation">Descripción general del Proyecto. <b class="caret"></b></a><div id="navigation-48" class="submenu panel-collapse collapse"><a class="list-group-item" href="./funcionalidad_principal.html">Funcionalidad principal de la aplicación.</a>
+<a class="list-group-item" href="./objetivos.html">Objetivos generales.</a>
+<a class="list-group-item" href="https://github.com/fernando3287/friendly">URL del repositorio en GitHub.</a>
+<a class="list-group-item" href="https://fernando3287.github.io/friendly/">URL de la documentación en GitHub Pages o similar.</a></div>
+<a class="list-group-item" href="#navigation-49" data-toggle="collapse" data-parent="#navigation">Instrucciones de instalación y despliegue. <b class="caret"></b></a><div id="navigation-49" class="submenu panel-collapse collapse"><a class="list-group-item" href="./local.html">En local.</a>
+<a class="list-group-item" href="./nube.html">en la nube.</a></div>
+<a class="list-group-item" href="#navigation-50" data-toggle="collapse" data-parent="#navigation">Catálogo de requisitos. <b class="caret"></b></a><div id="navigation-50" class="submenu panel-collapse collapse"><a class="list-group-item" href="./detallada.html">Definición detallada.</a>
+<a class="list-group-item" href="./cuadro_resumen.html">Cuadro resumen.</a></div>
+<a class="list-group-item active" href="#navigation-51" data-toggle="collapse" data-parent="#navigation">Manual básico de usuario. <b class="caret"></b></a><div id="navigation-51" class="submenu panel-collapse collapse in"><a class="list-group-item active" href="./manual.html">Manual básico.</a></div>
+<a class="list-group-item" href="#navigation-52" data-toggle="collapse" data-parent="#navigation">Decisiones adoptadas y su justificación. <b class="caret"></b></a><div id="navigation-52" class="submenu panel-collapse collapse"><a class="list-group-item" href="./decisiones.html">Decisiones adoptadas y su justificación.</a></div>
+<a class="list-group-item" href="#navigation-53" data-toggle="collapse" data-parent="#navigation">Dificultades encontradas y soluciones aplicadas. <b class="caret"></b></a><div id="navigation-53" class="submenu panel-collapse collapse"><a class="list-group-item" href="./dificultades.html">Dificultades encontradas y soluciones aplicadas.</a></div>
+<a class="list-group-item" href="#navigation-54" data-toggle="collapse" data-parent="#navigation">Diagramas. <b class="caret"></b></a><div id="navigation-54" class="submenu panel-collapse collapse"><a class="list-group-item" href="./diagrama_clases.html">Diagrama De clases.</a>
+<a class="list-group-item" href="./diagrama_eld.html">Diagrama De estructura lógica de datos.</a></div>
+<a class="list-group-item" href="#navigation-55" data-toggle="collapse" data-parent="#navigation">Glosario de términos. <b class="caret"></b></a><div id="navigation-55" class="submenu panel-collapse collapse"><a class="list-group-item" href="./glosario.html">Glosario.</a></div>
+<a class="list-group-item" href="#navigation-56" data-toggle="collapse" data-parent="#navigation">Conclusiones. <b class="caret"></b></a><div id="navigation-56" class="submenu panel-collapse collapse"><a class="list-group-item" href="./conclusiones.html">Conclusiones.</a></div>
+<a class="list-group-item" href="#navigation-57" data-toggle="collapse" data-parent="#navigation">Anexos. <b class="caret"></b></a><div id="navigation-57" class="submenu panel-collapse collapse"><a class="list-group-item" href="./Anexos.html">Anexos.</a></div></div>    </div>
+    <div class="col-md-9 guide-content" role="main">
+        <h1><img src="images/logo.png" alt="Friendly" /> <strong>Friendly</strong> <span id="friendly"></span><a href="#friendly" class="hashlink">&para;</a></h1><h3>Manual básico de usuario <span id="manual-basico-de-usuario"></span><a href="#manual-basico-de-usuario" class="hashlink">&para;</a></h3><hr />
+<h4>Pantalla login: <span id="pantalla-login"></span><a href="#pantalla-login" class="hashlink">&para;</a></h4><blockquote><p>Esta es la pantalla de entrada a la aplicación, usuarios registrados o no tienes que pasar por aquí para hacer login o registrarse.</p>
+</blockquote>
+<p><img src="images/login.png" alt="login" /></p>
+<hr />
+<h4>Pantalla principal: <span id="pantalla-principal"></span><a href="#pantalla-principal" class="hashlink">&para;</a></h4><blockquote><p>Si estamos registrado y hacemos login vamos a la página principal. Esta es la vista principal de la aplicación, donde entramos cuando hacemos login y donde volvemos después de estar en cualquiér otra página.</p>
+</blockquote>
+<p><img src="images/principal.png" alt="principal" /></p>
+<hr />
+<h4>Pantalla Registrarse: <span id="pantalla-registrarse"></span><a href="#pantalla-registrarse" class="hashlink">&para;</a></h4><blockquote><p>Si no estamos registrados, en la pantalla de login pulsamos el botón de registrarse y nos llevará a esta pantalla. Una vez introducido nuestros datos nos enviará un email de conformación con un enlace.</p>
+</blockquote>
+<p><img src="images/registro.png" alt="registro" /></p>
+<hr />
+<h4>Email de validación: <span id="email-de-validacion"></span><a href="#email-de-validacion" class="hashlink">&para;</a></h4><blockquote><p>este email viene con un enlace que si lo pulsamos nos validará nuestro usuario y de esta manera, lroxima vez que estemos en la pantalla de login, podremos entrar a la aplicación sin necesidad de registrarnos.</p>
+</blockquote>
+<p><img src="images/validacion.png" alt="validacion" /></p>
+<hr />
+<h4>Buscar en la página principal: <span id="buscar-en-la-pagina-principal"></span><a href="#buscar-en-la-pagina-principal" class="hashlink">&para;</a></h4><blockquote><p>Para buscar debemos pulsar el botón para que se abra el menú.</p>
+</blockquote>
+<p><img src="images/buscar1.png" alt="buscar1" /></p>
+<blockquote><p>pulsando el botón de buscar se abrirá siguiente pantalla
+Esta pantalla cuenta con una lista desplegable y un campo de texto acompañado de un botón de buscar.
+La lista desplegable cuenta con los criterios de búsqueda que desee el usuario.
+El campo de texto es el texto o palabra que desea buscar el usuario.
+para buscar somplemente deje de escribir en el campo de texto o pulse el botón  de buscar.</p>
+</blockquote>
+<p><img src="images/buscar2.png" alt="buscar2" /></p>
+<blockquote><p>Usando Ajax, la aplicación busca según los criterios elegidos por el usuario y el campo de texto.
+Este es un ejemplo de una búsqueda.
+Para dejar de buscar pulsa el botoón de cerrar y se vuelve a cerrar el menú de búsqueda.  </p>
+</blockquote>
+<p><img src="images/buscar3.png" alt="buscar3" /></p>
+<hr />
+<h4>Botones del menú de navegación <span id="botones-del-menu-de-navegacion"></span><a href="#botones-del-menu-de-navegacion" class="hashlink">&para;</a></h4><blockquote><p>El primero se encuentra a la izquierda y sirve para volver a la página principal en cualquier momento.</p>
+</blockquote>
+<blockquote><p>El segundo que nos encontramos es el que nos llevaría al char de grupo donde todos los usuarios conectados pueden hablar.</p>
+</blockquote>
+<blockquote><p>El tercer botón nos lleva al chat privado entre amigos. Aquí los usuarios que tengan iniciada sesión y tengan amigos conectados podrán hablar de forma privada con ellos.</p>
+</blockquote>
+<blockquote><p>El cuarto botón nos lleva a las peticiones de amistad recibidas por el usuario.</p>
+</blockquote>
+<blockquote><p>El quinto botón lleva al usuario a su perfil, y si tiene foto, aparecerá su foto de perfil en el botón.</p>
+</blockquote>
+<blockquote><p>Este sexto botón abre en una nueva ventana un reproductor mp3 con canciones predefinidas y donde el usuario podrá cambiar de canción cuando desee. Un poco de música ambiente.</p>
+</blockquote>
+<blockquote><p>El último botón cierra la sesión del usuario.</p>
+</blockquote>
+<p><img src="images/botones.png" alt="botones" /></p>
+<hr />
+<h4>Chat de grupo <span id="chat-de-grupo"></span><a href="#chat-de-grupo" class="hashlink">&para;</a></h4><blockquote><p>Esta pantalla nos muestra los mensajes enviados y recibidos por los usuarios conectados y una lista con los usuarios conectados en el momento actual.</p>
+</blockquote>
+<p><img src="images/grupo.png" alt="grupo" /></p>
+<hr />
+<h4>Chat privado <span id="chat-privado"></span><a href="#chat-privado" class="hashlink">&para;</a></h4><blockquote><p>Esta pantalla de la lista de amigos conectados tienes que elegir con quien quieres hablar y su conversación aparecerá automáticamente en la conversación de la derecha, pudiendo cambiar de conversación con cualquier amigo de la lista.</p>
+</blockquote>
+<p><img src="images/chat.png" alt="chat" /></p>
+<hr />
+<h4>Listado de amigos <span id="listado-de-amigos"></span><a href="#listado-de-amigos" class="hashlink">&para;</a></h4><blockquote><p>Esta pantalla aparece una lista de amigos del usuario, donde cada amigo tiene dos botones, uno es para ver el perfil de ese amigo y el otro es para borrarlo y dejar de ser su amigo.</p>
+</blockquote>
+<p><img src="images/amigos.png" alt="amigos" /></p>
+<hr />
+<h4>Peticiones de amistad <span id="peticiones-de-amistad"></span><a href="#peticiones-de-amistad" class="hashlink">&para;</a></h4><blockquote><p>Esta pantalla muestra las peticiones de amistad recibidas por el usuario, donde podrá aceptarlas y que pase a ser un amigo o puede rechazarla.</p>
+</blockquote>
+<p><img src="images/amistad.png" alt="amistad" /></p>
+<hr />
+<h4>Perfil de usuario <span id="perfil-de-usuario"></span><a href="#perfil-de-usuario" class="hashlink">&para;</a></h4><blockquote><p>Esta pantalla te muestra tu propio perfil en el que podrás modificar tus datos o borrar tu propio usuario.</p>
+</blockquote>
+<p><img src="images/perfil.png" alt="perfil" /></p>
+<hr />
+<h4>Modificar perfil usuario <span id="modificar-perfil-usuario"></span><a href="#modificar-perfil-usuario" class="hashlink">&para;</a></h4><blockquote><p>Esta pantalla permite al usuario rellenar solo los datos que desea cambiar de su perfil, lo que no quiera cambiar que no lo toque.</p>
+</blockquote>
+<p><img src="images/modificar.png" alt="modificar" /></p>
+<hr />
+<h4>Reproductor <span id="reproductor"></span><a href="#reproductor" class="hashlink">&para;</a></h4><blockquote><p>Abre una nueva ventana y muestra el reproductor y la lista de canciones que puede elegir el usuario.</p>
+</blockquote>
+<p><img src="images/reproductor.png" alt="reproductor" /></p>
+<hr />
+<h4>Pantalla sobre nosotros. <span id="pantalla-sobre-nosotros"></span><a href="#pantalla-sobre-nosotros" class="hashlink">&para;</a></h4><blockquote><p>El enlace esta al pie de pagina y muestra información sobra la red social.</p>
+</blockquote>
+<p><img src="images/about.png" alt="about" /></p>
+        <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
+    </div>
+</div>
+
+
+</div>
+
+<footer class="footer">
+        <p class="pull-right"><small>Page generated on Sat, 10 Jun 2017 17:17:53 +0000</small></p>
+    Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
+
+<script type="text/javascript">jQuery(document).ready(function () {
+    var shiftWindow = function () { scrollBy(0, -50) };
+    if (location.hash) setTimeout(shiftWindow, 1);
+    window.addEventListener("hashchange", shiftWindow);
+var element = document.createElement("script");
+element.src = "./jssearch.index.js";
+document.body.appendChild(element);
+
+var searchBox = $('#searchbox');
+
+// search when typing in search field
+searchBox.on("keyup", function(event) {
+    var query = $(this).val();
+
+    if (query == '' || event.which == 27) {
+        $('#search-resultbox').hide();
+        return;
+    } else if (event.which == 13) {
+        var selectedLink = $('#search-resultbox a.selected');
+        if (selectedLink.length != 0) {
+            document.location = selectedLink.attr('href');
+            return;
+        }
+    } else if (event.which == 38 || event.which == 40) {
+        $('#search-resultbox').show();
+
+        var selected = $('#search-resultbox a.selected');
+        if (selected.length == 0) {
+            $('#search-results').find('a').first().addClass('selected');
+        } else {
+            var next;
+            if (event.which == 40) {
+                next = selected.parent().next().find('a').first();
+            } else {
+                next = selected.parent().prev().find('a').first();
+            }
+            if (next.length != 0) {
+                var resultbox = $('#search-results');
+                var position = next.position();
+
+//              TODO scrolling is buggy and jumps around
+//                resultbox.scrollTop(Math.floor(position.top));
+//                console.log(position.top);
+
+                selected.removeClass('selected');
+                next.addClass('selected');
+            }
+        }
+
+        return;
+    }
+    $('#search-resultbox').show();
+    $('#search-results').html('<li><span class="no-results">No results</span></li>');
+
+    var result = jssearch.search(query);
+
+    if (result.length > 0) {
+        var i = 0;
+        var resHtml = '';
+
+        for (var key in result) {
+            if (i++ > 20) {
+                break;
+            }
+            resHtml = resHtml +
+            '<li><a href="' + result[key].file.u.substr(3) +'"><span class="title">' + result[key].file.t + '</span>' +
+            '<span class="description">' + result[key].file.d + '</span></a></li>';
+        }
+        $('#search-results').html(resHtml);
+    }
+});
+
+// hide the search results on ESC
+$(document).on("keyup", function(event) { if (event.which == 27) { $('#search-resultbox').hide(); } });
+// hide search results on click to document
+$(document).bind('click', function (e) { $('#search-resultbox').hide(); });
+// except the following:
+searchBox.bind('click', function(e) { e.stopPropagation(); });
+$('#search-resultbox').bind('click', function(e) { e.stopPropagation(); });
+
+});</script></body>
+</html>
