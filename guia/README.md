@@ -1,60 +1,64 @@
 ![Friendly](images/logo.png) **Friendly**
 ==================
 
-### Descripción general del Proyecto.
+Descripción general del Proyecto.
 -------------------------------------
-> [Funcionalidad principal de la aplicación.](funcionalidad_principal.md)   
 
-> [Objetivos generales.](objetivos.md)   
-
-> [URL del repositorio en GitHub.](github.md)   
-
-> [URL de la documentación en GitHub Pages o similar.](documentacion.md)   
+* [Funcionalidad principal de la aplicación.](funcionalidad_principal.md)   
+* [Objetivos generales.](objetivos.md)   
+* [URL del repositorio en GitHub.](https://github.com/fernando3287/friendly)   
+* [URL de la documentación en GitHub Pages o similar.](documentacion.md)   
 
 
-### Instrucciones de instalación y despliegue.
--------------------------------------
-> [En local.](local.md)   
+Instrucciones de instalación y despliegue.
+------------------------------------------
 
-> [en la nube.](nube.md)   
-
-
-### Catálogo de requisitos.
--------------------------------------
-> [Definición detallada.](detallada.md)   
-
-> [Cuadro resumen.](cuadro_resumen.md)
-
-### Manual básico de usuario.
--------------------------------------
-> [Manual básico.](manual.md)    
-
-### Decisiones adoptadas y su justificación.
--------------------------------------
-> [Decisiones adoptadas y su justificación.](decisiones.md)   
-
-### Dificultades encontradas y soluciones aplicadas.
--------------------------------------
-> [Dificultades encontradas y soluciones aplicadas.](dificultades.md)   
+* [En local.](local.md)   
+* [en la nube.](nube.md)   
 
 
-### Diagramas.
--------------------------------------
-> [Diagrama De clases.](diagrama_clases.md)   
+Catálogo de requisitos.
+------------------------
 
-> [Diagrama De estructura lógica de datos.](diagrama_eld.md)   
+* [Definición detallada.](detallada.md)   
+* [Cuadro resumen.](cuadro_resumen.md)
+
+Manual básico de usuario.
+-------------------------
+
+* [Manual básico.](manual.md)    
+
+Decisiones adoptadas y su justificación.
+----------------------------------------
+
+* [Decisiones adoptadas y su justificación.](decisiones.md)   
+
+Dificultades encontradas y soluciones aplicadas.
+------------------------------------------------
+
+* [Dificultades encontradas y soluciones aplicadas.](dificultades.md)   
 
 
-### Glosario de términos.
--------------------------------------
-> [Glosario.](glosario.md)   
+Diagramas.
+----------
+
+* [Diagrama De clases.](diagrama_clases.md)   
+* [Diagrama De estructura lógica de datos.](diagrama_eld.md)   
 
 
-### Conclusiones.
--------------------------------------
-> [Conclusiones.](conclusiones.md)   
+Glosario de términos.
+---------------------
+
+* [Glosario.](glosario.md)   
 
 
-### Anexos.
--------------------------------------
-> [Anexos.](Anexos.md)    
+Conclusiones.
+-------------
+
+* [Conclusiones.](conclusiones.md)   
+
+
+Anexos.
+-------
+
+* [Anexos.](Anexos.md)    
