@@ -4,7 +4,7 @@
 
 
 $this->title = 'Sobre nosotros';
-
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-about">
     <div class="row caja_principal">

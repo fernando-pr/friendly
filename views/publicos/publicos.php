@@ -10,7 +10,7 @@ use yii\web\JqueryAsset;
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Chat público';
-
+$this->params['breadcrumbs'][] = $this->title;
 $urlConectados = Url::to(['ajax/conectados']);
 $urlmsg = Url::to(['ajax/publicosmsg']);
 $urlenviar = Url::to(['publicos/enviar']);
@@ -28,7 +28,10 @@ $this->registerJsFile(
     ['depends' => [JqueryAsset::className()]]
 );
 ?>
-
+<div class="text-center">
+    <h1>Chat Público</h1>
+</div>
+<br>
 <div class="chat-index">
 
     <div class="col-md-8">

@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Usuario */
 
 $this->title = 'Perfil ' . $model->nombre;
-
+$this->params['breadcrumbs'][] = $this->title;
 
 ?>
 <div class="usuario-view">

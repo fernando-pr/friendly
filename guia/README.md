@@ -61,4 +61,10 @@ Conclusiones.
 Anexos.
 -------
 
-* [Anexos.](Anexos.md)    
+* [Anexo I :Prueba del 6](seis.md)   
+* [Anexo II :Validación html 5](html.md)
+* [Anexo III:Validación css ](css.md)
+* [Anexo IV:Validación microdatos ](microdatos.md)  
+* [Anexo V:Validación Accesibilidad ](accesibilidad.md)  
+* [Anexo VI: Resultado de las pruebas ](pruebas.md)
+* [Anexo VII: Vista de la aplicación en Internet Explorer](explorer.md)    
