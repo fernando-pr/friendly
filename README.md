@@ -1,5 +1,5 @@
 # friendly
-===========
+
 
 Aplicación desarrollada como proyecto integrado para el instituto IES doñana en el año 2017.
 
