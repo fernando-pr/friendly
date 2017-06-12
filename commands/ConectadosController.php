@@ -21,8 +21,7 @@ use yii\console\Controller;
 class ConectadosController extends Controller
 {
     /**
-    * This command muestra el mensaje que quieras.
-    * @param string $message mensaje que quieres mostrar.
+    * This command borra los usuarios que estan más de 10 min inactividad.
     */
     public function actionIndex()
     {

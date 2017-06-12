@@ -111,7 +111,6 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-
             $id = Yii::$app->user->id;
             $comprobar = Conectado::findOne(['id_usuario' => $id]);
             if (!isset($comprobar)) {

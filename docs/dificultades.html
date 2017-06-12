@@ -60,7 +60,7 @@
 </blockquote>
 <blockquote><p>Otra dificultad encontrada fue a la hora de buscar una extensión que me hiciera el chat. En la búsqueda use varias extensiones de extensiones pero la verdad que ninguna me terminó de convencer. Unas eran imposibles de configurar, otras no funcionaban bien y la mayoría tenía pocas descargas y no eran muy usadas por otros usuarios. así que mi decisión fue la de hacer las salas de chat por mí mismo.</p>
 </blockquote>
-<blockquote><p>Problemas con bootstrap. Unos de los problemas de usar bootstrap es que al poner tus propios css no los sobreescribe y sigue usando los css de bootstrap. Así que cambias por ejemplo el color de alguna propiedad y no hace nada. Otro problema añadido es que el navegador actualiza el css de algunos elementos desde lo que está guardado en el navegador, así que no cambia el diseño aunque lo cambies en el css. La solución aplicada a los dos problemas fue, primero usar la navegación privada para que cada vez se hiciera una petición se pidan también los recursos css y la segunda solución usar important! en las sentencias css y usar selectores mas directos para que tuvieran prioridad.</p>
+<blockquote><p>Una dificultad encontrada a sido a la hora de guardar los usuarios conectados para el chat. En un principio al hacer login guardaba el usuarios entre los conectados y al hacer logout lo eliminaba de entre los conectados. el problema era a la hora de que el usuario cierre el navegador o se vaya la luz, porque al no pasar por el logout no se eliminaba de los conectados. La solución mas razonable que he encontrado ha sido que cada cliente a la hora de hacer una petición http guarde o actualize una cookie y la actualice en la base de datos. Luego he hecho un crontab que se ejecuta cada minuto y busca los usuarios que entre el tiempo actual y la última petición http(cookie) ha pasado más de 10 minutos y los elimina de la base de datos.</p>
 </blockquote>
         <div class="toplink"><a href="#" class="h1" title="go to top"><span class="glyphicon glyphicon-arrow-up"></a></div>
     </div>
@@ -70,7 +70,7 @@
 </div>
 
 <footer class="footer">
-        <p class="pull-right"><small>Page generated on Sun, 11 Jun 2017 16:58:32 +0000</small></p>
+        <p class="pull-right"><small>Page generated on Mon, 12 Jun 2017 19:32:58 +0000</small></p>
     Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></footer>
 
 <script type="text/javascript">jQuery(document).ready(function () {

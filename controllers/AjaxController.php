@@ -83,6 +83,11 @@ class AjaxController extends \yii\web\Controller
     }
 
 
+    /**
+     * coge la cookie y la guarda en la base de datos.
+     * @param  int  $valor valor de la cookie
+     * @return void
+     */
     public function actionActualizar($valor)
     {
         $cookie = $_COOKIE['conexion'];
