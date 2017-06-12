@@ -1,5 +1,6 @@
 <?php
 
+use yii\helpers\Html;
 
 
 if (!empty($model)) { ?>
@@ -25,11 +26,11 @@ if (!empty($model)) { ?>
                         </a>
                         <div class="media-body">
                             <p class="<?=$pull?> p_mensaje">
-                                <?= $publico->mensaje ?>
+                                <?= Html::encode($publico->mensaje) ?>
                             </p>
                             <br /><br />
                             <p class="<?=$pull?>">
-                                <small class="text-muted"><?= $publico->usuario->nombre ?> | <?= Yii::$app->formatter->asDatetime($publico->fecha, 'HH:mm:ss dd/MM/yyyy' ) ?></small>
+                                <small class="text-muted"><?= Html::encode($publico->usuario->nombre) ?> | <?= Yii::$app->formatter->asDatetime($publico->fecha, 'HH:mm:ss dd/MM/yyyy' ) ?></small>
                             </p>
                         </div>
                     </div>

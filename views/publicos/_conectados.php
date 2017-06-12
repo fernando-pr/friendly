@@ -15,7 +15,7 @@ if (!empty($model)) { ?>
                             <img class="media-object img-circle " src="<?= $conectado->imageUrl ?>" style="width: 50px; height: 50px;"/>
                         </a>
                         <div class="media-body" >
-                            <h5><?= $conectado->nombre ?></h5>
+                            <h5><?= Html::encode($conectado->nombre) ?></h5>
                         </div>
                     </div>
                 </div>

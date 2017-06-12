@@ -26,12 +26,12 @@ if (!empty($model)) { ?>
                             <div class="row">
                                 <div class="col-md-4">
                                     <img alt="No imagen" src="<?= $usuario->imageUrl ?>" class="img-circle img-responsive img_buscar">
-                                    <?= $usuario->nombre?>
+                                    <?= Html::encode($usuario->nombre) ?>
                                 </div>
                                 <div class="col-md-4">
                                     <p>
-                                        <?= $usuario->poblacion?>
-                                        (<?=$usuario->provincia?>)
+                                        <?= Html::encode($usuario->poblacion)?>
+                                        (<?=Html::encode($usuario->provincia)?>)
                                     </p>
                                 </div>
                                 <div class="col-md-4">

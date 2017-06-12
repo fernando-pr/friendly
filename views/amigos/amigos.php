@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                         <div class="panel panel-info caja_perfil">
                             <div class="panel-heading">
-                                <h1 class="panel-title"><?= $usuario->nombre?></h1>
+                                <h1 class="panel-title"><?= Html::encode($usuario->nombre) ?></h1>
                             </div>
                             <div class="panel-body">
                                 <div class="row">
@@ -43,19 +43,19 @@ $this->params['breadcrumbs'][] = $this->title;
                                             <tbody>
                                                 <tr>
                                                     <td>Nombre</td>
-                                                    <td><?= $usuario->nombre?></td>
+                                                    <td><?= Html::encode($usuario->nombre) ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Email</td>
-                                                    <td><?= $usuario->email?></td>
+                                                    <td><?= Html::encode($usuario->email) ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Población</td>
-                                                    <td><?= $usuario->poblacion?></td>
+                                                    <td><?= Html::encode($usuario->poblacion) ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Provincia</td>
-                                                    <td><?= $usuario->provincia?></td>
+                                                    <td><?= Html::encode($usuario->provincia) ?></td>
                                                 </tr>
                                             </tbody>
                                         </table>

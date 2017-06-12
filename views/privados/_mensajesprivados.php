@@ -26,11 +26,11 @@ if (!empty($model)) { ?>
                         </a>
                         <div class="media-body">
                             <p class="<?=$pull?> p_mensaje">
-                                <?= $privado->mensaje ?>
+                                <?= Html::encode($privado->mensaje) ?>
                             </p>
                             <br /><br />
                             <p class="<?=$pull?>">
-                                <small class="text-muted"><?= $privado->emisor->nombre ?> | <?= Yii::$app->formatter->asDatetime($privado->fecha, 'HH:mm:ss dd/MM/yyyy' ) ?></small>
+                                <small class="text-muted"><?= Html::encode($privado->emisor->nombre) ?> | <?= Yii::$app->formatter->asDatetime($privado->fecha, 'HH:mm:ss dd/MM/yyyy' ) ?></small>
                             </p>
                         </div>
                     </div>
