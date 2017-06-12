@@ -82,6 +82,19 @@ class AjaxController extends \yii\web\Controller
         ]);
     }
 
+
+    public function actionActualizar($valor)
+    {
+        $cookie = $_COOKIE['conexion'];
+
+        if (isset($cookie)) {
+            $conectado = Conectado::findOne(Yii::$app->user->id);
+            if (isset($conectado)) {
+                $conectado->cookie = $cookie;
+                $conectado->update();
+            }
+        }
+    }
     /**
     * Muestra los usuarios que estan conectados en ese momento y que además
     * son amigos del usuario logueado.

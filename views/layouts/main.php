@@ -4,6 +4,7 @@
 /* @var $content string */
 
 use app\helpers\Mensaje;
+use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
@@ -12,7 +13,9 @@ use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
 AppAsset::register($this);
+$valor = time();
 
+$url = Url::to(['ajax/actualizar']);
 $js = <<<JS
 $(".exito").fadeTo(2000, 500).slideUp(500, function() {
     $(".exito").slideUp(500);
@@ -26,6 +29,21 @@ $(".exito").css({
 
 $(".play_musica").on('click', function() {
     $.reproducir();
+});
+
+var valor = "$valor";
+
+document.cookie = 'conexion=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+document.cookie = "conexion=$valor; path=/";
+
+$.ajax({
+    method: 'GET',
+    url: '$url',
+    data: {
+        valor: valor
+    },
+    success: function (data, status, event) {
+    }
 });
 
 JS;

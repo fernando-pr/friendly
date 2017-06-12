@@ -73,6 +73,8 @@ create table conectados (
 
     instante            timestamptz     not null default current_timestamp,
 
+    cookie            bigint,
+
     constraint          pk_conectados   primary key (id_usuario)
 );
 

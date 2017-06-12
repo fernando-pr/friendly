@@ -76,11 +76,13 @@ class PublicosController extends Controller
      */
     public function actionPublicos()
     {
-        // $conectados = Conectado::find()->all();
-        // $user_conectados=[];
-        // foreach ($conectados as $conectado) {
-        //     $user_conectados[] = Usuario::findOne($conectado->id_usuario);
-        // }
+        $id = Yii::$app->user->id;
+        $comprobar = Conectado::findOne(['id_usuario' => $id]);
+        if (!isset($comprobar)) {
+            $conectado = new Conectado();
+            $conectado->id_usuario = $id;
+            $conectado->save();
+        }
 
         return $this->render('publicos');
     }

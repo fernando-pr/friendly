@@ -22,6 +22,7 @@ $config = [
             'class' => 'app\components\User',
             'identityClass' => 'app\models\Usuario',
             'enableAutoLogin' => false,
+            'authTimeout' => 600,
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',

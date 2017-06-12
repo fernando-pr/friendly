@@ -13,15 +13,15 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 
 /**
- * SiteController, controlador que se encarga de todas las acciones que
- * tienen que ver con la web en general.
- */
+* SiteController, controlador que se encarga de todas las acciones que
+* tienen que ver con la web en general.
+*/
 class SiteController extends Controller
 {
     /**
-     * Define el comportamiento y el control de acceso a los componentes.
-     * @return mixed
-     */
+    * Define el comportamiento y el control de acceso a los componentes.
+    * @return mixed
+    */
     public function behaviors()
     {
         return [
@@ -111,10 +111,7 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            //usuario conectado
-            //
-            //isset($_COOKIE['_identity'] tambien para ver si esta conectado
-            //
+
             $id = Yii::$app->user->id;
             $comprobar = Conectado::findOne(['id_usuario' => $id]);
             if (!isset($comprobar)) {
@@ -181,18 +178,18 @@ class SiteController extends Controller
     }
 
     /**
-     * Muestra la vistra que contiene el reproductor.
-     * @return string
-     */
+    * Muestra la vistra que contiene el reproductor.
+    * @return string
+    */
     public function actionReproductor()
     {
         return $this->render('reproductor');
     }
 
     /**
-     * Redirecciona a la página anterior.
-     * @return string
-     */
+    * Redirecciona a la página anterior.
+    * @return string
+    */
     public function actionVolver()
     {
         return $this->goBack();

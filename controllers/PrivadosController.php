@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Privado;
+use app\models\Conectado;
 use app\models\PrivadoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -159,11 +160,13 @@ class PrivadosController extends Controller
      */
     public function actionPrivados()
     {
-        // $conectados = Conectado::find()->all();
-        // $user_conectados=[];
-        // foreach ($conectados as $conectado) {
-        //     $user_conectados[] = Usuario::findOne($conectado->id_usuario);
-        // }
+        $id = Yii::$app->user->id;
+        $comprobar = Conectado::findOne(['id_usuario' => $id]);
+        if (!isset($comprobar)) {
+            $conectado = new Conectado();
+            $conectado->id_usuario = $id;
+            $conectado->save();
+        }
 
         return $this->render('privados');
     }

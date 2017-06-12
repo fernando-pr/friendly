@@ -29,6 +29,7 @@ class Conectado extends \yii\db\ActiveRecord
             [['id_usuario'], 'required'],
             [['id_usuario'], 'integer'],
             [['instante'], 'safe'],
+            [['cookie'], 'safe'],
             [['id_usuario'], 'exist', 'skipOnError' => true, 'targetClass' => Usuario::className(), 'targetAttribute' => ['id_usuario' => 'id']],
         ];
     }
@@ -42,6 +43,7 @@ class Conectado extends \yii\db\ActiveRecord
         return [
             'id_usuario' => 'Id Usuario',
             'instante' => 'Instante',
+            'cookie' => 'Cookie',
         ];
     }
 
