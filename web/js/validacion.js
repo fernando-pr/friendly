@@ -37,7 +37,7 @@ $(document).on('ready', function () {
         error.css({'color' : 'red'});
         $(this).parent().append(error);
 
-        if(!/^\D+\@\D+\.\D+$/.test($(this).val())) {
+        if(!/^\w+\@\D+\.\D+$/.test($(this).val())) {
 
             $(this).css("backgroundColor","red");
             var texto = "Introduce un email valido";
