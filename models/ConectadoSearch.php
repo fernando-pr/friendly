@@ -8,10 +8,15 @@ use yii\data\ActiveDataProvider;
 use app\models\Conectado;
 
 /**
- * ConectadoSearch representa el modelo de búsqueda para `app\models\Conectado`.
- */
+* ConectadoSearch representa el modelo de búsqueda para `app\models\Conectado`.
+*/
 class ConectadoSearch extends Conectado
 {
+    /**
+    * @var string nombre
+    */
+    public $nombre;
+    
     /**
     * Reglas de validación para el modelo Conectado.
     * @return array Devuelve las reglas de validación.
@@ -20,14 +25,14 @@ class ConectadoSearch extends Conectado
     {
         return [
             [['id_usuario'], 'integer'],
-            [['instante'], 'safe'],
+            [['instante', 'nombre'], 'safe'],
         ];
     }
 
     /**
-     * devuelve los Escenarios relacionados a este modelo.
-     * @return mixed.
-     */
+    * devuelve los Escenarios relacionados a este modelo.
+    * @return mixed.
+    */
     public function scenarios()
     {
         // bypass scenarios() implementation in the parent class
@@ -35,13 +40,13 @@ class ConectadoSearch extends Conectado
     }
 
     /**
-     * Crea una instancia de ActiveDataProvider con los
-     * parámetros de búsqueda aplicados.
-     *
-     * @param array $params parámetros de búsqueda.
-     *
-     * @return ActiveDataProvider
-     */
+    * Crea una instancia de ActiveDataProvider con los
+    * parámetros de búsqueda aplicados.
+    *
+    * @param array $params parámetros de búsqueda.
+    *
+    * @return ActiveDataProvider
+    */
     public function search($params)
     {
         $query = Conectado::find();
@@ -60,11 +65,14 @@ class ConectadoSearch extends Conectado
             return $dataProvider;
         }
 
+        $query->joinWith(['usuario']);
         // grid filtering conditions
         $query->andFilterWhere([
             'id_usuario' => $this->id_usuario,
             'instante' => $this->instante,
         ]);
+
+        $query->andFilterWhere(['like', 'nombre', $this->nombre]);
 
         return $dataProvider;
     }

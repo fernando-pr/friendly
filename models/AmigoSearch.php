@@ -7,10 +7,15 @@ use yii\data\ActiveDataProvider;
 use app\models\Amigo;
 
 /**
- * AmigoSearch representa el modelo de búsqueda para `app\models\Amigo`.
- */
+* AmigoSearch representa el modelo de búsqueda para `app\models\Amigo`.
+*/
 class AmigoSearch extends Amigo
 {
+    /**
+    * @var string nombre
+    */
+    public $nombre;
+    
     /**
     * Reglas de validación para el modelo Amigo.
     * @return array Devuelve las reglas de validación.
@@ -19,14 +24,14 @@ class AmigoSearch extends Amigo
     {
         return [
             [['id', 'id_usuario', 'id_amigo'], 'integer'],
-            [['estado'], 'safe'],
+            [['estado', 'nombre'], 'safe'],
         ];
     }
 
     /**
-     * devuelve los Escenarios relacionados a este modelo.
-     * @return mixed.
-     */
+    * devuelve los Escenarios relacionados a este modelo.
+    * @return mixed.
+    */
     public function scenarios()
     {
         // bypass scenarios() implementation in the parent class
@@ -34,13 +39,13 @@ class AmigoSearch extends Amigo
     }
 
     /**
-     * Crea una instancia de ActiveDataProvider con los
-     * parámetros de búsqueda aplicados.
-     *
-     * @param array $params parámetros de búsqueda.
-     *
-     * @return ActiveDataProvider
-     */
+    * Crea una instancia de ActiveDataProvider con los
+    * parámetros de búsqueda aplicados.
+    *
+    * @param array $params parámetros de búsqueda.
+    *
+    * @return ActiveDataProvider
+    */
     public function search($params)
     {
         $query = Amigo::find();
@@ -59,6 +64,8 @@ class AmigoSearch extends Amigo
             return $dataProvider;
         }
 
+        $query->joinWith(['usuario']);
+
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
@@ -67,6 +74,7 @@ class AmigoSearch extends Amigo
         ]);
 
         $query->andFilterWhere(['like', 'estado', $this->estado]);
+        $query->andFilterWhere(['like', 'nombre', $this->nombre]);
 
         return $dataProvider;
     }

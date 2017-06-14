@@ -13,6 +13,11 @@ use app\models\Publico;
 class PublicoSearch extends Publico
 {
     /**
+    * @var string nombre
+    */
+    public $nombre;
+    
+    /**
     * Reglas de validación para el modelo Publico.
     * @return array Devuelve las reglas de validación.
     */
@@ -20,7 +25,7 @@ class PublicoSearch extends Publico
     {
         return [
             [['id', 'id_usuario'], 'integer'],
-            [['mensaje', 'fecha'], 'safe'],
+            [['mensaje', 'fecha', 'nombre'], 'safe'],
         ];
     }
 
@@ -59,7 +64,7 @@ class PublicoSearch extends Publico
             // $query->where('0=1');
             return $dataProvider;
         }
-
+        $query->joinWith(['usuario']);
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
@@ -68,6 +73,7 @@ class PublicoSearch extends Publico
         ]);
 
         $query->andFilterWhere(['like', 'mensaje', $this->mensaje]);
+        $query->andFilterWhere(['like', 'nombre', $this->nombre]);
 
         return $dataProvider;
     }

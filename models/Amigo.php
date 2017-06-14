@@ -14,6 +14,11 @@ use Yii;
 class Amigo extends \yii\db\ActiveRecord
 {
     /**
+    * @var string nombre
+    */
+    public $nombre;
+
+    /**
     * Este método indica el nombre de la tabla que esta asociada al modelo.
     * @return string nombre de la tabla asociada al modelo.
     */

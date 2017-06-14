@@ -8,10 +8,15 @@ use yii\data\ActiveDataProvider;
 use app\models\Privado;
 
 /**
- * PrivadoSearch representa el modelo de búsqueda para `app\models\Privado`.
- */
+* PrivadoSearch representa el modelo de búsqueda para `app\models\Privado`.
+*/
 class PrivadoSearch extends Privado
 {
+    /**
+    * @var string nombre
+    */
+    public $nombre;
+
     /**
     * Reglas de validación para el modelo Privado.
     * @return array Devuelve las reglas de validación.
@@ -20,14 +25,14 @@ class PrivadoSearch extends Privado
     {
         return [
             [['id', 'id_emisor', 'id_receptor'], 'integer'],
-            [['mensaje', 'fecha'], 'safe'],
+            [['mensaje', 'fecha', 'nombre'], 'safe'],
         ];
     }
 
     /**
-     * devuelve los Escenarios relacionados a este modelo.
-     * @return mixed.
-     */
+    * devuelve los Escenarios relacionados a este modelo.
+    * @return mixed.
+    */
     public function scenarios()
     {
         // bypass scenarios() implementation in the parent class
@@ -35,13 +40,13 @@ class PrivadoSearch extends Privado
     }
 
     /**
-     * Crea una instancia de ActiveDataProvider con los
-     * parámetros de búsqueda aplicados.
-     *
-     * @param array $params parámetros de búsqueda.
-     *
-     * @return ActiveDataProvider
-     */
+    * Crea una instancia de ActiveDataProvider con los
+    * parámetros de búsqueda aplicados.
+    *
+    * @param array $params parámetros de búsqueda.
+    *
+    * @return ActiveDataProvider
+    */
     public function search($params)
     {
         $query = Privado::find();
@@ -59,7 +64,7 @@ class PrivadoSearch extends Privado
             // $query->where('0=1');
             return $dataProvider;
         }
-
+        $query->joinWith(['emisor']);
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
@@ -69,6 +74,7 @@ class PrivadoSearch extends Privado
         ]);
 
         $query->andFilterWhere(['like', 'mensaje', $this->mensaje]);
+        $query->andFilterWhere(['like', 'nombre', $this->nombre]);
 
         return $dataProvider;
     }
