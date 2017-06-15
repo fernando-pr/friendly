@@ -260,7 +260,7 @@ class AmigosController extends Controller
             $amigo = $usuario->getAmistad($id);
             $amigo->delete();
         }
-        //return $this->redirect(['amigos/amigos']);
-        return $this->goBack();
+        return $this->redirect(['amigos/amigos']);
+        //return $this->goBack();
     }
 }

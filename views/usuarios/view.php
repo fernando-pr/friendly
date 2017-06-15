@@ -61,7 +61,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
                 <div class="panel-footer">
                     <?php if ($model->id == Yii::$app->user->id) {?>
-                        <?= Html::a('<img src="/editar.png" height="20" width="20"/>', ['update', 'id' => $model->id], ['class' => 'btn btn-sm btn-primary', 'data-toggle'=>"tooltip", 'alt'=>'editar']) ?>
+                        <?= Html::a('<img src="/editar.png" height="20" width="20" alt="editar" />', ['update', 'id' => $model->id], ['class' => 'btn btn-sm btn-primary', 'data-toggle'=>"tooltip"]) ?>
                         <?php
                     }
                     ?>

@@ -10,7 +10,7 @@ if (!empty($model)) { ?>
                 <div class="media-body">
                     <div class="media">
                         <a class="pull-left">
-                            <img class="media-object img-circle" src="<?= $conectado->imageUrl ?>" id="<?=$conectado->id?>" style="width: 50px; height: 50px;"/>
+                            <img class="media-object img-circle" src="<?= $conectado->imageUrl ?>" id="<?=$conectado->id?>" style="width: 40px; height: 40px;"/>
                         </a>
                         <!-- <div class="media-body" >
                         <!-- <h5><?= $conectado->nombre ?></h5> -->
